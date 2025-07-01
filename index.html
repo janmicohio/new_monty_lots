@@ -94,7 +94,7 @@
 			width: 100%;
 		}
 		
-		/* Custom cluster styling */
+		/* Custom cluster styling /
 		.marker-cluster-small {
 			background-color: rgba(7, 123, 255, 0.6);
 		}
@@ -115,6 +115,56 @@
 		.marker-cluster-large div {
 			background-color: rgba(220, 53, 69, 0.8);
 		}
+		
+		/* Search and Filter Styling */
+		.search-section {
+			background: white;
+			padding: 15px;
+			border-radius: 6px;
+			border: 1px solid #e9ecef;
+			margin-bottom: 20px;
+		}
+		
+		.search-container {
+			display: flex;
+			gap: 8px;
+			margin-bottom: 15px;
+		}
+		
+		#search-input {
+			flex: 1;
+			padding: 8px 12px;
+			border: 1px solid #dee2e6;
+			border-radius: 4px;
+			font-size: 14px;
+		}
+		
+		#clear-search {
+			padding: 8px 12px;
+			background: #6c757d;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+		}
+		
+		#clear-search:hover {
+			background: #5a6268;
+		}
+		
+		
+		.search-results {
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px solid #e9ecef;
+		}
+		
+		#search-count {
+			font-size: 13px;
+			color: #6c757d;
+			font-weight: 500;
+		}
 	</style>
 
 	
@@ -123,6 +173,19 @@
 	<div class="container">
 		<div class="sidebar">
 			<h2>Koop GeoJSON Server</h2>
+			
+			<!-- Search Section -->
+			<div class="search-section">
+				<h3>Search Properties</h3>
+				<div class="search-container">
+					<input type="text" id="search-input" placeholder="Search by address or parcel ID..." />
+					<button id="clear-search">Clear</button>
+				</div>
+				
+				<div class="search-results">
+					<span id="search-count">Search all properties</span>
+				</div>
+			</div>
 			
 			<h3>Available Layers</h3>
 			<ul id="layer-list" class="layer-list">
@@ -149,11 +212,19 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
+	// Global variables for search functionality
+	let allLayerData = {}; // Store all loaded layer data
+	let layerGroups = {}; // Store layer groups for filtering
+	let originalLayerGroups = {}; // Store original layer groups for reset
+
 	// Function to load a layer and add it to the map
 	function loadLayer(layerId) {
 		fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`)
 			.then(response => response.json())
 			.then(data => {
+				// Store the original data for searching
+				allLayerData[layerId] = data;
+				
 				const style = getStyleForLayer(layerId);
 				const featureCount = data.features.length;
 				
@@ -173,7 +244,7 @@
 					});
 					
 					// Add features to cluster group
-					L.geoJSON(data, {
+					const geoJsonLayer = L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
 							return L.marker(latlng);
 						},
@@ -182,6 +253,9 @@
 							const props = feature.properties;
 							const popupContent = createPopupContent(layerId, props, feature.geometry);
 							layer.bindPopup(popupContent);
+							
+							// Store reference to feature for searching
+							layer.feature = feature;
 							
 							// Add to cluster group for points, directly to map for polygons/lines
 							if (feature.geometry.type === 'Point') {
@@ -192,6 +266,10 @@
 						}
 					});
 					
+					// Store layer groups for filtering
+					layerGroups[layerId] = clusterGroup;
+					originalLayerGroups[layerId] = clusterGroup;
+					
 					// Add cluster group to map
 					map.addLayer(clusterGroup);
 					
@@ -199,7 +277,7 @@
 					console.log(`Loading ${layerId} without clustering (${featureCount} features)`);
 					
 					// Use regular loading for smaller datasets
-					L.geoJSON(data, {
+					const geoJsonLayer = L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
 							return L.marker(latlng);
 						},
@@ -208,11 +286,184 @@
 							const props = feature.properties;
 							const popupContent = createPopupContent(layerId, props, feature.geometry);
 							layer.bindPopup(popupContent);
+							
+							// Store reference to feature for searching
+							layer.feature = feature;
 						}
 					}).addTo(map);
+					
+					// Store layer groups for filtering
+					layerGroups[layerId] = geoJsonLayer;
+					originalLayerGroups[layerId] = geoJsonLayer;
 				}
 			})
 			.catch(error => console.error(`Error loading ${layerId} data:`, error));
+	}
+
+	// URL parameter functions
+	function updateURL(searchTerm) {
+		const params = new URLSearchParams();
+		if (searchTerm) params.set('search', searchTerm);
+		
+		const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+		window.history.pushState({}, '', newURL);
+	}
+	
+	function loadFromURL() {
+		const params = new URLSearchParams(window.location.search);
+		const searchTerm = params.get('search') || '';
+		
+		// Update search field
+		document.getElementById('search-input').value = searchTerm;
+		
+		// Apply search if term is set
+		if (searchTerm) {
+			searchFeatures(searchTerm);
+		}
+	}
+
+	// Search function - simplified for address and parcel ID only
+	function searchFeatures(searchTerm) {
+		let totalResults = 0;
+		
+		// If no search term, show all features
+		if (!searchTerm) {
+			clearAllFilters();
+			return;
+		}
+		
+		Object.keys(allLayerData).forEach(layerId => {
+			const data = allLayerData[layerId];
+			const filteredFeatures = data.features.filter(feature => {
+				const props = feature.properties;
+				
+				// Search only address and parcel ID fields
+				const searchLower = searchTerm.toLowerCase();
+				const searchableText = [
+					props.PARLOC || props.location || '',    // Address field
+					props.TAXPINNO || props.parcel || ''     // Parcel ID field
+				].join(' ').toLowerCase();
+				
+				return searchableText.includes(searchLower);
+			});
+			
+			totalResults += filteredFeatures.length;
+			
+			// Update the layer on the map
+			updateLayerWithFilteredFeatures(layerId, filteredFeatures);
+		});
+		
+		// Update search count
+		updateSearchCount(totalResults, searchTerm);
+		
+		// Update URL for shareability
+		updateURL(searchTerm);
+	}
+	
+	function updateLayerWithFilteredFeatures(layerId, filteredFeatures) {
+		// Remove existing layer
+		if (layerGroups[layerId]) {
+			map.removeLayer(layerGroups[layerId]);
+		}
+		
+		// Create new layer with filtered features
+		const filteredData = {
+			type: "FeatureCollection",
+			features: filteredFeatures
+		};
+		
+		const style = getStyleForLayer(layerId);
+		const featureCount = filteredFeatures.length;
+		const useClustering = featureCount > 1000;
+		
+		if (useClustering) {
+			// Create new cluster group for filtered data
+			const clusterGroup = L.markerClusterGroup({
+				maxClusterRadius: 50,
+				disableClusteringAtZoom: 18,
+				spiderfyOnMaxZoom: true,
+				showCoverageOnHover: true,
+				zoomToBoundsOnClick: true
+			});
+			
+			L.geoJSON(filteredData, {
+				pointToLayer: function(feature, latlng) {
+					return L.marker(latlng);
+				},
+				style: style,
+				onEachFeature: function(feature, layer) {
+					const props = feature.properties;
+					const popupContent = createPopupContent(layerId, props, feature.geometry);
+					layer.bindPopup(popupContent);
+					layer.feature = feature;
+					
+					if (feature.geometry.type === 'Point') {
+						clusterGroup.addLayer(layer);
+					} else {
+						layer.addTo(map);
+					}
+				}
+			});
+			
+			layerGroups[layerId] = clusterGroup;
+			map.addLayer(clusterGroup);
+			
+		} else {
+			// Create regular layer for smaller filtered datasets
+			const geoJsonLayer = L.geoJSON(filteredData, {
+				pointToLayer: function(feature, latlng) {
+					return L.marker(latlng);
+				},
+				style: style,
+				onEachFeature: function(feature, layer) {
+					const props = feature.properties;
+					const popupContent = createPopupContent(layerId, props, feature.geometry);
+					layer.bindPopup(popupContent);
+					layer.feature = feature;
+				}
+			}).addTo(map);
+			
+			layerGroups[layerId] = geoJsonLayer;
+		}
+	}
+	
+	function updateSearchCount(count, searchTerm) {
+		const searchCountElement = document.getElementById('search-count');
+		if (count === 0 && searchTerm) {
+			searchCountElement.textContent = 'No results found';
+			searchCountElement.style.color = '#dc3545';
+		} else if (searchTerm) {
+			const total = Object.values(allLayerData).reduce((sum, data) => sum + data.features.length, 0);
+			searchCountElement.textContent = `Found ${count.toLocaleString()} of ${total.toLocaleString()} properties`;
+			searchCountElement.style.color = '#28a745';
+		} else {
+			const total = Object.values(allLayerData).reduce((sum, data) => sum + data.features.length, 0);
+			searchCountElement.textContent = total > 0 ? `Search ${total.toLocaleString()} properties` : 'Search all properties';
+			searchCountElement.style.color = '#6c757d';
+		}
+	}
+	
+	function clearAllFilters() {
+		// Reset search field
+		document.getElementById('search-input').value = '';
+		
+		// Restore original layers
+		Object.keys(originalLayerGroups).forEach(layerId => {
+			if (layerGroups[layerId]) {
+				map.removeLayer(layerGroups[layerId]);
+			}
+			layerGroups[layerId] = originalLayerGroups[layerId];
+			map.addLayer(originalLayerGroups[layerId]);
+		});
+		
+		// Update search count
+		const total = Object.values(allLayerData).reduce((sum, data) => sum + data.features.length, 0);
+		const searchCountElement = document.getElementById('search-count');
+		searchCountElement.textContent = total > 0 ? `Search ${total.toLocaleString()} properties` : 'Search all properties';
+		searchCountElement.style.color = '#6c757d';
+		
+		// Clear URL parameters
+		window.history.pushState({}, '', window.location.pathname);
 	}
 
 	// Function to get style based on layer type
@@ -292,6 +543,11 @@
 			
 			// Display catalog info in console
 			console.log(`Found ${catalog.count} services available`);
+			
+			// Load search parameters from URL after data is loaded
+			setTimeout(() => {
+				loadFromURL();
+			}, 1000); // Wait for data to load
 		})
 		.catch(error => {
 			console.error('Error loading service catalog:', error);
@@ -317,6 +573,35 @@
 	}
 
 	map.on('click', onMapClick);
+
+	// Event listeners for search functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const searchInput = document.getElementById('search-input');
+		const clearButton = document.getElementById('clear-search');
+		
+		// Debounced search function
+		let searchTimeout;
+		function debouncedSearch() {
+			clearTimeout(searchTimeout);
+			searchTimeout = setTimeout(() => {
+				const searchTerm = searchInput.value.trim();
+				searchFeatures(searchTerm);
+			}, 300); // 300ms delay
+		}
+		
+		// Add event listeners
+		searchInput.addEventListener('input', debouncedSearch);
+		clearButton.addEventListener('click', clearAllFilters);
+		
+		// Enter key support for search input
+		searchInput.addEventListener('keypress', function(e) {
+			if (e.key === 'Enter') {
+				clearTimeout(searchTimeout);
+				const searchTerm = searchInput.value.trim();
+				searchFeatures(searchTerm);
+			}
+		});
+	});
 
 </script>
 
