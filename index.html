@@ -76,6 +76,37 @@
 			font-family: monospace;
 		}
 		
+		/* Layer toggle styling */
+		.layer-header {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		
+		.layer-toggle {
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+		}
+		
+		.layer-name {
+			cursor: pointer;
+			flex: 1;
+		}
+		
+		.layer-item.hidden {
+			opacity: 0.5;
+		}
+		
+		.layer-item.hidden .layer-name {
+			text-decoration: line-through;
+			color: #6c757d;
+		}
+		
+		.layer-item.hidden .layer-status {
+			color: #6c757d !important;
+		}
+		
 		.stats {
 			background: white;
 			padding: 15px;
@@ -511,19 +542,61 @@
 		// Clear loading message
 		layerList.innerHTML = '';
 		
-		// Add layer items with clustering info
+		// Add layer items with visibility toggles
 		catalog.services.forEach(service => {
 			const listItem = document.createElement('li');
 			listItem.className = 'layer-item';
 			
 			listItem.innerHTML = `
-				<div class="layer-name">${service.name}</div>
+				<div class="layer-header">
+					<input type="checkbox" id="toggle-${service.id}" class="layer-toggle" checked>
+					<label for="toggle-${service.id}" class="layer-name">${service.name}</label>
+				</div>
 				<div class="layer-id">${service.id}</div>
-				<div style="font-size: 0.8em; color: #28a745; margin-top: 4px;">✓ Loaded (clustering enabled for large datasets)</div>
+				<div class="layer-status" style="font-size: 0.8em; color: #28a745; margin-top: 4px;">✓ Visible</div>
 			`;
+			
+			// Add event listener for checkbox toggle
+			const checkbox = listItem.querySelector('.layer-toggle');
+			checkbox.addEventListener('change', function() {
+				toggleLayerVisibility(service.id, this.checked);
+			});
 			
 			layerList.appendChild(listItem);
 		});
+	}
+
+	// Layer visibility toggle function
+	function toggleLayerVisibility(layerId, isVisible) {
+		const layerGroup = layerGroups[layerId];
+		const layerItem = document.querySelector(`#toggle-${layerId}`).closest('.layer-item');
+		const statusElement = layerItem.querySelector('.layer-status');
+		
+		if (layerGroup) {
+			if (isVisible) {
+				// Show layer
+				map.addLayer(layerGroup);
+				layerItem.classList.remove('hidden');
+				statusElement.textContent = '✓ Visible';
+				statusElement.style.color = '#28a745';
+			} else {
+				// Hide layer
+				map.removeLayer(layerGroup);
+				layerItem.classList.add('hidden');
+				statusElement.textContent = '✗ Hidden';
+				statusElement.style.color = '#6c757d';
+			}
+		} else {
+			// Layer not loaded yet, update UI to show loading
+			if (isVisible) {
+				statusElement.textContent = '⏳ Loading...';
+				statusElement.style.color = '#007bff';
+			} else {
+				statusElement.textContent = '✗ Hidden (not loaded)';
+				statusElement.style.color = '#6c757d';
+			}
+			console.warn(`Layer ${layerId} not found in layerGroups. It may not be loaded yet.`);
+		}
 	}
 
 	// Discover and load all available layers from service catalog
