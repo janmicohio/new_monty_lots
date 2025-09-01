@@ -64,10 +64,97 @@
 			border: 1px solid #e9ecef;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 		}
+
+		.layer-item.loaded {
+			border-left: 4px solid #28a745;
+		}
+
+		.layer-item.loading {
+			border-left: 4px solid #007bff;
+			background: #f8f9ff;
+		}
+
+		.layer-item.error {
+			border-left: 4px solid #dc3545;
+			background: #fff8f8;
+		}
 		
 		.layer-name {
 			font-weight: 600;
 			color: #495057;
+		}
+
+		.layer-controls {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-top: 8px;
+		}
+
+		.layer-info {
+			font-size: 0.85em;
+			color: #6c757d;
+			margin-top: 4px;
+		}
+
+		.load-button {
+			padding: 4px 8px;
+			background: #007bff;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 0.8em;
+			flex-shrink: 0;
+		}
+
+		.load-button:hover {
+			background: #0056b3;
+		}
+
+		.load-button:disabled {
+			background: #6c757d;
+			cursor: not-allowed;
+		}
+
+		.unload-button {
+			background: #dc3545;
+		}
+
+		.unload-button:hover {
+			background: #c82333;
+		}
+
+		.feature-count {
+			font-size: 0.8em;
+			color: #28a745;
+			font-weight: 500;
+		}
+
+		.loading-spinner {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			border: 2px solid #f3f3f3;
+			border-top: 2px solid #007bff;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+			margin-right: 4px;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		.warning {
+			color: #856404;
+			background: #fff3cd;
+			border: 1px solid #ffeaa7;
+			padding: 6px 8px;
+			border-radius: 4px;
+			font-size: 0.8em;
+			margin-top: 4px;
 		}
 		
 		.layer-id {
@@ -247,12 +334,33 @@
 	let allLayerData = {}; // Store all loaded layer data
 	let layerGroups = {}; // Store layer groups for filtering
 	let originalLayerGroups = {}; // Store original layer groups for reset
+	let layerStates = {}; // Track loading state of each layer
+	let layerFeatureCounts = {}; // Store feature counts for each layer
+
+	// Function to get feature count for a layer without loading it
+	function getLayerFeatureCount(layerId) {
+		return fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=json&where=1=1&returnCountOnly=true`)
+			.then(response => response.json())
+			.then(data => {
+				const count = data.count || 0;
+				layerFeatureCounts[layerId] = count;
+				return count;
+			})
+			.catch(error => {
+				console.error(`Error getting feature count for ${layerId}:`, error);
+				return 0;
+			});
+	}
 
 	// Function to load a layer and add it to the map
 	function loadLayer(layerId) {
-		fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`)
-			.then(response => response.json())
-			.then(data => {
+		// Update loading state
+		updateLayerState(layerId, 'loading');
+		
+		return new Promise((resolve, reject) => {
+			fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`)
+				.then(response => response.json())
+				.then(data => {
 				// Store the original data for searching
 				allLayerData[layerId] = data;
 				
@@ -304,6 +412,10 @@
 					// Add cluster group to map
 					map.addLayer(clusterGroup);
 					
+					// Update state to loaded
+					updateLayerState(layerId, 'loaded');
+					resolve(data);
+					
 				} else {
 					console.log(`Loading ${layerId} without clustering (${featureCount} features)`);
 					
@@ -326,9 +438,82 @@
 					// Store layer groups for filtering
 					layerGroups[layerId] = geoJsonLayer;
 					originalLayerGroups[layerId] = geoJsonLayer;
+					
+					// Update state to loaded
+					updateLayerState(layerId, 'loaded');
+					resolve(data);
 				}
-			})
-			.catch(error => console.error(`Error loading ${layerId} data:`, error));
+				})
+				.catch(error => {
+					console.error(`Error loading ${layerId} data:`, error);
+					updateLayerState(layerId, 'error');
+					reject(error);
+				});
+		});
+	}
+
+	// Function to unload a layer
+	function unloadLayer(layerId) {
+		const layerGroup = layerGroups[layerId];
+		if (layerGroup) {
+			map.removeLayer(layerGroup);
+			delete layerGroups[layerId];
+			delete originalLayerGroups[layerId];
+			delete allLayerData[layerId];
+		}
+		updateLayerState(layerId, 'unloaded');
+	}
+
+	// Function to update layer state and UI
+	function updateLayerState(layerId, state) {
+		layerStates[layerId] = state;
+		const layerItem = document.querySelector(`[data-layer-id="${layerId}"]`);
+		if (!layerItem) return;
+
+		const statusElement = layerItem.querySelector('.layer-status');
+		const loadButton = layerItem.querySelector('.load-button');
+		const featureCountElement = layerItem.querySelector('.feature-count');
+		
+		// Remove all state classes
+		layerItem.classList.remove('loaded', 'loading', 'error');
+		
+		switch (state) {
+			case 'loading':
+				layerItem.classList.add('loading');
+				statusElement.innerHTML = '<span class="loading-spinner"></span>Loading...';
+				statusElement.style.color = '#007bff';
+				loadButton.textContent = 'Loading...';
+				loadButton.disabled = true;
+				break;
+			case 'loaded':
+				layerItem.classList.add('loaded');
+				const count = layerFeatureCounts[layerId] || 0;
+				statusElement.textContent = `✓ Loaded (${count.toLocaleString()} features)`;
+				statusElement.style.color = '#28a745';
+				loadButton.textContent = 'Unload';
+				loadButton.className = 'load-button unload-button';
+				loadButton.disabled = false;
+				if (featureCountElement) {
+					featureCountElement.textContent = `${count.toLocaleString()} features`;
+				}
+				break;
+			case 'error':
+				layerItem.classList.add('error');
+				statusElement.textContent = '✗ Error loading';
+				statusElement.style.color = '#dc3545';
+				loadButton.textContent = 'Retry';
+				loadButton.className = 'load-button';
+				loadButton.disabled = false;
+				break;
+			case 'unloaded':
+			default:
+				statusElement.textContent = 'Not loaded';
+				statusElement.style.color = '#6c757d';
+				loadButton.textContent = 'Load';
+				loadButton.className = 'load-button';
+				loadButton.disabled = false;
+				break;
+		}
 	}
 
 	// URL parameter functions
@@ -528,7 +713,7 @@
 		return content;
 	}
 
-	// Function to update sidebar with layer information
+	// Function to update sidebar with layer information and manual loading controls
 	function updateSidebar(catalog) {
 		const layerList = document.getElementById('layer-list');
 		const layerCount = document.getElementById('layer-count');
@@ -542,27 +727,79 @@
 		// Clear loading message
 		layerList.innerHTML = '';
 		
-		// Add layer items with visibility toggles
+		// Add layer items with manual loading controls
 		catalog.services.forEach(service => {
 			const listItem = document.createElement('li');
 			listItem.className = 'layer-item';
+			listItem.setAttribute('data-layer-id', service.id);
 			
 			listItem.innerHTML = `
 				<div class="layer-header">
-					<input type="checkbox" id="toggle-${service.id}" class="layer-toggle" checked>
-					<label for="toggle-${service.id}" class="layer-name">${service.name}</label>
+					<input type="checkbox" id="visibility-${service.id}" class="layer-toggle" style="display:none;">
+					<div class="layer-name">${service.name}</div>
 				</div>
 				<div class="layer-id">${service.id}</div>
-				<div class="layer-status" style="font-size: 0.8em; color: #28a745; margin-top: 4px;">✓ Visible</div>
+				<div class="layer-info">
+					<span class="feature-count">Getting count...</span>
+				</div>
+				<div class="layer-controls">
+					<button class="load-button" data-layer-id="${service.id}">Load</button>
+					<input type="checkbox" id="toggle-${service.id}" class="layer-toggle" style="display:none;" title="Show/Hide layer">
+				</div>
+				<div class="layer-status" style="font-size: 0.8em; color: #6c757d; margin-top: 4px;">Not loaded</div>
 			`;
 			
-			// Add event listener for checkbox toggle
-			const checkbox = listItem.querySelector('.layer-toggle');
-			checkbox.addEventListener('change', function() {
-				toggleLayerVisibility(service.id, this.checked);
-			});
-			
 			layerList.appendChild(listItem);
+			
+			// Get feature count for this layer
+			getLayerFeatureCount(service.id).then(count => {
+				const featureCountElement = listItem.querySelector('.feature-count');
+				const warningContainer = listItem.querySelector('.layer-info');
+				
+				if (count > 0) {
+					featureCountElement.textContent = `${count.toLocaleString()} features`;
+					featureCountElement.style.color = '#28a745';
+					
+					// Add warning for large datasets
+					if (count > 5000) {
+						const warning = document.createElement('div');
+						warning.className = 'warning';
+						warning.textContent = '⚠️ Large dataset - may take time to load';
+						warningContainer.appendChild(warning);
+					}
+				} else {
+					featureCountElement.textContent = 'No features found';
+					featureCountElement.style.color = '#6c757d';
+				}
+			});
+		});
+		
+		// Add event listeners for load/unload buttons
+		layerList.addEventListener('click', function(e) {
+			if (e.target.classList.contains('load-button')) {
+				const layerId = e.target.getAttribute('data-layer-id');
+				const currentState = layerStates[layerId] || 'unloaded';
+				
+				if (currentState === 'loaded') {
+					unloadLayer(layerId);
+				} else if (currentState === 'unloaded' || currentState === 'error') {
+					loadLayer(layerId).then(() => {
+						// Show visibility toggle after loading
+						const visibilityToggle = document.querySelector(`#toggle-${layerId}`);
+						if (visibilityToggle) {
+							visibilityToggle.style.display = 'inline';
+							visibilityToggle.checked = true;
+							
+							// Add visibility toggle event listener
+							visibilityToggle.addEventListener('change', function() {
+								toggleLayerVisibility(layerId, this.checked);
+							});
+						}
+					}).catch(error => {
+						console.error(`Failed to load layer ${layerId}:`, error);
+					});
+				}
+			}
 		});
 	}
 
@@ -608,11 +845,8 @@
 			// Update sidebar with layer information
 			updateSidebar(catalog);
 			
-			// Load each service from the catalog (clustering handles large datasets)
-			catalog.services.forEach(service => {
-				console.log(`Loading layer: ${service.name} (${service.id})`);
-				loadLayer(service.id);
-			});
+			// Layers are now loaded manually by user interaction
+			console.log(`Found ${catalog.count} services available for manual loading`);
 			
 			// Display catalog info in console
 			console.log(`Found ${catalog.count} services available`);
