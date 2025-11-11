@@ -1,0 +1,119 @@
+{
+  "name": "Agent Registry",
+  "description": "Property agent types and management information",
+  "version": "1.0",
+  "lastUpdated": "2025-01-31",
+  
+  "defaultStyle": {
+    "color": "#666666",
+    "fillColor": "#cccccc",
+    "fillOpacity": 0.7,
+    "radius": 6,
+    "weight": 2
+  },
+  
+  "styleRules": [
+    {
+      "id": "agent_type",
+      "name": "Agent Type",
+      "description": "Property management categorization by agent type",
+      "property": "agent_type",
+      "type": "categorical",
+      "enabled": true,
+      "showInLegend": true,
+      "mappings": {
+        "SAME AS OWNER": {
+          "color": "#007bff",
+          "fillColor": "#007bff",
+          "fillOpacity": 0.8,
+          "radius": 7,
+          "weight": 2,
+          "description": "Owner-Managed Property",
+          "awesomeMarker": {
+            "icon": "user",
+            "markerColor": "blue",
+            "iconColor": "white"
+          }
+        },
+        "IN STATE AGENT": {
+          "color": "#6f42c1",
+          "fillColor": "#6f42c1",
+          "fillOpacity": 0.8,
+          "radius": 6,
+          "weight": 2,
+          "description": "In-State Agent Managed",
+          "awesomeMarker": {
+            "icon": "briefcase",
+            "markerColor": "purple",
+            "iconColor": "white"
+          }
+        },
+        "EXCEPTION": {
+          "color": "#dc3545",
+          "fillColor": "#dc3545",
+          "fillOpacity": 0.8,
+          "radius": 5,
+          "weight": 3,
+          "description": "Exception Case",
+          "awesomeMarker": {
+            "icon": "question",
+            "markerColor": "red",
+            "iconColor": "white"
+          }
+        }
+      }
+    },
+    {
+      "id": "unit_count",
+      "name": "Number of Units",
+      "description": "Property size by unit count (disabled by default)",
+      "property": "number_units",
+      "type": "numeric",
+      "enabled": false,
+      "showInLegend": true,
+      "ranges": [
+        {
+          "min": 1,
+          "max": 1,
+          "style": {
+            "color": "#28a745",
+            "fillColor": "#28a745",
+            "fillOpacity": 0.7,
+            "radius": 5,
+            "weight": 2
+          },
+          "description": "Single Unit"
+        },
+        {
+          "min": 2,
+          "max": 10,
+          "style": {
+            "color": "#ffc107",
+            "fillColor": "#ffc107",
+            "fillOpacity": 0.7,
+            "radius": 7,
+            "weight": 2
+          },
+          "description": "Small Multi-Unit (2-10)"
+        },
+        {
+          "min": 11,
+          "style": {
+            "color": "#dc3545",
+            "fillColor": "#dc3545",
+            "fillOpacity": 0.7,
+            "radius": 9,
+            "weight": 3
+          },
+          "description": "Large Multi-Unit (11+)"
+        }
+      ]
+    }
+  ],
+  
+  "legend": {
+    "title": "Property Agent Types",
+    "position": "bottomleft",
+    "collapsed": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Layer Display Name",
+  "description": "Description of what this layer represents",
+  "version": "1.0",
+  "lastUpdated": "YYYY-MM-DD",
+  
+  "defaultStyle": {
+    "color": "#666666",
+    "fillColor": "#cccccc",
+    "fillOpacity": 0.7,
+    "radius": 6,
+    "weight": 2
+  },
+  
+  "styleRules": [
+    {
+      "id": "example_rule",
+      "name": "Example Rule Name",
+      "description": "Description of what this rule represents",
+      "property": "property_field_name",
+      "type": "categorical",
+      "enabled": true,
+      "showInLegend": true,
+      "mappings": {
+        "value1": {
+          "color": "#28a745",
+          "fillColor": "#28a745",
+          "fillOpacity": 0.8,
+          "radius": 7,
+          "weight": 2,
+          "description": "Description for value1",
+          "icon": "circle"
+        },
+        "value2": {
+          "color": "#ffc107",
+          "fillColor": "#ffc107",
+          "description": "Description for value2"
+        }
+      }
+    }
+  ],
+  
+  "legend": {
+    "title": "Legend Title",
+    "position": "bottomleft",
+    "collapsed": false
+  }
+}

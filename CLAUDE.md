@@ -62,9 +62,38 @@ All GeoJSON files are automatically served through standard Koop FeatureServer e
 
 **Service Discovery Pattern**: Frontend calls `/catalog` to get available services, then dynamically loads each layer without hardcoding layer names.
 
-**Styling Strategy**: `getStyleForLayer()` function applies different styles based on filename/geometry type (polygon=blue, line=red, square=green, default=purple).
+**Dynamic Styling System**: Configuration-driven styling with `StyleResolver` class that applies styles based on feature properties rather than hardcoded layer names.
 
 **Error Handling**: Graceful fallback to common layer names if catalog fails, with status indicators in sidebar.
+
+### Dynamic Styling System
+
+**Configuration Structure**: JSON-based configuration system located in `/config/` directory:
+- `styles.json` - Main index configuration with global settings
+- `layers/housing.json` - Housing layer styling (Grade_Code property)  
+- `layers/registry.json` - Registry layer styling (agent_type property)
+- `schemas/layer-config.schema.json` - Validation schema
+
+**Styling Rules**: Support for categorical and numeric rule types:
+- **Categorical**: Map discrete property values to specific styles
+- **Numeric**: Apply styles based on value ranges (future enhancement)
+- **Conditional**: Complex logic-based styling (future enhancement)
+
+**API Endpoints**:
+- `GET /api/styles/config` - Main configuration index
+- `GET /api/styles/config/:layerId` - Layer-specific styling configuration
+
+**StyleResolver Class**: Frontend processing engine that:
+- Evaluates feature properties against configured rules
+- Returns appropriate styles for map rendering
+- Generates legend data for UI display
+- Caches styles for performance
+
+**Legend System**: Dynamic legend generation that:
+- Shows color coding for active style rules
+- Updates automatically when layers are loaded/unloaded  
+- Collapsible interface positioned at bottom-left
+- Rule-based legend items with descriptions
 
 ### Dependencies
 

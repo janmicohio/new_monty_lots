@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "description": "Main styling configuration index for New Monty Lots",
+  "lastUpdated": "2025-01-31",
+  
+  "globalDefaults": {
+    "color": "#666666",
+    "fillColor": "#cccccc",
+    "fillOpacity": 0.7,
+    "radius": 6,
+    "weight": 2,
+    "opacity": 1.0
+  },
+  
+  "layers": {
+    "housing": {
+      "name": "Housing Properties",
+      "configFile": "./layers/housing.json",
+      "enabled": true,
+      "priority": 1,
+      "description": "Montgomery County property conditions and classifications"
+    },
+    "registry": {
+      "name": "Agent Registry",
+      "configFile": "./layers/registry.json", 
+      "enabled": true,
+      "priority": 2,
+      "description": "Property agent types and management information"
+    }
+  },
+  
+  "legendSettings": {
+    "globalPosition": "bottomleft",
+    "allowCollapse": true,
+    "showLayerToggle": true,
+    "maxWidth": 250
+  },
+  
+  "performance": {
+    "cacheStyles": true,
+    "clusteringThreshold": 1000,
+    "preloadConfigurations": true
+  },
+  
+  "development": {
+    "validateOnLoad": true,
+    "logStyleResolution": false,
+    "allowConfigReload": true
+  }
+}

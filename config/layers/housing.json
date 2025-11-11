@@ -1,0 +1,115 @@
+{
+  "name": "Housing Properties",
+  "description": "Montgomery County property conditions and classifications",
+  "version": "1.0",
+  "lastUpdated": "2025-01-31",
+  
+  "defaultStyle": {
+    "color": "#666666",
+    "fillColor": "#cccccc",
+    "fillOpacity": 0.7,
+    "radius": 6,
+    "weight": 2
+  },
+  
+  "styleRules": [
+    {
+      "id": "grade_condition",
+      "name": "Property Condition",
+      "description": "Color-coded by Grade_Code reflecting property condition assessment",
+      "property": "Grade_Code",
+      "type": "categorical",
+      "enabled": true,
+      "showInLegend": true,
+      "mappings": {
+        "1": {
+          "color": "#28a745",
+          "fillColor": "#28a745",
+          "fillOpacity": 0.8,
+          "radius": 8,
+          "weight": 2,
+          "description": "Excellent Condition",
+          "awesomeMarker": {
+            "icon": "home",
+            "markerColor": "green",
+            "iconColor": "white"
+          }
+        },
+        "2": {
+          "color": "#ffc107",
+          "fillColor": "#ffc107",
+          "fillOpacity": 0.8,
+          "radius": 7,
+          "weight": 2,
+          "description": "Good Condition",
+          "awesomeMarker": {
+            "icon": "home",
+            "markerColor": "orange",
+            "iconColor": "white"
+          }
+        },
+        "3": {
+          "color": "#fd7e14",
+          "fillColor": "#fd7e14",
+          "fillOpacity": 0.8,
+          "radius": 6,
+          "weight": 2,
+          "description": "Fair Condition",
+          "awesomeMarker": {
+            "icon": "home",
+            "markerColor": "lightred",
+            "iconColor": "white"
+          }
+        },
+        "4": {
+          "color": "#dc3545",
+          "fillColor": "#dc3545",
+          "fillOpacity": 0.8,
+          "radius": 6,
+          "weight": 3,
+          "description": "Poor Condition",
+          "awesomeMarker": {
+            "icon": "exclamation-triangle",
+            "markerColor": "red",
+            "iconColor": "white"
+          }
+        }
+      }
+    },
+    {
+      "id": "property_class",
+      "name": "Property Class",
+      "description": "Styling based on property classification code",
+      "property": "Class_Code",
+      "type": "categorical",
+      "enabled": false,
+      "showInLegend": true,
+      "mappings": {
+        "R": {
+          "color": "#007bff",
+          "fillColor": "#007bff",
+          "fillOpacity": 0.7,
+          "description": "Residential"
+        },
+        "C": {
+          "color": "#6f42c1",
+          "fillColor": "#6f42c1",
+          "fillOpacity": 0.7,
+          "description": "Commercial"
+        },
+        "I": {
+          "color": "#e83e8c",
+          "fillColor": "#e83e8c",
+          "fillOpacity": 0.7,
+          "description": "Industrial"
+        }
+      }
+    }
+  ],
+  
+  "legend": {
+    "title": "Housing Property Conditions",
+    "position": "bottomleft",
+    "collapsed": false
+  }
+}
