@@ -435,6 +435,7 @@
 	let originalLayerGroups = {}; // Store original layer groups for reset
 	let layerStates = {}; // Track loading state of each layer
 	let layerFeatureCounts = {}; // Store feature counts for each layer
+	let layerGeometryTypes = {}; // Store geometry types for each layer
 	let layerBounds = {}; // Store geographic bounds for each layer
 	let styleConfigs = {}; // Cache for layer style configurations
 
@@ -592,6 +593,46 @@
 			});
 	}
 
+	// Function to detect geometry type from GeoJSON data
+	function detectGeometryType(data) {
+		if (!data || !data.features || data.features.length === 0) {
+			return 'Unknown';
+		}
+
+		// Get geometry type from first feature
+		const firstFeature = data.features[0];
+		if (firstFeature && firstFeature.geometry && firstFeature.geometry.type) {
+			return firstFeature.geometry.type;
+		}
+
+		return 'Unknown';
+	}
+
+	// Function to update global statistics in the sidebar
+	function updateGlobalStatistics() {
+		// Count total loaded layers
+		const loadedLayers = Object.keys(layerStates).filter(layerId => layerStates[layerId] === 'loaded');
+
+		// Calculate total features across all loaded layers
+		let totalFeatures = 0;
+		loadedLayers.forEach(layerId => {
+			if (layerFeatureCounts[layerId]) {
+				totalFeatures += layerFeatureCounts[layerId];
+			}
+		});
+
+		// Update the statistics section
+		const statsContent = document.getElementById('stats-content');
+		if (statsContent) {
+			statsContent.innerHTML = `
+				<p><strong>Total Layers:</strong> <span id="layer-count">${document.querySelectorAll('.layer-item').length}</span></p>
+				<p><strong>Loaded Layers:</strong> <span id="loaded-count">${loadedLayers.length}</span></p>
+				<p><strong>Total Features:</strong> <span id="total-features">${totalFeatures.toLocaleString()}</span></p>
+				<p><strong>Server Status:</strong> <span id="server-status" style="color: #28a745;">Connected</span></p>
+			`;
+		}
+	}
+
 	// Function to load a layer and add it to the map
 	async function loadLayer(layerId) {
 		// Update loading state
@@ -605,10 +646,14 @@
 			// Load layer data
 			const response = await fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`);
 			const data = await response.json();
-			
+
 			// Store the original data for searching
 			allLayerData[layerId] = data;
-			
+
+			// Detect and store geometry type
+			const geometryType = detectGeometryType(data);
+			layerGeometryTypes[layerId] = geometryType;
+
      	// Calculate and store bounds for this layer
 			if (data.features && data.features.length > 0) {
 				const tempLayer = L.geoJSON(data);
@@ -664,7 +709,10 @@
 					
 					// Update state to loaded
 					updateLayerState(layerId, 'loaded');
-					
+
+					// Update global statistics
+					updateGlobalStatistics();
+
 					// Add to legend
 					addLayerToLegend(layerId, styleResolver);
 					
@@ -694,7 +742,10 @@
 					
 					// Update state to loaded
 					updateLayerState(layerId, 'loaded');
-					
+
+					// Update global statistics
+					updateGlobalStatistics();
+
 					// Add to legend
 					addLayerToLegend(layerId, styleResolver);
 				}
@@ -717,11 +768,14 @@
 			delete originalLayerGroups[layerId];
 			delete allLayerData[layerId];
 		}
-		
+
 		// Remove from legend
 		removeLayerFromLegend(layerId);
-		
+
 		updateLayerState(layerId, 'unloaded');
+
+		// Update global statistics
+		updateGlobalStatistics();
 	}
 
 	// Function to update layer state and UI
@@ -748,13 +802,14 @@
 			case 'loaded':
 				layerItem.classList.add('loaded');
 				const count = layerFeatureCounts[layerId] || 0;
+				const geometryType = layerGeometryTypes[layerId] || 'Unknown';
 				statusElement.textContent = `✓ Loaded (${count.toLocaleString()} features)`;
 				statusElement.style.color = '#28a745';
 				loadButton.textContent = 'Unload';
 				loadButton.className = 'load-button unload-button';
 				loadButton.disabled = false;
 				if (featureCountElement) {
-					featureCountElement.textContent = `${count.toLocaleString()} features`;
+					featureCountElement.textContent = `${count.toLocaleString()} features • ${geometryType}`;
 				}
 				break;
 			case 'error':
@@ -1091,13 +1146,9 @@
 	// Function to update sidebar with layer information and manual loading controls
 	function updateSidebar(catalog) {
 		const layerList = document.getElementById('layer-list');
-		const layerCount = document.getElementById('layer-count');
-		const serverStatus = document.getElementById('server-status');
-		
-		// Update stats
-		layerCount.textContent = catalog.count;
-		serverStatus.textContent = 'Connected';
-		serverStatus.style.color = '#28a745';
+
+		// Update global statistics initially
+		updateGlobalStatistics();
 		
 		// Clear loading message
 		layerList.innerHTML = '';
