@@ -70,10 +70,18 @@
 			border-radius: 6px;
 			border: 1px solid #e9ecef;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+			transition: all 0.2s ease;
 		}
 
 		.layer-item.loaded {
 			border-left: 4px solid #28a745;
+			cursor: pointer;
+		}
+
+		.layer-item.loaded:hover {
+			background: #f0f8ff;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+			transform: translateX(2px);
 		}
 
 		.layer-item.loading {
@@ -427,6 +435,7 @@
 	let originalLayerGroups = {}; // Store original layer groups for reset
 	let layerStates = {}; // Track loading state of each layer
 	let layerFeatureCounts = {}; // Store feature counts for each layer
+	let layerBounds = {}; // Store geographic bounds for each layer
 	let styleConfigs = {}; // Cache for layer style configurations
 
 	// Style resolution system
@@ -600,6 +609,11 @@
 			// Store the original data for searching
 			allLayerData[layerId] = data;
 			
+     	// Calculate and store bounds for this layer
+			if (data.features && data.features.length > 0) {
+				const tempLayer = L.geoJSON(data);
+				layerBounds[layerId] = tempLayer.getBounds();
+			}
 			const featureCount = data.features.length;
 				
 			// Use clustering for large datasets (>1000 features)
@@ -1135,12 +1149,12 @@
 			});
 		});
 		
-		// Add event listeners for load/unload buttons
+		// Add event listeners for load/unload buttons and layer click-to-center
 		layerList.addEventListener('click', function(e) {
 			if (e.target.classList.contains('load-button')) {
 				const layerId = e.target.getAttribute('data-layer-id');
 				const currentState = layerStates[layerId] || 'unloaded';
-				
+
 				if (currentState === 'loaded') {
 					unloadLayer(layerId);
 				} else if (currentState === 'unloaded' || currentState === 'error') {
@@ -1150,7 +1164,7 @@
 						if (visibilityToggle) {
 							visibilityToggle.style.display = 'inline';
 							visibilityToggle.checked = true;
-							
+
 							// Add visibility toggle event listener
 							visibilityToggle.addEventListener('change', function() {
 								toggleLayerVisibility(layerId, this.checked);
@@ -1158,6 +1172,22 @@
 						}
 					}).catch(error => {
 						console.error(`Failed to load layer ${layerId}:`, error);
+					});
+				}
+			} else if (e.target.closest('.layer-item.loaded') &&
+			           !e.target.classList.contains('load-button') &&
+			           !e.target.classList.contains('layer-toggle')) {
+				// Handle click-to-center for loaded layers
+				const layerItem = e.target.closest('.layer-item');
+				const layerId = layerItem.getAttribute('data-layer-id');
+
+				// Center map on this layer if bounds are available
+				if (layerBounds[layerId]) {
+					map.fitBounds(layerBounds[layerId], {
+						padding: [50, 50],
+						maxZoom: 16,
+						animate: true,
+						duration: 0.5
 					});
 				}
 			}
