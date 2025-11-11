@@ -1,6 +1,7 @@
 const Koop = require('@koopjs/koop-core');
 const provider = require('@koopjs/provider-file-geojson');
 const path = require('path');
+const fs = require('fs');
 const koop = new Koop({ logLevel: 'debug' });
 const output = require('koop-output-geojson');
 
@@ -52,5 +53,91 @@ koop.server.get('/catalog', (req, res) => {
 koop.server.get('/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
+
+// Style configuration cache
+let styleConfigCache = {};
+let mainStyleConfig = null;
+
+// Load and cache style configurations
+function loadStyleConfig(configPath) {
+  try {
+    const fullPath = path.resolve(__dirname, configPath);
+    const configData = fs.readFileSync(fullPath, 'utf8');
+    return JSON.parse(configData);
+  } catch (error) {
+    console.warn(`Failed to load style config from ${configPath}:`, error.message);
+    return null;
+  }
+}
+
+// Load main styles configuration
+function loadMainStyleConfig() {
+  try {
+    mainStyleConfig = loadStyleConfig('./config/styles.json');
+    if (mainStyleConfig) {
+      console.log('✓ Main style configuration loaded');
+      
+      // Pre-load layer configurations
+      if (mainStyleConfig.layers) {
+        Object.entries(mainStyleConfig.layers).forEach(([layerId, layerInfo]) => {
+          if (layerInfo.enabled && layerInfo.configFile) {
+            const layerConfig = loadStyleConfig(`./config/${layerInfo.configFile}`);
+            if (layerConfig) {
+              styleConfigCache[layerId] = layerConfig;
+              console.log(`✓ Loaded style config for layer: ${layerId}`);
+            }
+          }
+        });
+      }
+    }
+  } catch (error) {
+    console.warn('Failed to load main style configuration:', error.message);
+  }
+}
+
+// Style configuration API endpoints
+koop.server.get('/api/styles/config', (req, res) => {
+  if (!mainStyleConfig) {
+    return res.status(500).json({ error: 'Style configuration not loaded' });
+  }
+  res.json(mainStyleConfig);
+});
+
+koop.server.get('/api/styles/config/:layerId', (req, res) => {
+  const layerId = req.params.layerId;
+  
+  // Check cache first
+  if (styleConfigCache[layerId]) {
+    return res.json(styleConfigCache[layerId]);
+  }
+  
+  // Try to load from main config
+  if (mainStyleConfig && mainStyleConfig.layers && mainStyleConfig.layers[layerId]) {
+    const layerInfo = mainStyleConfig.layers[layerId];
+    if (layerInfo.configFile) {
+      const layerConfig = loadStyleConfig(`./config/${layerInfo.configFile}`);
+      if (layerConfig) {
+        styleConfigCache[layerId] = layerConfig; // Cache it
+        return res.json(layerConfig);
+      }
+    }
+  }
+  
+  // Fallback: return default configuration
+  res.json({
+    name: layerId,
+    defaultStyle: {
+      color: '#666666',
+      fillColor: '#cccccc',
+      fillOpacity: 0.7,
+      radius: 6,
+      weight: 2
+    },
+    styleRules: []
+  });
+});
+
+// Initialize style configuration on startup
+loadMainStyleConfig();
 
 koop.server.listen(process.env.PORT || 8080);
