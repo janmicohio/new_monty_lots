@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "layer-config.schema.json",
+  "title": "Layer Style Configuration",
+  "description": "Schema for validating layer styling configuration files",
+  "type": "object",
+  "required": ["name", "defaultStyle"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for the layer"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of what this layer represents"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "description": "Version number in semver format"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last configuration update (YYYY-MM-DD)"
+    },
+    "defaultStyle": {
+      "$ref": "#/definitions/styleObject",
+      "description": "Default styling applied when no rules match"
+    },
+    "styleRules": {
+      "type": "array",
+      "description": "Array of styling rules to apply",
+      "items": {
+        "$ref": "#/definitions/styleRule"
+      }
+    },
+    "legend": {
+      "$ref": "#/definitions/legendConfig",
+      "description": "Legend display configuration"
+    }
+  },
+  "definitions": {
+    "styleObject": {
+      "type": "object",
+      "description": "Leaflet-compatible style object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Border color (hex)"
+        },
+        "fillColor": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Fill color (hex)"
+        },
+        "fillOpacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Fill opacity (0-1)"
+        },
+        "radius": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Point marker radius"
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Border weight/thickness"
+        },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Border opacity (0-1)"
+        },
+        "dashArray": {
+          "type": "string",
+          "description": "Dash pattern for lines"
+        },
+        "icon": {
+          "type": "string",
+          "enum": ["circle", "square", "triangle", "star", "diamond"],
+          "description": "Icon shape for point markers (legacy)"
+        },
+        "awesomeMarker": {
+          "type": "object",
+          "description": "Awesome marker configuration",
+          "properties": {
+            "icon": {
+              "type": "string",
+              "description": "Font Awesome icon name (e.g., 'home', 'star', 'info')"
+            },
+            "markerColor": {
+              "type": "string",
+              "enum": ["red", "darkred", "lightred", "orange", "beige", "green", "darkgreen", "lightgreen", "blue", "darkblue", "lightblue", "purple", "darkpurple", "pink", "cadetblue", "white", "gray", "lightgray", "black"],
+              "description": "Marker color from awesome-markers palette"
+            },
+            "iconColor": {
+              "type": "string",
+              "enum": ["white", "black", "darkred", "lightred", "orange", "yellow", "green", "darkgreen", "lightgreen", "blue", "darkblue", "lightblue", "purple", "darkpurple", "pink", "cadetblue", "gray", "lightgray"],
+              "default": "white",
+              "description": "Icon color"
+            },
+            "spin": {
+              "type": "boolean",
+              "default": false,
+              "description": "Whether the icon should spin"
+            },
+            "extraClasses": {
+              "type": "string",
+              "description": "Additional CSS classes for the marker"
+            }
+          },
+          "required": ["icon", "markerColor"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "styleRule": {
+      "type": "object",
+      "required": ["id", "name", "property", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "description": "Unique identifier for this rule"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name for the rule"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of what this rule does"
+        },
+        "property": {
+          "type": "string",
+          "description": "Feature property name to evaluate"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["categorical", "numeric", "conditional"],
+          "description": "Type of rule logic"
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether this rule is active"
+        },
+        "showInLegend": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show this rule in the legend"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "categorical" } }
+          },
+          "then": {
+            "required": ["mappings"],
+            "properties": {
+              "mappings": {
+                "type": "object",
+                "description": "Map property values to styles",
+                "patternProperties": {
+                  ".*": {
+                    "allOf": [
+                      { "$ref": "#/definitions/styleObject" },
+                      {
+                        "properties": {
+                          "description": {
+                            "type": "string",
+                            "description": "Description for legend display"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "numeric" } }
+          },
+          "then": {
+            "required": ["ranges"],
+            "properties": {
+              "ranges": {
+                "type": "array",
+                "description": "Numeric ranges and their styles",
+                "items": {
+                  "type": "object",
+                  "required": ["style"],
+                  "properties": {
+                    "min": { "type": "number" },
+                    "max": { "type": "number" },
+                    "style": { "$ref": "#/definitions/styleObject" },
+                    "description": {
+                      "type": "string",
+                      "description": "Description for legend display"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "legendConfig": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Legend title text"
+        },
+        "position": {
+          "type": "string",
+          "enum": ["topright", "topleft", "bottomright", "bottomleft"],
+          "default": "bottomleft",
+          "description": "Legend position on map"
+        },
+        "collapsed": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether legend starts collapsed"
+        }
+      }
+    }
+  }
+}

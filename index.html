@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Leaflet Awesome Markers plugin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
 	<style>
 		html, body {
@@ -220,28 +227,6 @@
 			width: 100%;
 		}
 		
-		/* Custom cluster styling /
-		.marker-cluster-small {
-			background-color: rgba(7, 123, 255, 0.6);
-		}
-		.marker-cluster-small div {
-			background-color: rgba(7, 123, 255, 0.8);
-		}
-		
-		.marker-cluster-medium {
-			background-color: rgba(255, 193, 7, 0.6);
-		}
-		.marker-cluster-medium div {
-			background-color: rgba(255, 193, 7, 0.8);
-		}
-		
-		.marker-cluster-large {
-			background-color: rgba(220, 53, 69, 0.6);
-		}
-		.marker-cluster-large div {
-			background-color: rgba(220, 53, 69, 0.8);
-		}
-		
 		/* Search and Filter Styling */
 		.search-section {
 			background: white;
@@ -291,6 +276,102 @@
 			color: #6c757d;
 			font-weight: 500;
 		}
+
+		/* Legend styling */
+		.legend {
+			position: fixed;
+			bottom: 20px;
+			left: 340px; /* Position after sidebar (300px + 40px margin) */
+			background: white;
+			padding: 15px;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+			border: 1px solid #dee2e6;
+			max-width: 280px;
+			z-index: 1000;
+		}
+
+		/* Responsive legend positioning */
+		@media (max-width: 768px) {
+			.legend {
+				left: 20px;
+				right: 20px;
+				max-width: none;
+				bottom: 80px; /* Higher on mobile to avoid controls */
+			}
+		}
+
+		.legend h4 {
+			margin: 0 0 10px 0;
+			font-size: 14px;
+			font-weight: 600;
+			color: #495057;
+			border-bottom: 1px solid #e9ecef;
+			padding-bottom: 8px;
+		}
+
+		.legend-rule {
+			margin-bottom: 12px;
+		}
+
+		.legend-rule:last-child {
+			margin-bottom: 0;
+		}
+
+		.legend-rule-title {
+			font-size: 12px;
+			font-weight: 600;
+			color: #6c757d;
+			margin-bottom: 6px;
+		}
+
+		.legend-item {
+			display: flex;
+			align-items: center;
+			margin-bottom: 4px;
+			font-size: 11px;
+		}
+
+		.legend-item:last-child {
+			margin-bottom: 0;
+		}
+
+		.legend-color {
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			margin-right: 8px;
+			flex-shrink: 0;
+			border: 1px solid rgba(0,0,0,0.2);
+		}
+
+		.legend-text {
+			color: #495057;
+			line-height: 1.3;
+		}
+
+		.legend.collapsed {
+			padding: 8px 12px;
+		}
+
+		.legend.collapsed .legend-content {
+			display: none;
+		}
+
+		.legend-toggle {
+			cursor: pointer;
+			user-select: none;
+		}
+
+		.legend-toggle::before {
+			content: '−';
+			font-weight: bold;
+			margin-right: 5px;
+		}
+
+		.legend.collapsed .legend-toggle::before {
+			content: '+';
+		}
 	</style>
 
 	
@@ -329,6 +410,16 @@
 		
 		<div id="map"></div>
 	</div>
+	
+	<!-- Dynamic Legend -->
+	<div id="legend" class="legend" style="display: none;">
+		<div class="legend-toggle" onclick="toggleLegend()">
+			<span>Map Legend</span>
+		</div>
+		<div class="legend-content" id="legend-content">
+			<!-- Legend content will be dynamically generated -->
+		</div>
+	</div>
 <script>
 
 	const map = L.map('map').setView([39.7589, -84.1916], 10);
@@ -345,6 +436,146 @@
 	let layerStates = {}; // Track loading state of each layer
 	let layerFeatureCounts = {}; // Store feature counts for each layer
 	let layerBounds = {}; // Store geographic bounds for each layer
+	let styleConfigs = {}; // Cache for layer style configurations
+
+	// Style resolution system
+	class StyleResolver {
+		constructor(layerConfig) {
+			this.layerConfig = layerConfig;
+			this.defaultStyle = layerConfig.defaultStyle || {
+				color: '#666666',
+				fillColor: '#cccccc',
+				fillOpacity: 0.7,
+				radius: 6,
+				weight: 2
+			};
+			this.styleCache = new Map();
+		}
+
+		// Get style for a feature based on its properties
+		getStyle(properties) {
+			if (!this.layerConfig.styleRules) {
+				return this.defaultStyle;
+			}
+
+			// Find the first enabled rule that can be applied
+			for (const rule of this.layerConfig.styleRules) {
+				if (!rule.enabled) continue;
+
+				if (rule.type === 'categorical') {
+					const value = properties[rule.property];
+					if (value !== undefined && rule.mappings && rule.mappings[value]) {
+						return { ...this.defaultStyle, ...rule.mappings[value] };
+					}
+				} else if (rule.type === 'numeric') {
+					const value = parseFloat(properties[rule.property]);
+					if (!isNaN(value) && rule.ranges) {
+						for (const range of rule.ranges) {
+							const minCheck = range.min === undefined || value >= range.min;
+							const maxCheck = range.max === undefined || value <= range.max;
+							if (minCheck && maxCheck) {
+								return { ...this.defaultStyle, ...range.style };
+							}
+						}
+					}
+				}
+			}
+
+			return this.defaultStyle;
+		}
+
+		// Create appropriate marker type (awesome-marker or circle marker)
+		createMarker(properties, latlng) {
+			const style = this.getStyle(properties);
+			
+			// Check if we should use awesome-markers
+			if (style.awesomeMarker && window.L && L.AwesomeMarkers) {
+				const awesomeOptions = {
+					icon: style.awesomeMarker.icon,
+					markerColor: style.awesomeMarker.markerColor,
+					iconColor: style.awesomeMarker.iconColor || 'white',
+					spin: style.awesomeMarker.spin || false,
+					extraClasses: style.awesomeMarker.extraClasses || ''
+				};
+				
+				const awesomeIcon = L.AwesomeMarkers.icon(awesomeOptions);
+				return L.marker(latlng, { icon: awesomeIcon });
+			}
+			
+			// Fallback to circle marker with regular styling
+			return L.circleMarker(latlng, style);
+		}
+
+		// Get legend data for enabled rules
+		getLegendData() {
+			if (!this.layerConfig.styleRules) return null;
+
+			const legends = [];
+			for (const rule of this.layerConfig.styleRules) {
+				if (!rule.enabled || !rule.showInLegend) continue;
+
+				const legendRule = {
+					id: rule.id,
+					name: rule.name,
+					description: rule.description,
+					items: []
+				};
+
+				if (rule.type === 'categorical' && rule.mappings) {
+					for (const [value, style] of Object.entries(rule.mappings)) {
+						legendRule.items.push({
+							value,
+							style: { ...this.defaultStyle, ...style },
+							description: style.description || value
+						});
+					}
+				} else if (rule.type === 'numeric' && rule.ranges) {
+					for (const range of rule.ranges) {
+						legendRule.items.push({
+							range: { min: range.min, max: range.max },
+							style: { ...this.defaultStyle, ...range.style },
+							description: range.description
+						});
+					}
+				}
+
+				if (legendRule.items.length > 0) {
+					legends.push(legendRule);
+				}
+			}
+
+			return legends;
+		}
+	}
+
+	// Load style configuration for a layer
+	async function loadStyleConfig(layerId) {
+		if (styleConfigs[layerId]) {
+			return styleConfigs[layerId];
+		}
+
+		try {
+			const response = await fetch(`/api/styles/config/${layerId}`);
+			const config = await response.json();
+			styleConfigs[layerId] = config;
+			console.log(`✓ Loaded style config for ${layerId}`);
+			return config;
+		} catch (error) {
+			console.warn(`Failed to load style config for ${layerId}:`, error);
+			// Return fallback configuration
+			return {
+				name: layerId,
+				defaultStyle: {
+					color: '#666666',
+					fillColor: '#cccccc',
+					fillOpacity: 0.7,
+					radius: 6,
+					weight: 2
+				},
+				styleRules: []
+			};
+		}
+	}
 
 	// Function to get feature count for a layer without loading it
 	function getLayerFeatureCount(layerId) {
@@ -362,47 +593,51 @@
 	}
 
 	// Function to load a layer and add it to the map
-	function loadLayer(layerId) {
+	async function loadLayer(layerId) {
 		// Update loading state
 		updateLayerState(layerId, 'loading');
 		
-		return new Promise((resolve, reject) => {
-			fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`)
-				.then(response => response.json())
-				.then(data => {
-				// Store the original data for searching
-				allLayerData[layerId] = data;
-
-				// Calculate and store bounds for this layer
-				if (data.features && data.features.length > 0) {
-					const tempLayer = L.geoJSON(data);
-					layerBounds[layerId] = tempLayer.getBounds();
-				}
-
-				const style = getStyleForLayer(layerId);
-				const featureCount = data.features.length;
+		try {
+			// Load style configuration first
+			const styleConfig = await loadStyleConfig(layerId);
+			const styleResolver = new StyleResolver(styleConfig);
+			
+			// Load layer data
+			const response = await fetch(`/file-geojson/rest/services/${layerId}/FeatureServer/0/query?f=geojson&where=1=1&outFields=*`);
+			const data = await response.json();
+			
+			// Store the original data for searching
+			allLayerData[layerId] = data;
+			
+     	// Calculate and store bounds for this layer
+			if (data.features && data.features.length > 0) {
+				const tempLayer = L.geoJSON(data);
+				layerBounds[layerId] = tempLayer.getBounds();
+			}
+			const featureCount = data.features.length;
 				
-				// Use clustering for large datasets (>1000 features)
-				const useClustering = featureCount > 1000;
+			// Use clustering for large datasets (>1000 features)
+			const useClustering = featureCount > 1000;
+			
+			if (useClustering) {
+				console.log(`Using clustering for ${layerId} (${featureCount} features) with dynamic styling`);
 				
-				if (useClustering) {
-					console.log(`Using clustering for ${layerId} (${featureCount} features)`);
-					
-					// Create marker cluster group
-					const clusterGroup = L.markerClusterGroup({
-						maxClusterRadius: 50,
-						disableClusteringAtZoom: 18,
-						spiderfyOnMaxZoom: true,
-						showCoverageOnHover: true,
-						zoomToBoundsOnClick: true
-					});
-					
-					// Add features to cluster group
-					const geoJsonLayer = L.geoJSON(data, {
-						pointToLayer: function(feature, latlng) {
-							return L.marker(latlng);
-						},
-						style: style,
+				// Create marker cluster group
+				const clusterGroup = L.markerClusterGroup({
+					maxClusterRadius: 50,
+					disableClusteringAtZoom: 18,
+					spiderfyOnMaxZoom: true,
+					showCoverageOnHover: true,
+					zoomToBoundsOnClick: true
+				});
+				
+				// Add features to cluster group with dynamic styling
+				const geoJsonLayer = L.geoJSON(data, {
+					pointToLayer: function(feature, latlng) {
+						const style = styleResolver.getStyle(feature.properties);
+						return styleResolver.createMarker(feature.properties, latlng);
+					},
+					style: createStyleFunction(styleResolver),
 						onEachFeature: function(feature, layer) {
 							const props = feature.properties;
 							const popupContent = createPopupContent(layerId, props, feature.geometry);
@@ -429,17 +664,20 @@
 					
 					// Update state to loaded
 					updateLayerState(layerId, 'loaded');
-					resolve(data);
+					
+					// Add to legend
+					addLayerToLegend(layerId, styleResolver);
 					
 				} else {
-					console.log(`Loading ${layerId} without clustering (${featureCount} features)`);
+					console.log(`Loading ${layerId} without clustering (${featureCount} features) with dynamic styling`);
 					
-					// Use regular loading for smaller datasets
+					// Use regular loading for smaller datasets with dynamic styling
 					const geoJsonLayer = L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
-							return L.marker(latlng);
+							const style = styleResolver.getStyle(feature.properties);
+							return styleResolver.createMarker(feature.properties, latlng);
 						},
-						style: style,
+						style: createStyleFunction(styleResolver),
 						onEachFeature: function(feature, layer) {
 							const props = feature.properties;
 							const popupContent = createPopupContent(layerId, props, feature.geometry);
@@ -456,15 +694,18 @@
 					
 					// Update state to loaded
 					updateLayerState(layerId, 'loaded');
-					resolve(data);
+					
+					// Add to legend
+					addLayerToLegend(layerId, styleResolver);
 				}
-				})
-				.catch(error => {
-					console.error(`Error loading ${layerId} data:`, error);
-					updateLayerState(layerId, 'error');
-					reject(error);
-				});
-		});
+				
+				return data;
+				
+		} catch (error) {
+			console.error(`Error loading ${layerId} data:`, error);
+			updateLayerState(layerId, 'error');
+			throw error;
+		}
 	}
 
 	// Function to unload a layer
@@ -476,6 +717,10 @@
 			delete originalLayerGroups[layerId];
 			delete allLayerData[layerId];
 		}
+		
+		// Remove from legend
+		removeLayerFromLegend(layerId);
+		
 		updateLayerState(layerId, 'unloaded');
 	}
 
@@ -697,7 +942,7 @@
 		window.history.pushState({}, '', window.location.pathname);
 	}
 
-	// Function to get style based on layer type
+	// Function to get style based on layer type (legacy fallback)
 	function getStyleForLayer(layerId) {
 		const styles = {
 			polygon: { color: 'blue', fillColor: '#30f', fillOpacity: 0.3, weight: 2 },
@@ -705,6 +950,121 @@
 			square: { color: 'green', fillColor: '#0f0', fillOpacity: 0.4, weight: 2 }
 		};
 		return styles[layerId] || { color: 'purple', weight: 2 };
+	}
+
+	// Create a style function that uses StyleResolver for a feature
+	function createStyleFunction(styleResolver) {
+		return function(feature) {
+			return styleResolver.getStyle(feature.properties);
+		};
+	}
+
+	// Legend management
+	let activeLegends = {};
+
+	function toggleLegend() {
+		const legend = document.getElementById('legend');
+		legend.classList.toggle('collapsed');
+	}
+
+	function updateLegend() {
+		const legendElement = document.getElementById('legend');
+		const contentElement = document.getElementById('legend-content');
+		
+		// Clear existing content
+		contentElement.innerHTML = '';
+		
+		// Check if we have any active legends
+		const legendKeys = Object.keys(activeLegends);
+		if (legendKeys.length === 0) {
+			legendElement.style.display = 'none';
+			return;
+		}
+		
+		// Show legend
+		legendElement.style.display = 'block';
+		
+		// Generate legend content for each loaded layer
+		legendKeys.forEach(layerId => {
+			const legends = activeLegends[layerId];
+			if (!legends || legends.length === 0) return;
+			
+			legends.forEach(legend => {
+				const ruleDiv = document.createElement('div');
+				ruleDiv.className = 'legend-rule';
+				
+				const titleDiv = document.createElement('div');
+				titleDiv.className = 'legend-rule-title';
+				titleDiv.textContent = legend.name;
+				ruleDiv.appendChild(titleDiv);
+				
+				legend.items.forEach(item => {
+					const itemDiv = document.createElement('div');
+					itemDiv.className = 'legend-item';
+					
+					const iconDiv = document.createElement('div');
+					iconDiv.className = 'legend-color';
+					
+					// Check if we should display an awesome-marker icon
+					if (item.style.awesomeMarker && item.style.awesomeMarker.icon) {
+						iconDiv.innerHTML = `<i class="fas fa-${item.style.awesomeMarker.icon}" style="color: ${item.style.awesomeMarker.iconColor || 'white'}; background-color: ${getAwesomeMarkerColor(item.style.awesomeMarker.markerColor)}; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius: 3px; font-size: 10px;"></i>`;
+					} else {
+						// Fallback to colored circle
+						iconDiv.style.backgroundColor = item.style.fillColor || item.style.color;
+						iconDiv.style.borderColor = item.style.color;
+					}
+					
+					const textDiv = document.createElement('div');
+					textDiv.className = 'legend-text';
+					textDiv.textContent = item.description;
+					
+					itemDiv.appendChild(iconDiv);
+					itemDiv.appendChild(textDiv);
+					ruleDiv.appendChild(itemDiv);
+				});
+				
+				contentElement.appendChild(ruleDiv);
+			});
+		});
+	}
+
+	function addLayerToLegend(layerId, styleResolver) {
+		const legendData = styleResolver.getLegendData();
+		if (legendData && legendData.length > 0) {
+			activeLegends[layerId] = legendData;
+		}
+		updateLegend();
+	}
+
+	function removeLayerFromLegend(layerId) {
+		delete activeLegends[layerId];
+		updateLegend();
+	}
+
+	// Helper function to convert awesome-markers color names to hex colors
+	function getAwesomeMarkerColor(colorName) {
+		const colorMap = {
+			'red': '#d63031',
+			'darkred': '#74b9ff',
+			'lightred': '#ff7675',
+			'orange': '#e17055',
+			'beige': '#f39c12',
+			'green': '#00b894',
+			'darkgreen': '#00a085',
+			'lightgreen': '#55efc4',
+			'blue': '#0984e3',
+			'darkblue': '#2d3436',
+			'lightblue': '#74b9ff',
+			'purple': '#a29bfe',
+			'darkpurple': '#6c5ce7',
+			'pink': '#fd79a8',
+			'cadetblue': '#81ecec',
+			'white': '#ddd',
+			'gray': '#636e72',
+			'lightgray': '#b2bec3',
+			'black': '#2d3436'
+		};
+		return colorMap[colorName] || '#666';
 	}
 
 	// Function to create popup content
@@ -904,10 +1264,10 @@
 		});
 
 	function onMapClick(e) {
-		L.popup()
-			.setLatLng(e.latlng)
-			.setContent(`You clicked the map at ${e.latlng.toString()}`)
-			.openOn(map);
+		// L.popup()
+		// 	.setLatLng(e.latlng)
+		// 	.setContent(`You clicked the map at ${e.latlng.toString()}`)
+		//	.openOn(map);
 	}
 
 	map.on('click', onMapClick);
