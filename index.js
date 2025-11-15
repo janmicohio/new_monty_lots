@@ -19,6 +19,8 @@ koop.server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+koop.server.use('/static', require('express').static(path.join(__dirname, 'static')));
+
 // Service catalog endpoint
 koop.server.get('/catalog', (req, res) => {
   const fs = require('fs');
