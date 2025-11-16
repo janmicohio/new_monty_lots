@@ -5,7 +5,7 @@
 
 import { getLayerFeatureCount } from '../services/CatalogService.js';
 import { loadLayer, unloadLayer, toggleLayerVisibility } from '../services/LayerService.js';
-import { getLayerState, getFeatureCount, getGeometryType, getLayerBounds } from '../state/LayerState.js';
+import { getLayerState, setLayerState, getFeatureCount, getGeometryType, getLayerBounds } from '../state/LayerState.js';
 import { updateGlobalStatistics } from './Statistics.js';
 import { getMap } from '../state/MapState.js';
 
@@ -21,6 +21,9 @@ export function updateLayerState(layerId, state) {
   const statusElement = layerItem.querySelector(".layer-status");
   const loadButton = layerItem.querySelector(".load-button");
   const featureCountElement = layerItem.querySelector(".feature-count");
+
+  // Update the actual state
+  setLayerState(layerId, state);
 
   // Remove all state classes
   layerItem.classList.remove("loaded", "loading", "error");

@@ -29,7 +29,6 @@ export function updateGlobalStatistics() {
         loadedLayers.length
       }</span></p>
       <p><strong>Total Features:</strong> <span id="total-features">${totalFeatures.toLocaleString()}</span></p>
-      <p><strong>Server Status:</strong> <span id="server-status" style="color: #28a745;">Connected</span></p>
     `;
   }
 }
