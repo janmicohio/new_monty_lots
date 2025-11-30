@@ -19,6 +19,8 @@ Monty Lots is an open-source geospatial data platform built by [Code for Dayton]
 
 ### Technical Features
 - **Dynamic Service Discovery** - Automatically catalogs all GeoJSON files in the data directory
+- **GeoJSON Validation** - Automatic validation of GeoJSON syntax with detailed error reporting
+- **S3-Compatible Storage** - Optional sync from DigitalOcean Spaces, AWS S3, Backblaze B2, or any S3-compatible storage
 - **Koop FeatureServer API** - Industry-standard GIS REST API for data access
 - **Layer Visibility Controls** - Toggle layers on/off without reloading
 - **Real-time Status Indicators** - Visual feedback for loading states and feature counts
@@ -207,23 +209,60 @@ Returns server health status for monitoring.
 }
 ```
 
+### S3 Sync Endpoints
+
+**`GET /api/sync/status`**
+
+Returns current S3 sync configuration status.
+
+**Response:**
+```json
+{
+  "enabled": true,
+  "bucket": "my-geojson-data",
+  "endpoint": "https://nyc3.digitaloceanspaces.com",
+  "autoSync": true,
+  "syncInterval": 0
+}
+```
+
+**`POST /api/sync`**
+
+Manually trigger a sync from S3 storage. Only available when `S3_ENABLED=true`.
+
+**Response:**
+```json
+{
+  "success": true,
+  "filesSync": 2,
+  "totalFiles": 2
+}
+```
+
 ## 📁 Project Structure
 
 ```
 new_monty_lots/
-├── index.js              # Koop server with custom endpoints
-├── index.html            # Frontend map interface
-├── provider-data/        # GeoJSON data files (auto-discovered)
-│   ├── housing.geojson   # Housing/property data
-│   └── registry.geojson  # Registry data
-├── package.json          # Dependencies and scripts
-├── README.md            # This file
-├── CONTRIBUTING.md      # Contribution guidelines
-├── CLAUDE.md           # AI assistant documentation
-└── deploy.md           # Deployment guide
+├── index.js                 # Koop server with custom endpoints
+├── index.html               # Frontend map interface
+├── lib/
+│   └── s3-sync.js          # S3-compatible storage sync module
+├── docs/
+│   └── DIGITALOCEAN_SPACES_SETUP.md  # S3 storage setup guide
+├── provider-data/           # GeoJSON data files (auto-discovered or synced from S3)
+│   ├── housing.geojson      # Housing/property data
+│   └── registry.geojson     # Registry data
+├── .env.example             # Environment variable template
+├── package.json             # Dependencies and scripts
+├── README.md               # This file
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CLAUDE.md              # AI assistant documentation
+└── deploy.md              # Deployment guide
 ```
 
 ## 💾 Adding Data
+
+### Option 1: Local Files (Default)
 
 Simply add `.geojson` files to the `provider-data/` directory:
 
@@ -241,12 +280,57 @@ The new layer will automatically:
 - Be queryable via the Koop API
 - Use the filename (without extension) as the layer ID
 
+### Option 2: S3-Compatible Storage (DigitalOcean Spaces, AWS S3, etc.)
+
+For production deployments or large datasets, you can store GeoJSON files in S3-compatible object storage:
+
+**Supported providers:**
+- DigitalOcean Spaces
+- AWS S3
+- Backblaze B2
+- Wasabi
+- MinIO (self-hosted)
+- Any S3-compatible storage
+
+**Setup:**
+
+1. **Copy the environment example**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Configure your S3 settings in `.env`**
+   ```bash
+   S3_ENABLED=true
+   S3_BUCKET=my-geojson-data
+   S3_ENDPOINT=https://nyc3.digitaloceanspaces.com  # For DigitalOcean Spaces
+   S3_ACCESS_KEY_ID=your-access-key
+   S3_SECRET_ACCESS_KEY=your-secret-key
+   ```
+
+3. **Start the server**
+   ```bash
+   npm start
+   # Files will automatically sync from S3 to local cache on startup
+   ```
+
+**Features:**
+- ✅ Automatic sync on server startup
+- ✅ Optional periodic sync at configurable intervals
+- ✅ Manual sync via API: `POST /api/sync`
+- ✅ Check sync status: `GET /api/sync/status`
+- ✅ All files are validated before serving
+- ✅ Works seamlessly with existing Koop provider
+
+See [docs/DIGITALOCEAN_SPACES_SETUP.md](docs/DIGITALOCEAN_SPACES_SETUP.md) for detailed setup instructions.
+
 ### Data Guidelines
 
 - **Format:** Valid GeoJSON (FeatureCollection recommended)
 - **Coordinate System:** WGS84 (EPSG:4326) or Web Mercator (EPSG:3857)
-- **File Size:** < 50MB for local hosting (use object storage for larger files)
+- **File Size:** No strict limit with S3 storage; < 50MB for local-only hosting
 - **Naming:** Use lowercase, hyphens for spaces (e.g., `property-parcels.geojson`)
+- **Validation:** All files are automatically validated for correct GeoJSON syntax
 
 ## 🚢 Deployment
 
@@ -288,6 +372,33 @@ We welcome contributions from developers, designers, GIS professionals, and civi
 - 📖 Improve documentation
 - 🧪 Test with different datasets and provide feedback
 - 🎨 Enhance UI/UX design
+
+### Development Workflow
+
+**IMPORTANT: Always create a feature branch for your work. Never commit directly to `main`.**
+
+1. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or for bug fixes:
+   git checkout -b fix/issue-number-description
+   ```
+
+2. **Make your changes and commit**
+   ```bash
+   git add .
+   git commit -m "Description of your changes"
+   ```
+
+3. **Push to your branch**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+4. **Open a Pull Request**
+   - Go to GitHub and create a PR from your branch to `main`
+   - Link any related issues
+   - Request review from maintainers
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines on:
 - Development workflow
