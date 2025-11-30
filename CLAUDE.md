@@ -47,11 +47,28 @@ All GeoJSON files are automatically served through standard Koop FeatureServer e
 
 ### Data Management
 
-**Zero-configuration approach**: Simply add `.geojson` files to `/provider-data/` directory. The server automatically:
+**Local File Mode (Default)**: Simply add `.geojson` files to `/provider-data/` directory. The server automatically:
 - Discovers new files
-- Registers them as Koop services  
+- Validates GeoJSON syntax
+- Registers them as Koop services
 - Makes them available via the catalog API
 - Loads them in the frontend interface
+
+**S3-Compatible Storage Mode**: Configure the server to sync GeoJSON files from S3-compatible storage:
+- Supports AWS S3, DigitalOcean Spaces, Backblaze B2, MinIO, Wasabi, etc.
+- Automatic sync on server startup
+- Optional periodic sync at configurable intervals
+- Manual sync via API endpoint: `POST /api/sync`
+- Files are synced to local `/provider-data/` directory and served via Koop
+- Maintains all local mode features (validation, catalog, etc.)
+
+**Configuration**: Use environment variables to enable S3 mode (see `.env.example`):
+- `S3_ENABLED=true` - Enable S3 sync
+- `S3_BUCKET` - Bucket name
+- `S3_ENDPOINT` - For DigitalOcean Spaces: `https://nyc3.digitaloceanspaces.com`
+- `S3_ACCESS_KEY_ID` and `S3_SECRET_ACCESS_KEY` - Credentials
+- `S3_AUTO_SYNC` - Auto-sync on startup (default: true)
+- `S3_SYNC_INTERVAL` - Periodic sync in ms (0 = disabled)
 
 **Sample data patterns**:
 - Points with various coordinate systems (point.geojson, point-3857.geojson)
@@ -97,6 +114,26 @@ All GeoJSON files are automatically served through standard Koop FeatureServer e
 
 ### Dependencies
 
-**Server**: `@koopjs/koop-core` (v10.4.17), `@koopjs/provider-file-geojson` (v2.2.0), `koop-output-geojson` (v1.1.2)
+**Server**:
+- `@koopjs/koop-core` (v10.4.17) - Core Koop server framework
+- `@koopjs/provider-file-geojson` (v2.2.0) - Local GeoJSON file provider
+- `koop-output-geojson` (v1.1.2) - GeoJSON output format
+- `@aws-sdk/client-s3` (v3.940.0) - S3-compatible storage client
+- `geojson-validation` (v1.0.2) - GeoJSON validation library
+- `dotenv` (v17.2.3) - Environment variable management
 
 **Frontend**: Leaflet v1.9.4 (CDN), vanilla JavaScript with fetch API
+
+### API Endpoints
+
+**Standard Koop Endpoints**:
+- `GET /file-geojson/rest/services/:id/FeatureServer` - Service metadata
+- `GET /file-geojson/rest/services/:id/FeatureServer/0/query` - Query features
+
+**Custom Endpoints**:
+- `GET /catalog` - List all available GeoJSON services with validation status
+- `GET /health` - Server health check
+- `GET /api/sync/status` - S3 sync configuration status
+- `POST /api/sync` - Manually trigger S3 sync
+- `GET /api/styles/config` - Main style configuration
+- `GET /api/styles/config/:layerId` - Layer-specific style configuration

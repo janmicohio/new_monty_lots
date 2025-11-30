@@ -17,8 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.940.0",
     "@koopjs/koop-core": "^10.4.17",
     "@koopjs/provider-file-geojson": "^2.2.0",
+    "dotenv": "^17.2.3",
     "geojson-validation": "^1.0.2",
     "koop-output-geojson": "^1.1.2"
   },
