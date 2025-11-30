@@ -18,6 +18,9 @@ body {
   overflow-y: auto;
   padding: 20px;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1001;
 }
 
 .sidebar h2 {
@@ -268,13 +271,86 @@ body {
   z-index: 1000;
 }
 
-/* Responsive legend positioning */
+/* Mobile sidebar toggle button */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1002;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sidebar-toggle:hover {
+  background: #0056b3;
+}
+
+.sidebar-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Mobile overlay for sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  #map {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .legend {
     left: 20px;
     right: 20px;
     max-width: none;
-    bottom: 80px; /* Higher on mobile to avoid controls */
+    bottom: 80px;
+  }
+
+  .sidebar.active ~ .sidebar-toggle {
+    left: 290px;
   }
 }
 
