@@ -10,6 +10,7 @@ import { loadLayer } from './services/LayerService.js';
 import { updateSidebar } from './components/LayerList.js';
 import { initializeSearchBar, loadFromURL } from './components/SearchBar.js';
 import { toggleLegend } from './components/Legend.js';
+import { initializeSidebarToggle } from './components/SidebarToggle.js';
 
 // Initialize the Leaflet map
 const map = L.map("map").setView([39.7589, -84.1916], 10);
@@ -71,9 +72,10 @@ async function initializeApp() {
   }
 }
 
-// Initialize search bar on DOM ready
+// Initialize components on DOM ready
 document.addEventListener("DOMContentLoaded", function () {
   initializeSearchBar();
+  initializeSidebarToggle();
 });
 
 // Start the application
