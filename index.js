@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const koop = new Koop({ logLevel: 'debug' });
 const output = require('koop-output-geojson');
+const geojsonValidation = require('geojson-validation');
 
 // const auth = require('@koopjs/auth-direct-file')(
 //   'pass-in-your-secret',
@@ -21,33 +22,75 @@ koop.server.get('/', (req, res) => {
 
 koop.server.use('/static', require('express').static(path.join(__dirname, 'static')));
 
-// Service catalog endpoint
+// Service catalog endpoint with GeoJSON validation
 koop.server.get('/catalog', (req, res) => {
   const fs = require('fs');
   const dataDir = path.join(__dirname, 'provider-data');
-  
+
   fs.readdir(dataDir, (err, files) => {
     if (err) {
+      console.error('Error reading data directory:', err);
       return res.status(500).json({ error: 'Unable to read data directory' });
     }
-    
-    const geojsonFiles = files
+
+    const geojsonFiles = [];
+    const validationErrors = [];
+
+    files
       .filter(file => file.endsWith('.geojson'))
-      .map(file => {
+      .forEach(file => {
         const layerId = path.basename(file, '.geojson');
-        return {
-          id: layerId,
-          name: layerId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-          type: 'FeatureServer',
-          url: `/file-geojson/rest/services/${layerId}/FeatureServer`,
-          queryUrl: `/file-geojson/rest/services/${layerId}/FeatureServer/0/query`
-        };
+        const filePath = path.join(dataDir, file);
+
+        try {
+          // Read and parse GeoJSON file
+          const fileContent = fs.readFileSync(filePath, 'utf8');
+          const geojson = JSON.parse(fileContent);
+
+          // Validate GeoJSON structure
+          const isValid = geojsonValidation.valid(geojson);
+
+          if (isValid) {
+            geojsonFiles.push({
+              id: layerId,
+              name: layerId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+              type: 'FeatureServer',
+              url: `/file-geojson/rest/services/${layerId}/FeatureServer`,
+              queryUrl: `/file-geojson/rest/services/${layerId}/FeatureServer/0/query`
+            });
+          } else {
+            const errors = geojsonValidation.isFeatureCollection(geojson) ||
+                          geojsonValidation.isFeature(geojson) ||
+                          geojsonValidation.isGeometryObject(geojson) ||
+                          ['Invalid GeoJSON structure'];
+
+            console.warn(`⚠️  Skipping invalid GeoJSON file: ${file}`, errors);
+            validationErrors.push({
+              file: file,
+              errors: Array.isArray(errors) ? errors : [errors]
+            });
+          }
+        } catch (error) {
+          console.error(`⚠️  Error validating ${file}:`, error.message);
+          validationErrors.push({
+            file: file,
+            errors: [error.message]
+          });
+        }
       });
-    
-    res.json({
+
+    const response = {
       services: geojsonFiles,
       count: geojsonFiles.length
-    });
+    };
+
+    // Include validation errors in response if any (for debugging)
+    if (validationErrors.length > 0) {
+      response.validationErrors = validationErrors;
+      console.warn(`Found ${validationErrors.length} invalid GeoJSON file(s)`);
+    }
+
+    res.json(response);
   });
 });
 
