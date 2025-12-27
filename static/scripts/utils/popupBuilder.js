@@ -124,9 +124,20 @@ export async function createPopupContent(layerId, properties, geometry) {
     .replace(/\b\w/g, (char) => char.toUpperCase());
   let content = `<div style="max-width: 300px;"><h3 style="margin: 0 0 10px 0; padding-bottom: 8px; border-bottom: 2px solid #007bff;">${layerTitle}</h3>`;
 
+  // Check if this is a precinct layer
+  const isPrecinctLayer = layerId.includes('precinct');
+  let precinctCode = null;
+
+  if (isPrecinctLayer && properties) {
+    precinctCode = properties.VLABEL || properties.Precinct || properties.NAME;
+  }
+
   // Check if this feature has race data
   if (properties && properties._currentRace) {
     content += buildRacePopupContent(properties._currentRace);
+  } else if (properties && properties._turnoutData) {
+    // Show turnout data if available
+    content += buildTurnoutPopupContent(properties._turnoutData);
   } else {
     // Add properties if they exist
     if (properties && Object.keys(properties).length > 0) {
@@ -152,6 +163,15 @@ export async function createPopupContent(layerId, properties, geometry) {
 
       content += '</table>';
     }
+  }
+
+  // Add "View Full Summary" button for precinct layers
+  if (isPrecinctLayer && precinctCode) {
+    content += `
+      <button class="view-precinct-details" onclick="window.openPrecinctSummary('${precinctCode}')">
+        View Full Election History
+      </button>
+    `;
   }
 
   content += '</div>';
@@ -208,6 +228,162 @@ function buildRacePopupContent(raceData) {
   content += `<div style="padding-top: 8px; border-top: 2px solid #ddd; font-size: 13px;">`;
   content += `<strong>Total Votes:</strong> ${(raceData['Total Votes Cast'] || 0).toLocaleString()}`;
   content += `</div>`;
+
+  content += '</div>';
+
+  return content;
+}
+
+/**
+ * Build popup content for comparison mode
+ * @param {string} precinctCode - Precinct code
+ * @param {Object} compData - Comparison data with 2024/2025 turnout
+ * @returns {string} HTML content for comparison popup
+ */
+export function buildComparisonPopupContent(precinctCode, compData) {
+  if (!compData) {
+    return '<p>No comparison data available</p>';
+  }
+
+  const turnout2024Percent = (compData.turnout2024 * 100).toFixed(2);
+  const turnout2025Percent = (compData.turnout2025 * 100).toFixed(2);
+  const changePercent = (compData.change * 100).toFixed(2);
+  const changeClass = compData.change >= 0 ? 'increase' : 'decrease';
+  const changeSymbol = compData.change >= 0 ? '+' : '';
+
+  let content = '<div style="max-width: 300px;">';
+  content += `<h3 style="margin: 0 0 10px 0; padding-bottom: 8px; border-bottom: 2px solid #007bff;">Precinct ${precinctCode}</h3>`;
+
+  content += '<h4 style="margin: 10px 0 5px 0; font-size: 14px;">Voter Turnout Comparison</h4>';
+
+  content += '<table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">';
+
+  // 2024 turnout
+  content += `
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 4px 8px 4px 0; font-weight: 600; font-size: 13px;">2024:</td>
+      <td style="padding: 4px 0; text-align: right; font-size: 13px;">${turnout2024Percent}%</td>
+    </tr>
+  `;
+
+  // 2025 turnout
+  content += `
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 4px 8px 4px 0; font-weight: 600; font-size: 13px;">2025:</td>
+      <td style="padding: 4px 0; text-align: right; font-size: 13px;">${turnout2025Percent}%</td>
+    </tr>
+  `;
+
+  // Change
+  content += `
+    <tr style="border-bottom: 2px solid #ddd;">
+      <td style="padding: 8px 8px 8px 0; font-weight: 600; font-size: 14px;">Change:</td>
+      <td style="padding: 8px 0; text-align: right; font-size: 14px; color: ${changeClass === 'increase' ? '#28a745' : '#dc3545'};">
+        <strong>${changeSymbol}${changePercent}%</strong>
+      </td>
+    </tr>
+  `;
+
+  content += '</table>';
+
+  // Interpretation
+  if (Math.abs(compData.change * 100) > 5) {
+    const direction = compData.change > 0 ? 'increase' : 'decrease';
+    content += `<p style="margin: 10px 0 0 0; padding: 8px; background: ${changeClass === 'increase' ? '#d4edda' : '#f8d7da'}; border-radius: 4px; font-size: 12px; color: ${changeClass === 'increase' ? '#155724' : '#721c24'};">`;
+    content += `<strong>Significant ${direction}</strong> in voter turnout between 2024 and 2025 elections.`;
+    content += '</p>';
+  } else if (Math.abs(compData.change * 100) < 0.5) {
+    content += `<p style="margin: 10px 0 0 0; padding: 8px; background: #e2e3e5; border-radius: 4px; font-size: 12px; color: #383d41;">`;
+    content += 'Voter turnout remained relatively stable between 2024 and 2025.';
+    content += '</p>';
+  }
+
+  content += '</div>';
+
+  return content;
+}
+
+/**
+ * Build popup content for turnout data
+ * @param {Object} turnoutData - Turnout statistics data
+ * @returns {string} HTML content for turnout display
+ */
+function buildTurnoutPopupContent(turnoutData) {
+  if (!turnoutData || typeof turnoutData !== 'object') {
+    return '<p>No turnout data available</p>';
+  }
+
+  let content = '<div style="margin-top: 10px;">';
+
+  // Display precinct name if available
+  if (turnoutData.Precinct) {
+    content += `<p style="margin: 0 0 10px 0; font-weight: 600;">Precinct: ${turnoutData.Precinct}</p>`;
+  }
+
+  // Parse turnout value
+  const turnoutValue = turnoutData['Voter Turnout - Total'];
+  let turnoutPercent;
+
+  if (typeof turnoutValue === 'number') {
+    turnoutPercent = turnoutValue > 1 ? turnoutValue : turnoutValue * 100;
+  } else if (typeof turnoutValue === 'string') {
+    turnoutPercent = parseFloat(turnoutValue.replace('%', ''));
+  } else {
+    turnoutPercent = 0;
+  }
+
+  // Display turnout information
+  content += '<table style="width: 100%; border-collapse: collapse; margin-bottom: 10px;">';
+
+  content += `
+    <tr style="border-bottom: 1px solid #eee;">
+      <td style="padding: 6px 8px 6px 0; font-weight: 600; font-size: 14px;">Voter Turnout:</td>
+      <td style="padding: 6px 0; text-align: right; font-size: 14px; color: #007bff;">
+        <strong>${turnoutPercent.toFixed(2)}%</strong>
+      </td>
+    </tr>
+  `;
+
+  // Add registered voters if available
+  if (turnoutData['Registered Voters - Total']) {
+    const registered = typeof turnoutData['Registered Voters - Total'] === 'string'
+      ? turnoutData['Registered Voters - Total']
+      : turnoutData['Registered Voters - Total'].toLocaleString();
+
+    content += `
+      <tr style="border-bottom: 1px solid #eee;">
+        <td style="padding: 6px 8px 6px 0; font-weight: 500; font-size: 13px;">Registered Voters:</td>
+        <td style="padding: 6px 0; text-align: right; font-size: 13px;">${registered}</td>
+      </tr>
+    `;
+  }
+
+  // Add ballots cast if available
+  if (turnoutData['Ballots Cast - Total']) {
+    const ballotsCast = typeof turnoutData['Ballots Cast - Total'] === 'string'
+      ? turnoutData['Ballots Cast - Total']
+      : turnoutData['Ballots Cast - Total'].toLocaleString();
+
+    content += `
+      <tr style="border-bottom: 1px solid #eee;">
+        <td style="padding: 6px 8px 6px 0; font-weight: 500; font-size: 13px;">Ballots Cast:</td>
+        <td style="padding: 6px 0; text-align: right; font-size: 13px;">${ballotsCast}</td>
+      </tr>
+    `;
+  }
+
+  content += '</table>';
+
+  // Add context message based on turnout level
+  if (turnoutPercent >= 70) {
+    content += '<p style="margin: 10px 0 0 0; padding: 8px; background: #d4edda; border-radius: 4px; font-size: 12px; color: #155724;">';
+    content += '<strong>High turnout</strong> for this precinct.';
+    content += '</p>';
+  } else if (turnoutPercent < 40) {
+    content += '<p style="margin: 10px 0 0 0; padding: 8px; background: #f8d7da; border-radius: 4px; font-size: 12px; color: #721c24;">';
+    content += '<strong>Low turnout</strong> for this precinct.';
+    content += '</p>';
+  }
 
   content += '</div>';
 
