@@ -13,6 +13,22 @@ import { toggleLegend } from './components/Legend.js';
 import { initializeSidebarToggle } from './components/SidebarToggle.js';
 import { initializeAdvancedSearch } from './components/AdvancedSearch.js';
 import { initializeElectionUI } from './components/ElectionUI.js';
+import { PrecinctSummary } from './components/PrecinctSummary.js';
+
+// Create precinct summary instance FIRST
+let precinctSummary = null;
+
+// Define global functions IMMEDIATELY (before any async operations)
+// These must be available before popups are created
+window.toggleLegend = toggleLegend;
+window.openPrecinctSummary = function(precinctCode) {
+  if (!precinctSummary) {
+    console.warn('PrecinctSummary not yet initialized, initializing now...');
+    precinctSummary = new PrecinctSummary();
+    precinctSummary.initialize();
+  }
+  precinctSummary.showPrecinct(precinctCode);
+};
 
 // Initialize the Leaflet map
 const map = L.map('map').setView([39.7589, -84.1916], 10);
@@ -25,8 +41,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Store map instance in state
 setMap(map);
 
-// Make toggleLegend available globally for onclick handler in HTML
-window.toggleLegend = toggleLegend;
+// Create precinct summary instance
+precinctSummary = new PrecinctSummary();
 
 // Map click handler
 function onMapClick(_e) {
@@ -50,6 +66,9 @@ async function initializeApp() {
     updateSidebar(catalog);
 
     console.log(`Found ${catalog.count} services available for manual loading`);
+
+    // Initialize precinct summary component
+    precinctSummary.initialize();
 
     // Initialize search bar after a brief delay to allow layers to load
     setTimeout(() => {
