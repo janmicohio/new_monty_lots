@@ -1,8 +1,8 @@
 # Monty Lots
 
-**A civic tech platform for exploring property and parcel data in Montgomery County, Ohio**
+**A civic tech platform for exploring property, parcel, and election data in Montgomery County, Ohio**
 
-Monty Lots is an open-source geospatial data platform built by [Code for Dayton](https://www.codefordayton.org/) to make property and parcel information accessible, searchable, and useful for residents, researchers, and civic organizations.
+Monty Lots is an open-source geospatial data platform built by [Code for Dayton](https://www.codefordayton.org/) to make property, parcel, and election information accessible, searchable, and useful for residents, researchers, civic organizations, and Democracy Fellows.
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
@@ -12,11 +12,21 @@ Monty Lots is an open-source geospatial data platform built by [Code for Dayton]
 ### Core Capabilities
 
 - **🔍 Intelligent Search** - Search properties by address or parcel ID with real-time filtering
+- **🗳️ Election Data Visualization** - Interactive maps of 2024 and 2025 election results by precinct
 - **📊 Large Dataset Handling** - Automatic clustering for datasets with 1000+ features
 - **🎯 Manual Layer Loading** - User-controlled layer loading to optimize performance
 - **🗺️ Interactive Mapping** - Full-screen Leaflet interface with dynamic layer discovery
 - **🔗 Shareable URLs** - Search results can be bookmarked and shared via URL parameters
 - **📱 Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
+
+### Election Features
+
+- **📈 Voter Turnout Choropleth** - Visualize turnout rates with 8-tier color scale (red to green)
+- **⚖️ Comparison Mode** - Side-by-side comparison of 2024 vs 2025 elections with diverging colors
+- **🔎 Advanced Filtering** - Filter precincts by name, turnout range, or race winner
+- **📋 Full Election History** - View complete race results for any precinct
+- **🎨 Dynamic Race Selection** - Browse and visualize any race from 180+ available contests
+- **📊 Summary Statistics** - Average, min, and max turnout across all precincts
 
 ### Technical Features
 
@@ -76,6 +86,15 @@ npm run dev
 2. **Search Properties** - Use the search box to filter by address or parcel ID
 3. **View Details** - Click any feature on the map to see its properties in a popup
 4. **Share Results** - Copy the URL to share specific search results with others
+
+### Exploring Election Data
+
+1. **Select Election Year** - Choose between 2024 and 2025 elections
+2. **Choose a Race** - Select from dropdown of 180+ races or view voter turnout
+3. **View Results** - Precinct boundaries are colored by vote percentage or turnout
+4. **Compare Years** - Toggle "Comparison Mode" to see changes between 2024 and 2025
+5. **Filter Precincts** - Use advanced filters to search by name, turnout, or winner
+6. **View History** - Click any precinct and select "View Full Election History"
 
 ### Search Capabilities
 
@@ -259,21 +278,40 @@ Manually trigger a sync from S3 storage. Only available when `S3_ENABLED=true`.
 
 ```
 new_monty_lots/
-├── index.js                 # Koop server with custom endpoints
-├── index.html               # Frontend map interface
+├── index.js                    # Koop server with custom endpoints
+├── index.html                  # Frontend map interface
+├── static/                     # Frontend assets
+│   ├── scripts/
+│   │   ├── components/         # UI components (ElectionUI, Filters, etc.)
+│   │   ├── services/           # Data services (Catalog, Layer, Style)
+│   │   ├── state/              # State management (MapState, LayerState)
+│   │   ├── utils/              # Utilities (popupBuilder, fieldAnalyzer)
+│   │   └── main.js            # Application entry point
+│   └── styles/
+│       └── main.css           # Application styles
 ├── lib/
-│   └── s3-sync.js          # S3-compatible storage sync module
+│   └── s3-sync.js             # S3-compatible storage sync module
+├── config/                     # Layer styling configuration
+│   ├── styles.json            # Style configuration index
+│   └── layers/                # Layer-specific styling rules
+├── data/                       # Election and property data
+│   ├── README.md              # Data organization documentation
+│   ├── raw/                   # Raw source data (PDFs, CSVs)
+│   └── elections/             # Processed election JSON files
 ├── docs/
 │   └── DIGITALOCEAN_SPACES_SETUP.md  # S3 storage setup guide
-├── provider-data/           # GeoJSON data files (auto-discovered or synced from S3)
-│   ├── housing.geojson      # Housing/property data
-│   └── registry.geojson     # Registry data
-├── .env.example             # Environment variable template
-├── package.json             # Dependencies and scripts
-├── README.md               # This file
-├── CONTRIBUTING.md         # Contribution guidelines
-├── CLAUDE.md              # AI assistant documentation
-└── deploy.md              # Deployment guide
+├── provider-data/              # GeoJSON files served via Koop
+│   ├── housing.geojson        # Housing/property data (47MB)
+│   ├── registry.geojson       # Registry data (19MB)
+│   ├── precincts.geojson      # Base precinct boundaries
+│   ├── precincts_2024.geojson # 2024 election results (13MB)
+│   └── precincts_2025.geojson # 2025 election results (13MB)
+├── .env.example                # Environment variable template
+├── package.json                # Dependencies and scripts
+├── README.md                  # This file
+├── CONTRIBUTING.md            # Contribution guidelines
+├── CLAUDE.md                 # AI assistant documentation
+└── deploy.md                 # Deployment guide
 ```
 
 ## 💾 Adding Data
@@ -477,31 +515,40 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines on:
 - Research properties before purchase or rental
 - Understand neighborhood boundaries and zoning
 - Track property development in their area
+- Explore election results in their precinct
+- Compare turnout and voting patterns over time
 
-**For Researchers:**
+**For Researchers & Democracy Fellows:**
 
-- Analyze property patterns and trends
-- Study urban development over time
-- Export data for academic research
+- Analyze property and election patterns across Montgomery County
+- Study voter turnout trends by precinct and demographic area
+- Identify geographic patterns in election results
+- Compare year-over-year changes in voter participation
+- Export data for academic research and civic analysis
 
 **For Civic Organizations:**
 
 - Identify underutilized properties
 - Plan community development projects
 - Support affordable housing initiatives
+- Understand voting patterns for outreach campaigns
+- Target areas with low voter turnout
 
 **For Developers:**
 
 - Build applications on top of the API
-- Integrate property data into other civic tech tools
-- Create custom visualizations
+- Integrate property and election data into other civic tech tools
+- Create custom visualizations and dashboards
+- Access 180+ race results via structured JSON
 
 ## 🙏 Acknowledgments
 
-- **Code for Dayton** - Civic tech volunteer organization
-- **Koop Team** - For the excellent open-source GIS framework
-- **OpenStreetMap** - For map tile data
-- **Montgomery County, Ohio** - For open data access
+- **Code for Dayton** - Civic tech volunteer organization building this platform
+- **Democracy Fellows** - Supporting civic engagement through election data transparency
+- **Montgomery County Board of Elections** - Providing comprehensive election results data
+- **Montgomery County, Ohio** - Open data access for property records
+- **Koop Team** - Excellent open-source GIS data transformation framework
+- **OpenStreetMap** - Map tile data and geographic basemaps
 
 ## 📄 License
 
