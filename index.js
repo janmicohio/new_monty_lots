@@ -247,7 +247,7 @@ koop.server.get('/api/elections', (req, res) => {
       return res.status(500).json({ error: 'Unable to read elections directory' });
     }
 
-    const years = files
+    const yearDirs = files
       .filter(file => {
         const filePath = path.join(electionsDir, file);
         return fs.statSync(filePath).isDirectory();
@@ -255,9 +255,28 @@ koop.server.get('/api/elections', (req, res) => {
       .sort()
       .reverse(); // Most recent first
 
+    // Load metadata for each year to get displayName
+    const yearsWithMetadata = yearDirs.map(year => {
+      const metadataPath = path.join(electionsDir, year, 'metadata.json');
+      try {
+        const metadataContent = fs.readFileSync(metadataPath, 'utf8');
+        const metadata = JSON.parse(metadataContent);
+        return {
+          year: year,
+          displayName: metadata.displayName || year
+        };
+      } catch (error) {
+        console.warn(`Could not read metadata for ${year}, using year as displayName:`, error.message);
+        return {
+          year: year,
+          displayName: year
+        };
+      }
+    });
+
     res.json({
-      years: years,
-      count: years.length,
+      years: yearsWithMetadata,
+      count: yearsWithMetadata.length,
     });
   });
 });
