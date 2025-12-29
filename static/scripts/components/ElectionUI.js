@@ -34,10 +34,14 @@ export async function initializeElectionUI() {
   // Populate year dropdown
   const yearSelect = document.getElementById('election-year');
   if (yearSelect) {
-    years.forEach(year => {
+    years.forEach(yearData => {
       const option = document.createElement('option');
-      option.value = year;
-      option.textContent = year;
+      // Handle both old format (string) and new format (object with year/displayName)
+      const yearValue = typeof yearData === 'string' ? yearData : yearData.year;
+      const yearDisplay = typeof yearData === 'string' ? yearData : (yearData.displayName || yearData.year);
+
+      option.value = yearValue;
+      option.textContent = yearDisplay;
       yearSelect.appendChild(option);
     });
 
