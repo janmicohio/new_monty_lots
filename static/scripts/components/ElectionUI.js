@@ -57,6 +57,12 @@ export async function initializeElectionUI() {
     comparisonToggle.addEventListener('change', handleComparisonToggle);
   }
 
+  // Add turnout button event listener
+  const turnoutButton = document.getElementById('view-turnout-button');
+  if (turnoutButton) {
+    turnoutButton.addEventListener('click', handleTurnoutButtonClick);
+  }
+
   // Initialize precinct filter
   precinctFilter.initialize();
 
@@ -292,23 +298,12 @@ async function handleYearChange(event) {
 function populateRaceSelector(races) {
   const raceSelect = document.getElementById('race-selector');
   const container = document.getElementById('race-selector-container');
+  const turnoutButtonContainer = document.getElementById('turnout-button-container');
 
   if (!raceSelect || !container) return;
 
   // Clear existing options (except first)
-  raceSelect.innerHTML = '<option value="">-- Select Race --</option>';
-
-  // Add turnout visualization option
-  const turnoutOption = document.createElement('option');
-  turnoutOption.value = '__TURNOUT__';
-  turnoutOption.textContent = '📊 View Voter Turnout';
-  raceSelect.appendChild(turnoutOption);
-
-  // Add separator
-  const separator = document.createElement('option');
-  separator.disabled = true;
-  separator.textContent = '─────────────────────';
-  raceSelect.appendChild(separator);
+  raceSelect.innerHTML = '<option value="">-- Select Race or Issue --</option>';
 
   // Add race options
   races.forEach(race => {
@@ -318,8 +313,11 @@ function populateRaceSelector(races) {
     raceSelect.appendChild(option);
   });
 
-  // Show race selector
+  // Show race selector and turnout button
   container.style.display = 'block';
+  if (turnoutButtonContainer) {
+    turnoutButtonContainer.style.display = 'block';
+  }
 }
 
 /**
@@ -329,6 +327,11 @@ function hideRaceSelector() {
   const container = document.getElementById('race-selector-container');
   if (container) {
     container.style.display = 'none';
+  }
+
+  const turnoutButtonContainer = document.getElementById('turnout-button-container');
+  if (turnoutButtonContainer) {
+    turnoutButtonContainer.style.display = 'none';
   }
 
   const summaryDiv = document.getElementById('race-summary');
@@ -366,12 +369,6 @@ async function handleRaceChange(event) {
     }
   }
 
-  // Check if this is the turnout visualization
-  if (raceId === '__TURNOUT__') {
-    await displayTurnoutVisualization();
-    return;
-  }
-
   // Load race data
   const raceData = await raceManager.loadRaceData(raceManager.currentYear, raceId);
 
@@ -399,6 +396,24 @@ async function handleRaceChange(event) {
       rebindPopups();
     }
   }
+}
+
+/**
+ * Handle turnout button click
+ */
+async function handleTurnoutButtonClick() {
+  if (!raceManager.currentYear) {
+    showErrorFeedback('Please select an election year first');
+    return;
+  }
+
+  // Clear any selected race in the dropdown
+  const raceSelect = document.getElementById('race-selector');
+  if (raceSelect) {
+    raceSelect.value = '';
+  }
+
+  await displayTurnoutVisualization();
 }
 
 /**
