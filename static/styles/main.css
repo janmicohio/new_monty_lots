@@ -549,6 +549,62 @@ body {
   border: 1px solid #dee2e6;
 }
 
+/* Election Instructions */
+.election-instructions {
+  background: #e7f3ff;
+  border-left: 4px solid #2196f3;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.election-instructions p {
+  margin: 8px 0;
+  color: #0d47a1;
+}
+
+.election-instructions p:first-child {
+  margin-top: 0;
+}
+
+.election-instructions strong {
+  color: #01579b;
+  font-weight: 600;
+}
+
+.election-instructions ol {
+  margin: 8px 0;
+  padding-left: 24px;
+  color: #1565c0;
+}
+
+.election-instructions ol li {
+  margin: 4px 0;
+}
+
+.election-instructions .instruction-alternatives {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+
+.election-instructions .instruction-alternatives li {
+  padding-left: 20px;
+  position: relative;
+  margin: 4px 0;
+  color: #1565c0;
+}
+
+.election-instructions .instruction-alternatives li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #2196f3;
+  font-weight: bold;
+}
+
 .election-controls {
   margin: 10px 0;
 }
