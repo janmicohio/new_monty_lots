@@ -105,6 +105,17 @@ function formatFieldValue(value, fieldName) {
     return value.toLocaleString();
   }
 
+  // Handle objects (like ComparisonData)
+  if (typeof value === 'object') {
+    try {
+      return '<pre style="font-size: 11px; margin: 0; white-space: pre-wrap; word-wrap: break-word;">' +
+             JSON.stringify(value, null, 2) +
+             '</pre>';
+    } catch (e) {
+      return '[Complex Object]';
+    }
+  }
+
   return String(value);
 }
 
