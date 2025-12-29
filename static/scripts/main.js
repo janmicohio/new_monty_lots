@@ -33,7 +33,16 @@ window.openPrecinctSummary = function(precinctCode) {
 };
 
 // Initialize the Leaflet map
-const map = L.map('map').setView([39.7589, -84.1916], 10);
+// Constrain map bounds to Ohio region to prevent excessive panning
+const ohioBounds = L.latLngBounds(
+  L.latLng(38.4, -85.5),  // Southwest corner (southern Ohio, western edge)
+  L.latLng(42.3, -80.5)   // Northeast corner (northern Ohio, eastern edge)
+);
+
+const map = L.map('map', {
+  maxBounds: ohioBounds,
+  maxBoundsViscosity: 0.8  // Makes the bounds feel "sticky" rather than hard edges
+}).setView([39.7589, -84.1916], 10);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
