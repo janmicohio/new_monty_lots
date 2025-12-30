@@ -8,6 +8,7 @@ export class PrecinctSummary {
     this.currentPrecinct = null;
     this.electionData = {};
     this.summaryPanel = null;
+    this.metadata = {}; // Store metadata for race name lookups
   }
 
   /**
@@ -87,8 +88,10 @@ export class PrecinctSummary {
     };
 
     try {
-      // Load statistics for both years
+      // Load metadata and statistics for both years
       await Promise.all([
+        this.loadYearMetadata(2024),
+        this.loadYearMetadata(2025),
         this.loadYearStatistics(2024, normalizedCode),
         this.loadYearStatistics(2025, normalizedCode),
         this.loadYearRaces(2024, normalizedCode),
@@ -96,6 +99,19 @@ export class PrecinctSummary {
       ]);
     } catch (error) {
       console.error('Error loading precinct data:', error);
+    }
+  }
+
+  /**
+   * Load metadata for a specific year
+   */
+  async loadYearMetadata(year) {
+    try {
+      const response = await fetch(`/api/elections/${year}`);
+      const metadata = await response.json();
+      this.metadata[year] = metadata;
+    } catch (error) {
+      console.error(`Error loading ${year} metadata:`, error);
     }
   }
 
@@ -258,7 +274,7 @@ export class PrecinctSummary {
       html += `<p class="race-count">${yearData.races.length} races on ballot</p>`;
 
       yearData.races.forEach(race => {
-        html += this.renderRaceCard(race);
+        html += this.renderRaceCard(race, year);
       });
     }
 
@@ -267,11 +283,26 @@ export class PrecinctSummary {
   }
 
   /**
+   * Get display name for a race from metadata
+   */
+  getRaceDisplayName(year, raceId) {
+    const metadata = this.metadata[year];
+    if (!metadata || !metadata.races) {
+      return raceId; // Fallback to race ID if no metadata
+    }
+
+    const raceInfo = metadata.races.find(r => r.id === raceId);
+    return raceInfo ? raceInfo.name : raceId;
+  }
+
+  /**
    * Render a single race card
    */
-  renderRaceCard(race) {
+  renderRaceCard(race, year) {
+    const displayName = this.getRaceDisplayName(year, race.race);
+
     let html = `<div class="race-card">`;
-    html += `<h4>${race.race}</h4>`;
+    html += `<h4>${displayName}</h4>`;
 
     const result = race.result;
     const excludeFields = ['Precinct', 'Total Votes Cast', 'Overvotes', 'Undervotes', 'Contest Total'];
