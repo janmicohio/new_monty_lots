@@ -97,6 +97,15 @@ export async function loadLayer(layerId) {
             return 'Loading...';
           });
 
+          // Bind tooltip for precinct layers to show precinct name on hover
+          if (layerId.includes('precinct')) {
+            const precinctName = props.VNAME || props.VLABEL || props.Precinct || props.NAME || 'Unknown Precinct';
+            layer.bindTooltip(precinctName, {
+              sticky: true,
+              direction: 'auto'
+            });
+          }
+
           // Store reference to feature for searching
           layer.feature = feature;
 
@@ -146,6 +155,15 @@ export async function loadLayer(layerId) {
             });
             return 'Loading...';
           });
+
+          // Bind tooltip for precinct layers to show precinct name on hover
+          if (layerId.includes('precinct')) {
+            const precinctName = props.VNAME || props.VLABEL || props.Precinct || props.NAME || 'Unknown Precinct';
+            layer.bindTooltip(precinctName, {
+              sticky: true,
+              direction: 'auto'
+            });
+          }
 
           // Store reference to feature for searching
           layer.feature = feature;
