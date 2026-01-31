@@ -264,6 +264,17 @@ export class AboutModal {
         </div>
 
         <div class="learn-card">
+          <h4>📖 Common Election Abbreviations</h4>
+          <p>You'll see these abbreviations throughout the election data:</p>
+          <ul>
+            <li><strong>FTC</strong> - Full Term Commencing. Indicates when the elected official's term begins (e.g., "FTC 1-3-2025" means the term starts January 3, 2025).</li>
+            <li><strong>UTE</strong> - Unexpired Term Ending. This is for filling a vacancy in an office where the original term hasn't finished yet. The date indicates when the partial term ends.</li>
+            <li><strong>CSD</strong> - City School District. These are school districts that serve city areas (e.g., Dayton CSD, Kettering CSD).</li>
+            <li><strong>LSD</strong> - Local School District. These are school districts serving smaller communities and townships (e.g., Mad River LSD, Northridge LSD).</li>
+          </ul>
+        </div>
+
+        <div class="learn-card">
           <h4>📊 How to Read Turnout Percentages</h4>
           <p>
             <strong>Turnout</strong> = (Ballots Cast ÷ Registered Voters) × 100
