@@ -26,6 +26,13 @@
       "enabled": true,
       "priority": 2,
       "description": "Property agent types and management information"
+    },
+    "neighborhoods": {
+      "name": "Dayton Neighborhoods",
+      "configFile": "./layers/neighborhoods.json",
+      "enabled": true,
+      "priority": 0,
+      "description": "City of Dayton neighborhood boundaries"
     }
   },
 

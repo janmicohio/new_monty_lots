@@ -106,6 +106,15 @@ export async function loadLayer(layerId) {
             });
           }
 
+          // Bind tooltip for neighborhoods layer to show neighborhood name on hover
+          if (layerId === 'neighborhoods') {
+            const neighborhoodName = props.HOOD || props.NAME || 'Unknown Neighborhood';
+            layer.bindTooltip(neighborhoodName, {
+              sticky: true,
+              direction: 'auto'
+            });
+          }
+
           // Store reference to feature for searching
           layer.feature = feature;
 
@@ -160,6 +169,15 @@ export async function loadLayer(layerId) {
           if (layerId.includes('precinct')) {
             const precinctName = props.VNAME || props.VLABEL || props.Precinct || props.NAME || 'Unknown Precinct';
             layer.bindTooltip(precinctName, {
+              sticky: true,
+              direction: 'auto'
+            });
+          }
+
+          // Bind tooltip for neighborhoods layer to show neighborhood name on hover
+          if (layerId === 'neighborhoods') {
+            const neighborhoodName = props.HOOD || props.NAME || 'Unknown Neighborhood';
+            layer.bindTooltip(neighborhoodName, {
               sticky: true,
               direction: 'auto'
             });

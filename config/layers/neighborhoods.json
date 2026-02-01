@@ -1,0 +1,22 @@
+{
+  "name": "Dayton Neighborhoods",
+  "description": "City of Dayton neighborhood boundaries",
+  "version": "1.0",
+  "lastUpdated": "2025-01-31",
+
+  "defaultStyle": {
+    "color": "#1e90ff",
+    "fillColor": "#87ceeb",
+    "fillOpacity": 0.3,
+    "weight": 2,
+    "opacity": 0.8
+  },
+
+  "styleRules": [],
+
+  "legend": {
+    "title": "Dayton Neighborhoods",
+    "position": "bottomleft",
+    "collapsed": true
+  }
+}
