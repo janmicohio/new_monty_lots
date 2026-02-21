@@ -1,0 +1,216 @@
+{
+  "race": "14. Northmont CSD - Additional - 5.5 mill - 10 yrs Northmont CSD",
+  "precincts": 30,
+  "results": [
+    {
+      "Precinct": "CLATWP-A",
+      "FOR THE TAX LEVY": 114,
+      "AGAINST THE TAX LEVY": 315,
+      "Total Votes Cast": 429,
+      "Contest Total": 434
+    },
+    {
+      "Precinct": "CLATWP-B",
+      "FOR THE TAX LEVY": 27,
+      "AGAINST THE TAX LEVY": 33,
+      "Total Votes Cast": 60,
+      "Contest Total": 62
+    },
+    {
+      "Precinct": "CLATWP-C",
+      "FOR THE TAX LEVY": 31,
+      "AGAINST THE TAX LEVY": 123,
+      "Total Votes Cast": 154,
+      "Contest Total": 158
+    },
+    {
+      "Precinct": "CTN 1-A",
+      "FOR THE TAX LEVY": 151,
+      "AGAINST THE TAX LEVY": 334,
+      "Total Votes Cast": 485,
+      "Contest Total": 497
+    },
+    {
+      "Precinct": "CTN 1-B",
+      "FOR THE TAX LEVY": 211,
+      "AGAINST THE TAX LEVY": 287,
+      "Total Votes Cast": 498,
+      "Contest Total": 513
+    },
+    {
+      "Precinct": "CTN 1-C",
+      "FOR THE TAX LEVY": 287,
+      "AGAINST THE TAX LEVY": 346,
+      "Total Votes Cast": 633,
+      "Contest Total": 652
+    },
+    {
+      "Precinct": "CTN 1-D",
+      "FOR THE TAX LEVY": 175,
+      "AGAINST THE TAX LEVY": 194,
+      "Total Votes Cast": 369,
+      "Contest Total": 377
+    },
+    {
+      "Precinct": "CTN 2-A",
+      "FOR THE TAX LEVY": 227,
+      "AGAINST THE TAX LEVY": 212,
+      "Total Votes Cast": 439,
+      "Contest Total": 462
+    },
+    {
+      "Precinct": "CTN 2-B",
+      "FOR THE TAX LEVY": 287,
+      "AGAINST THE TAX LEVY": 306,
+      "Total Votes Cast": 593,
+      "Contest Total": 608
+    },
+    {
+      "Precinct": "CTN 2-C",
+      "FOR THE TAX LEVY": 271,
+      "AGAINST THE TAX LEVY": 285,
+      "Total Votes Cast": 556,
+      "Contest Total": 582
+    },
+    {
+      "Precinct": "CTN 3-A",
+      "FOR THE TAX LEVY": 302,
+      "AGAINST THE TAX LEVY": 336,
+      "Total Votes Cast": 638,
+      "Contest Total": 658
+    },
+    {
+      "Precinct": "CTN 3-B",
+      "FOR THE TAX LEVY": 267,
+      "AGAINST THE TAX LEVY": 291,
+      "Total Votes Cast": 558,
+      "Contest Total": 583
+    },
+    {
+      "Precinct": "CTN 3-C",
+      "FOR THE TAX LEVY": 213,
+      "AGAINST THE TAX LEVY": 250,
+      "Total Votes Cast": 463,
+      "Contest Total": 492
+    },
+    {
+      "Precinct": "ENG-A",
+      "FOR THE TAX LEVY": 351,
+      "AGAINST THE TAX LEVY": 250,
+      "Total Votes Cast": 601,
+      "Contest Total": 615
+    },
+    {
+      "Precinct": "ENG-B",
+      "FOR THE TAX LEVY": 254,
+      "AGAINST THE TAX LEVY": 278,
+      "Total Votes Cast": 532,
+      "Contest Total": 544
+    },
+    {
+      "Precinct": "ENG-C",
+      "FOR THE TAX LEVY": 237,
+      "AGAINST THE TAX LEVY": 208,
+      "Total Votes Cast": 445,
+      "Contest Total": 452
+    },
+    {
+      "Precinct": "ENG-D",
+      "FOR THE TAX LEVY": 288,
+      "AGAINST THE TAX LEVY": 320,
+      "Total Votes Cast": 608,
+      "Contest Total": 624
+    },
+    {
+      "Precinct": "ENG-E",
+      "FOR THE TAX LEVY": 298,
+      "AGAINST THE TAX LEVY": 290,
+      "Total Votes Cast": 588,
+      "Contest Total": 605
+    },
+    {
+      "Precinct": "ENG-F",
+      "FOR THE TAX LEVY": 243,
+      "AGAINST THE TAX LEVY": 270,
+      "Total Votes Cast": 513,
+      "Contest Total": 524
+    },
+    {
+      "Precinct": "ENG-G",
+      "FOR THE TAX LEVY": 314,
+      "AGAINST THE TAX LEVY": 271,
+      "Total Votes Cast": 585,
+      "Contest Total": 591
+    },
+    {
+      "Precinct": "ENG-H",
+      "FOR THE TAX LEVY": 186,
+      "AGAINST THE TAX LEVY": 259,
+      "Total Votes Cast": 445,
+      "Contest Total": 456
+    },
+    {
+      "Precinct": "ENG-I",
+      "FOR THE TAX LEVY": 217,
+      "AGAINST THE TAX LEVY": 173,
+      "Total Votes Cast": 390,
+      "Contest Total": 408
+    },
+    {
+      "Precinct": "ENG-J",
+      "FOR THE TAX LEVY": 259,
+      "AGAINST THE TAX LEVY": 212,
+      "Total Votes Cast": 471,
+      "Contest Total": 485
+    },
+    {
+      "Precinct": "PHBG",
+      "FOR THE TAX LEVY": 44,
+      "AGAINST THE TAX LEVY": 129,
+      "Total Votes Cast": 173,
+      "Contest Total": 178
+    },
+    {
+      "Precinct": "TR 1-B",
+      "FOR THE TAX LEVY": 20,
+      "AGAINST THE TAX LEVY": 24,
+      "Total Votes Cast": 44,
+      "Contest Total": 45
+    },
+    {
+      "Precinct": "UN-A",
+      "FOR THE TAX LEVY": 99,
+      "AGAINST THE TAX LEVY": 197,
+      "Total Votes Cast": 296,
+      "Contest Total": 305
+    },
+    {
+      "Precinct": "UN-B",
+      "FOR THE TAX LEVY": 182,
+      "AGAINST THE TAX LEVY": 313,
+      "Total Votes Cast": 495,
+      "Contest Total": 502
+    },
+    {
+      "Precinct": "UN-C",
+      "FOR THE TAX LEVY": 160,
+      "AGAINST THE TAX LEVY": 190,
+      "Total Votes Cast": 350,
+      "Contest Total": 360
+    },
+    {
+      "Precinct": "UN-D",
+      "FOR THE TAX LEVY": 259,
+      "AGAINST THE TAX LEVY": 323,
+      "Total Votes Cast": 582,
+      "Contest Total": 590
+    },
+    {
+      "Precinct": "UN-E",
+      "FOR THE TAX LEVY": 200,
+      "AGAINST THE TAX LEVY": 338,
+      "Total Votes Cast": 538,
+      "Contest Total": 553
+    }
+  ]
+}

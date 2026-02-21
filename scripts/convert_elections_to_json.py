@@ -156,15 +156,22 @@ def process_year(year: str) -> None:
 
     print(f"     ✓ Created {len(race_files)} race JSON files")
 
+    display_names = {
+        '2023': 'November 2023 General Election',
+        '2024': 'November 2024 General Election',
+        '2025': 'November 2025 General Election',
+    }
+
     # Create metadata catalog
     metadata = {
         'year': year,
+        'displayName': display_names.get(year, f'{year} Election'),
         'statistics_file': 'statistics.json' if statistics_file else None,
         'races': [
             {
                 'id': csv_file.stem.replace('/', '-').replace('\\', '-'),
                 'name': csv_file.stem,
-                'file': f'{csv_file.stem.replace("/", "-").replace("\\", "-")}.json'
+                'file': csv_file.stem.replace('/', '-').replace('\\', '-') + '.json'
             }
             for csv_file in race_files
         ]
@@ -183,14 +190,15 @@ def main():
     # Parse command line arguments
     year = sys.argv[1] if len(sys.argv) > 1 else 'all'
 
-    if year not in ['2024', '2025', 'all']:
-        print("Usage: python3 scripts/convert_elections_to_json.py [--year 2024|2025|all]")
+    if year not in ['2023', '2024', '2025', 'all']:
+        print("Usage: python3 scripts/convert_elections_to_json.py [--year 2023|2024|2025|all]")
         print("Default: all")
         sys.exit(1)
 
     print("🔄 Converting election CSV files to JSON...")
 
     if year == 'all':
+        process_year('2023')
         process_year('2024')
         process_year('2025')
     else:

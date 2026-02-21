@@ -1,0 +1,20 @@
+{
+  "race": "Warren County Educational Service Center",
+  "precincts": 2,
+  "results": [
+    {
+      "Precinct": "MBG 1-A",
+      "Chad R. Bridgman": 0,
+      "Sally J. Williams": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "MIATWP-J",
+      "Chad R. Bridgman": 44,
+      "Sally J. Williams": 167,
+      "Total Votes Cast": 211,
+      "Contest Total": 814
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "race": "Kettering School Board",
+  "precincts": 43,
+  "results": [
+    {
+      "Precinct": "KT 1-A",
+      "Jennifer Slanker Kane": 171,
+      "Justin LeBrun": 91,
+      "Chrissie Richards": 149,
+      "Steve White": 84,
+      "Total Votes Cast": 495,
+      "Contest Total": 868
+    },
+    {
+      "Precinct": "KT 1-B",
+      "Jennifer Slanker Kane": 126,
+      "Justin LeBrun": 114,
+      "Chrissie Richards": 128,
+      "Steve White": 100,
+      "Total Votes Cast": 468,
+      "Contest Total": 808
+    },
+    {
+      "Precinct": "KT 1-C",
+      "Jennifer Slanker Kane": 200,
+      "Justin LeBrun": 162,
+      "Chrissie Richards": 184,
+      "Steve White": 173,
+      "Total Votes Cast": 719,
+      "Contest Total": 1158
+    },
+    {
+      "Precinct": "KT 1-D",
+      "Jennifer Slanker Kane": 207,
+      "Justin LeBrun": 130,
+      "Chrissie Richards": 189,
+      "Steve White": 145,
+      "Total Votes Cast": 671,
+      "Contest Total": 1066
+    },
+    {
+      "Precinct": "KT 1-E",
+      "Jennifer Slanker Kane": 129,
+      "Justin LeBrun": 88,
+      "Chrissie Richards": 105,
+      "Steve White": 86,
+      "Total Votes Cast": 408,
+      "Contest Total": 660
+    },
+    {
+      "Precinct": "KT 1-F",
+      "Jennifer Slanker Kane": 154,
+      "Justin LeBrun": 123,
+      "Chrissie Richards": 151,
+      "Steve White": 87,
+      "Total Votes Cast": 515,
+      "Contest Total": 882
+    },
+    {
+      "Precinct": "KT 1-G",
+      "Jennifer Slanker Kane": 164,
+      "Justin LeBrun": 98,
+      "Chrissie Richards": 197,
+      "Steve White": 121,
+      "Total Votes Cast": 580,
+      "Contest Total": 964
+    },
+    {
+      "Precinct": "KT 1-H",
+      "Jennifer Slanker Kane": 232,
+      "Justin LeBrun": 127,
+      "Chrissie Richards": 203,
+      "Steve White": 162,
+      "Total Votes Cast": 724,
+      "Contest Total": 1206
+    },
+    {
+      "Precinct": "KT 1-I",
+      "Jennifer Slanker Kane": 180,
+      "Justin LeBrun": 124,
+      "Chrissie Richards": 170,
+      "Steve White": 151,
+      "Total Votes Cast": 625,
+      "Contest Total": 964
+    },
+    {
+      "Precinct": "KT 2-A",
+      "Jennifer Slanker Kane": 205,
+      "Justin LeBrun": 125,
+      "Chrissie Richards": 200,
+      "Steve White": 129,
+      "Total Votes Cast": 659,
+      "Contest Total": 1052
+    },
+    {
+      "Precinct": "KT 2-B",
+      "Jennifer Slanker Kane": 232,
+      "Justin LeBrun": 139,
+      "Chrissie Richards": 195,
+      "Steve White": 152,
+      "Total Votes Cast": 718,
+      "Contest Total": 1074
+    },
+    {
+      "Precinct": "KT 2-C",
+      "Jennifer Slanker Kane": 241,
+      "Justin LeBrun": 198,
+      "Chrissie Richards": 208,
+      "Steve White": 147,
+      "Total Votes Cast": 794,
+      "Contest Total": 1098
+    },
+    {
+      "Precinct": "KT 2-D",
+      "Jennifer Slanker Kane": 209,
+      "Justin LeBrun": 116,
+      "Chrissie Richards": 198,
+      "Steve White": 147,
+      "Total Votes Cast": 670,
+      "Contest Total": 1092
+    },
+    {
+      "Precinct": "KT 2-E",
+      "Jennifer Slanker Kane": 216,
+      "Justin LeBrun": 206,
+      "Chrissie Richards": 211,
+      "Steve White": 191,
+      "Total Votes Cast": 824,
+      "Contest Total": 1180
+    },
+    {
+      "Precinct": "KT 2-F",
+      "Jennifer Slanker Kane": 145,
+      "Justin LeBrun": 121,
+      "Chrissie Richards": 153,
+      "Steve White": 145,
+      "Total Votes Cast": 564,
+      "Contest Total": 862
+    },
+    {
+      "Precinct": "KT 2-G",
+      "Jennifer Slanker Kane": 330,
+      "Justin LeBrun": 227,
+      "Chrissie Richards": 276,
+      "Steve White": 208,
+      "Total Votes Cast": 1041,
+      "Contest Total": 1478
+    },
+    {
+      "Precinct": "KT 2-H",
+      "Jennifer Slanker Kane": 265,
+      "Justin LeBrun": 164,
+      "Chrissie Richards": 222,
+      "Steve White": 156,
+      "Total Votes Cast": 807,
+      "Contest Total": 1212
+    },
+    {
+      "Precinct": "KT 2-I",
+      "Jennifer Slanker Kane": 201,
+      "Justin LeBrun": 116,
+      "Chrissie Richards": 196,
+      "Steve White": 116,
+      "Total Votes Cast": 629,
+      "Contest Total": 918
+    },
+    {
+      "Precinct": "KT 2-J",
+      "Jennifer Slanker Kane": 141,
+      "Justin LeBrun": 71,
+      "Chrissie Richards": 154,
+      "Steve White": 68,
+      "Total Votes Cast": 434,
+      "Contest Total": 690
+    },
+    {
+      "Precinct": "KT 3-A",
+      "Jennifer Slanker Kane": 245,
+      "Justin LeBrun": 117,
+      "Chrissie Richards": 210,
+      "Steve White": 117,
+      "Total Votes Cast": 689,
+      "Contest Total": 1164
+    },
+    {
+      "Precinct": "KT 3-B",
+      "Jennifer Slanker Kane": 286,
+      "Justin LeBrun": 112,
+      "Chrissie Richards": 239,
+      "Steve White": 116,
+      "Total Votes Cast": 753,
+      "Contest Total": 1186
+    },
+    {
+      "Precinct": "KT 3-C",
+      "Jennifer Slanker Kane": 258,
+      "Justin LeBrun": 134,
+      "Chrissie Richards": 246,
+      "Steve White": 148,
+      "Total Votes Cast": 786,
+      "Contest Total": 1218
+    },
+    {
+      "Precinct": "KT 3-D",
+      "Jennifer Slanker Kane": 179,
+      "Justin LeBrun": 93,
+      "Chrissie Richards": 176,
+      "Steve White": 81,
+      "Total Votes Cast": 529,
+      "Contest Total": 908
+    },
+    {
+      "Precinct": "KT 3-E",
+      "Jennifer Slanker Kane": 244,
+      "Justin LeBrun": 130,
+      "Chrissie Richards": 216,
+      "Steve White": 152,
+      "Total Votes Cast": 742,
+      "Contest Total": 1160
+    },
+    {
+      "Precinct": "KT 3-F",
+      "Jennifer Slanker Kane": 218,
+      "Justin LeBrun": 100,
+      "Chrissie Richards": 183,
+      "Steve White": 98,
+      "Total Votes Cast": 599,
+      "Contest Total": 914
+    },
+    {
+      "Precinct": "KT 3-G",
+      "Jennifer Slanker Kane": 203,
+      "Justin LeBrun": 119,
+      "Chrissie Richards": 209,
+      "Steve White": 124,
+      "Total Votes Cast": 655,
+      "Contest Total": 978
+    },
+    {
+      "Precinct": "KT 3-H",
+      "Jennifer Slanker Kane": 238,
+      "Justin LeBrun": 120,
+      "Chrissie Richards": 223,
+      "Steve White": 124,
+      "Total Votes Cast": 705,
+      "Contest Total": 1108
+    },
+    {
+      "Precinct": "KT 3-I",
+      "Jennifer Slanker Kane": 269,
+      "Justin LeBrun": 112,
+      "Chrissie Richards": 226,
+      "Steve White": 147,
+      "Total Votes Cast": 754,
+      "Contest Total": 1088
+    },
+    {
+      "Precinct": "KT 3-J",
+      "Jennifer Slanker Kane": 265,
+      "Justin LeBrun": 131,
+      "Chrissie Richards": 251,
+      "Steve White": 127,
+      "Total Votes Cast": 774,
+      "Contest Total": 1074
+    },
+    {
+      "Precinct": "KT 3-K",
+      "Jennifer Slanker Kane": 299,
+      "Justin LeBrun": 176,
+      "Chrissie Richards": 251,
+      "Steve White": 178,
+      "Total Votes Cast": 904,
+      "Contest Total": 1360
+    },
+    {
+      "Precinct": "KT 4-A",
+      "Jennifer Slanker Kane": 320,
+      "Justin LeBrun": 141,
+      "Chrissie Richards": 284,
+      "Steve White": 156,
+      "Total Votes Cast": 901,
+      "Contest Total": 1440
+    },
+    {
+      "Precinct": "KT 4-B",
+      "Jennifer Slanker Kane": 304,
+      "Justin LeBrun": 113,
+      "Chrissie Richards": 248,
+      "Steve White": 128,
+      "Total Votes Cast": 793,
+      "Contest Total": 1360
+    },
+    {
+      "Precinct": "KT 4-C",
+      "Jennifer Slanker Kane": 190,
+      "Justin LeBrun": 103,
+      "Chrissie Richards": 170,
+      "Steve White": 94,
+      "Total Votes Cast": 557,
+      "Contest Total": 838
+    },
+    {
+      "Precinct": "KT 4-D",
+      "Jennifer Slanker Kane": 260,
+      "Justin LeBrun": 149,
+      "Chrissie Richards": 234,
+      "Steve White": 136,
+      "Total Votes Cast": 779,
+      "Contest Total": 1162
+    },
+    {
+      "Precinct": "KT 4-E",
+      "Jennifer Slanker Kane": 222,
+      "Justin LeBrun": 135,
+      "Chrissie Richards": 189,
+      "Steve White": 129,
+      "Total Votes Cast": 675,
+      "Contest Total": 1084
+    },
+    {
+      "Precinct": "KT 4-F",
+      "Jennifer Slanker Kane": 274,
+      "Justin LeBrun": 115,
+      "Chrissie Richards": 233,
+      "Steve White": 137,
+      "Total Votes Cast": 759,
+      "Contest Total": 1204
+    },
+    {
+      "Precinct": "KT 4-G",
+      "Jennifer Slanker Kane": 403,
+      "Justin LeBrun": 187,
+      "Chrissie Richards": 343,
+      "Steve White": 194,
+      "Total Votes Cast": 1127,
+      "Contest Total": 1612
+    },
+    {
+      "Precinct": "KT 4-H",
+      "Jennifer Slanker Kane": 165,
+      "Justin LeBrun": 104,
+      "Chrissie Richards": 161,
+      "Steve White": 92,
+      "Total Votes Cast": 522,
+      "Contest Total": 822
+    },
+    {
+      "Precinct": "KT 4-I",
+      "Jennifer Slanker Kane": 287,
+      "Justin LeBrun": 105,
+      "Chrissie Richards": 268,
+      "Steve White": 124,
+      "Total Votes Cast": 784,
+      "Contest Total": 1228
+    },
+    {
+      "Precinct": "KT 4-J",
+      "Jennifer Slanker Kane": 250,
+      "Justin LeBrun": 92,
+      "Chrissie Richards": 202,
+      "Steve White": 97,
+      "Total Votes Cast": 641,
+      "Contest Total": 1040
+    },
+    {
+      "Precinct": "KT 4-K",
+      "Jennifer Slanker Kane": 258,
+      "Justin LeBrun": 136,
+      "Chrissie Richards": 225,
+      "Steve White": 128,
+      "Total Votes Cast": 747,
+      "Contest Total": 1190
+    },
+    {
+      "Precinct": "MOR 1-A",
+      "Jennifer Slanker Kane": 48,
+      "Justin LeBrun": 32,
+      "Chrissie Richards": 43,
+      "Steve White": 38,
+      "Total Votes Cast": 161,
+      "Contest Total": 312
+    },
+    {
+      "Precinct": "MOR 3-A",
+      "Jennifer Slanker Kane": 0,
+      "Justin LeBrun": 0,
+      "Chrissie Richards": 0,
+      "Steve White": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "race": "Moraine Council (4th Ward)",
+  "precincts": 2,
+  "results": [
+    {
+      "Precinct": "MOR 4-A",
+      "Jeanette Marcus": 164,
+      "Total Votes Cast": 164,
+      "Contest Total": 263
+    },
+    {
+      "Precinct": "MOR 4-B",
+      "Jeanette Marcus": 128,
+      "Total Votes Cast": 128,
+      "Contest Total": 199
+    }
+  ]
+}

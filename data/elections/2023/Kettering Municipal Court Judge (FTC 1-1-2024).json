@@ -1,0 +1,564 @@
+{
+  "race": "Kettering Municipal Court Judge (FTC 1-1-2024)",
+  "precincts": 93,
+  "results": [
+    {
+      "Precinct": "CV-A",
+      "Jim Long": 230,
+      "Total Votes Cast": 230,
+      "Contest Total": 364
+    },
+    {
+      "Precinct": "CV-B",
+      "Jim Long": 392,
+      "Total Votes Cast": 392,
+      "Contest Total": 649
+    },
+    {
+      "Precinct": "CV-C",
+      "Jim Long": 259,
+      "Total Votes Cast": 259,
+      "Contest Total": 415
+    },
+    {
+      "Precinct": "CV-D",
+      "Jim Long": 250,
+      "Total Votes Cast": 250,
+      "Contest Total": 385
+    },
+    {
+      "Precinct": "CV-E",
+      "Jim Long": 358,
+      "Total Votes Cast": 358,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "CV-F",
+      "Jim Long": 423,
+      "Total Votes Cast": 423,
+      "Contest Total": 702
+    },
+    {
+      "Precinct": "CV-G",
+      "Jim Long": 446,
+      "Total Votes Cast": 446,
+      "Contest Total": 727
+    },
+    {
+      "Precinct": "CV-H",
+      "Jim Long": 484,
+      "Total Votes Cast": 484,
+      "Contest Total": 773
+    },
+    {
+      "Precinct": "CV-I",
+      "Jim Long": 519,
+      "Total Votes Cast": 519,
+      "Contest Total": 801
+    },
+    {
+      "Precinct": "CV-J",
+      "Jim Long": 427,
+      "Total Votes Cast": 427,
+      "Contest Total": 686
+    },
+    {
+      "Precinct": "CV-K",
+      "Jim Long": 450,
+      "Total Votes Cast": 450,
+      "Contest Total": 715
+    },
+    {
+      "Precinct": "CV-L",
+      "Jim Long": 496,
+      "Total Votes Cast": 496,
+      "Contest Total": 766
+    },
+    {
+      "Precinct": "CV-M",
+      "Jim Long": 393,
+      "Total Votes Cast": 393,
+      "Contest Total": 646
+    },
+    {
+      "Precinct": "CV-N",
+      "Jim Long": 353,
+      "Total Votes Cast": 353,
+      "Contest Total": 550
+    },
+    {
+      "Precinct": "CV-O",
+      "Jim Long": 515,
+      "Total Votes Cast": 515,
+      "Contest Total": 809
+    },
+    {
+      "Precinct": "CV-P",
+      "Jim Long": 409,
+      "Total Votes Cast": 409,
+      "Contest Total": 679
+    },
+    {
+      "Precinct": "CV-Q",
+      "Jim Long": 356,
+      "Total Votes Cast": 356,
+      "Contest Total": 589
+    },
+    {
+      "Precinct": "CV-R",
+      "Jim Long": 346,
+      "Total Votes Cast": 346,
+      "Contest Total": 585
+    },
+    {
+      "Precinct": "KT 1-A",
+      "Jim Long": 235,
+      "Total Votes Cast": 235,
+      "Contest Total": 434
+    },
+    {
+      "Precinct": "KT 1-B",
+      "Jim Long": 240,
+      "Total Votes Cast": 240,
+      "Contest Total": 404
+    },
+    {
+      "Precinct": "KT 1-C",
+      "Jim Long": 351,
+      "Total Votes Cast": 351,
+      "Contest Total": 579
+    },
+    {
+      "Precinct": "KT 1-D",
+      "Jim Long": 332,
+      "Total Votes Cast": 332,
+      "Contest Total": 533
+    },
+    {
+      "Precinct": "KT 1-E",
+      "Jim Long": 275,
+      "Total Votes Cast": 275,
+      "Contest Total": 438
+    },
+    {
+      "Precinct": "KT 1-F",
+      "Jim Long": 262,
+      "Total Votes Cast": 262,
+      "Contest Total": 441
+    },
+    {
+      "Precinct": "KT 1-G",
+      "Jim Long": 291,
+      "Total Votes Cast": 291,
+      "Contest Total": 482
+    },
+    {
+      "Precinct": "KT 1-H",
+      "Jim Long": 354,
+      "Total Votes Cast": 354,
+      "Contest Total": 603
+    },
+    {
+      "Precinct": "KT 1-I",
+      "Jim Long": 313,
+      "Total Votes Cast": 313,
+      "Contest Total": 482
+    },
+    {
+      "Precinct": "KT 2-A",
+      "Jim Long": 308,
+      "Total Votes Cast": 308,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "KT 2-B",
+      "Jim Long": 334,
+      "Total Votes Cast": 334,
+      "Contest Total": 537
+    },
+    {
+      "Precinct": "KT 2-C",
+      "Jim Long": 362,
+      "Total Votes Cast": 362,
+      "Contest Total": 549
+    },
+    {
+      "Precinct": "KT 2-D",
+      "Jim Long": 343,
+      "Total Votes Cast": 343,
+      "Contest Total": 546
+    },
+    {
+      "Precinct": "KT 2-E",
+      "Jim Long": 383,
+      "Total Votes Cast": 383,
+      "Contest Total": 590
+    },
+    {
+      "Precinct": "KT 2-F",
+      "Jim Long": 273,
+      "Total Votes Cast": 273,
+      "Contest Total": 431
+    },
+    {
+      "Precinct": "KT 2-G",
+      "Jim Long": 463,
+      "Total Votes Cast": 463,
+      "Contest Total": 739
+    },
+    {
+      "Precinct": "KT 2-H",
+      "Jim Long": 357,
+      "Total Votes Cast": 357,
+      "Contest Total": 606
+    },
+    {
+      "Precinct": "KT 2-I",
+      "Jim Long": 292,
+      "Total Votes Cast": 292,
+      "Contest Total": 459
+    },
+    {
+      "Precinct": "KT 2-J",
+      "Jim Long": 211,
+      "Total Votes Cast": 211,
+      "Contest Total": 345
+    },
+    {
+      "Precinct": "KT 3-A",
+      "Jim Long": 348,
+      "Total Votes Cast": 348,
+      "Contest Total": 582
+    },
+    {
+      "Precinct": "KT 3-B",
+      "Jim Long": 357,
+      "Total Votes Cast": 357,
+      "Contest Total": 593
+    },
+    {
+      "Precinct": "KT 3-C",
+      "Jim Long": 389,
+      "Total Votes Cast": 389,
+      "Contest Total": 609
+    },
+    {
+      "Precinct": "KT 3-D",
+      "Jim Long": 288,
+      "Total Votes Cast": 288,
+      "Contest Total": 454
+    },
+    {
+      "Precinct": "KT 3-E",
+      "Jim Long": 376,
+      "Total Votes Cast": 376,
+      "Contest Total": 580
+    },
+    {
+      "Precinct": "KT 3-F",
+      "Jim Long": 276,
+      "Total Votes Cast": 276,
+      "Contest Total": 457
+    },
+    {
+      "Precinct": "KT 3-G",
+      "Jim Long": 331,
+      "Total Votes Cast": 331,
+      "Contest Total": 489
+    },
+    {
+      "Precinct": "KT 3-H",
+      "Jim Long": 337,
+      "Total Votes Cast": 337,
+      "Contest Total": 554
+    },
+    {
+      "Precinct": "KT 3-I",
+      "Jim Long": 350,
+      "Total Votes Cast": 350,
+      "Contest Total": 547
+    },
+    {
+      "Precinct": "KT 3-J",
+      "Jim Long": 333,
+      "Total Votes Cast": 333,
+      "Contest Total": 537
+    },
+    {
+      "Precinct": "KT 3-K",
+      "Jim Long": 444,
+      "Total Votes Cast": 444,
+      "Contest Total": 680
+    },
+    {
+      "Precinct": "KT 4-A",
+      "Jim Long": 412,
+      "Total Votes Cast": 412,
+      "Contest Total": 720
+    },
+    {
+      "Precinct": "KT 4-B",
+      "Jim Long": 377,
+      "Total Votes Cast": 377,
+      "Contest Total": 680
+    },
+    {
+      "Precinct": "KT 4-C",
+      "Jim Long": 278,
+      "Total Votes Cast": 278,
+      "Contest Total": 419
+    },
+    {
+      "Precinct": "KT 4-D",
+      "Jim Long": 329,
+      "Total Votes Cast": 329,
+      "Contest Total": 581
+    },
+    {
+      "Precinct": "KT 4-E",
+      "Jim Long": 315,
+      "Total Votes Cast": 315,
+      "Contest Total": 542
+    },
+    {
+      "Precinct": "KT 4-F",
+      "Jim Long": 352,
+      "Total Votes Cast": 352,
+      "Contest Total": 602
+    },
+    {
+      "Precinct": "KT 4-G",
+      "Jim Long": 473,
+      "Total Votes Cast": 473,
+      "Contest Total": 806
+    },
+    {
+      "Precinct": "KT 4-H",
+      "Jim Long": 276,
+      "Total Votes Cast": 276,
+      "Contest Total": 411
+    },
+    {
+      "Precinct": "KT 4-I",
+      "Jim Long": 379,
+      "Total Votes Cast": 379,
+      "Contest Total": 614
+    },
+    {
+      "Precinct": "KT 4-J",
+      "Jim Long": 330,
+      "Total Votes Cast": 330,
+      "Contest Total": 520
+    },
+    {
+      "Precinct": "KT 4-K",
+      "Jim Long": 340,
+      "Total Votes Cast": 340,
+      "Contest Total": 595
+    },
+    {
+      "Precinct": "MOR 1-A",
+      "Jim Long": 152,
+      "Total Votes Cast": 152,
+      "Contest Total": 243
+    },
+    {
+      "Precinct": "MOR 2-A",
+      "Jim Long": 312,
+      "Total Votes Cast": 312,
+      "Contest Total": 517
+    },
+    {
+      "Precinct": "MOR 3-A",
+      "Jim Long": 180,
+      "Total Votes Cast": 180,
+      "Contest Total": 299
+    },
+    {
+      "Precinct": "MOR 4-A",
+      "Jim Long": 150,
+      "Total Votes Cast": 150,
+      "Contest Total": 263
+    },
+    {
+      "Precinct": "MOR 4-B",
+      "Jim Long": 118,
+      "Total Votes Cast": 118,
+      "Contest Total": 199
+    },
+    {
+      "Precinct": "WASTWP-A",
+      "Jim Long": 341,
+      "Total Votes Cast": 341,
+      "Contest Total": 597
+    },
+    {
+      "Precinct": "WASTWP-B",
+      "Jim Long": 431,
+      "Total Votes Cast": 431,
+      "Contest Total": 743
+    },
+    {
+      "Precinct": "WASTWP-C",
+      "Jim Long": 383,
+      "Total Votes Cast": 383,
+      "Contest Total": 685
+    },
+    {
+      "Precinct": "WASTWP-D",
+      "Jim Long": 306,
+      "Total Votes Cast": 306,
+      "Contest Total": 508
+    },
+    {
+      "Precinct": "WASTWP-E",
+      "Jim Long": 463,
+      "Total Votes Cast": 463,
+      "Contest Total": 725
+    },
+    {
+      "Precinct": "WASTWP-F",
+      "Jim Long": 243,
+      "Total Votes Cast": 243,
+      "Contest Total": 438
+    },
+    {
+      "Precinct": "WASTWP-G",
+      "Jim Long": 451,
+      "Total Votes Cast": 451,
+      "Contest Total": 753
+    },
+    {
+      "Precinct": "WASTWP-H",
+      "Jim Long": 354,
+      "Total Votes Cast": 354,
+      "Contest Total": 634
+    },
+    {
+      "Precinct": "WASTWP-I",
+      "Jim Long": 273,
+      "Total Votes Cast": 273,
+      "Contest Total": 449
+    },
+    {
+      "Precinct": "WASTWP-J",
+      "Jim Long": 334,
+      "Total Votes Cast": 334,
+      "Contest Total": 574
+    },
+    {
+      "Precinct": "WASTWP-K",
+      "Jim Long": 340,
+      "Total Votes Cast": 340,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-L",
+      "Jim Long": 284,
+      "Total Votes Cast": 284,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "WASTWP-M",
+      "Jim Long": 413,
+      "Total Votes Cast": 413,
+      "Contest Total": 690
+    },
+    {
+      "Precinct": "WASTWP-N",
+      "Jim Long": 364,
+      "Total Votes Cast": 364,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-O",
+      "Jim Long": 334,
+      "Total Votes Cast": 334,
+      "Contest Total": 559
+    },
+    {
+      "Precinct": "WASTWP-P",
+      "Jim Long": 394,
+      "Total Votes Cast": 394,
+      "Contest Total": 654
+    },
+    {
+      "Precinct": "WASTWP-Q",
+      "Jim Long": 352,
+      "Total Votes Cast": 352,
+      "Contest Total": 638
+    },
+    {
+      "Precinct": "WASTWP-R",
+      "Jim Long": 308,
+      "Total Votes Cast": 308,
+      "Contest Total": 500
+    },
+    {
+      "Precinct": "WASTWP-S",
+      "Jim Long": 328,
+      "Total Votes Cast": 328,
+      "Contest Total": 531
+    },
+    {
+      "Precinct": "WASTWP-T",
+      "Jim Long": 329,
+      "Total Votes Cast": 329,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "WASTWP-U",
+      "Jim Long": 398,
+      "Total Votes Cast": 398,
+      "Contest Total": 667
+    },
+    {
+      "Precinct": "WASTWP-V",
+      "Jim Long": 338,
+      "Total Votes Cast": 338,
+      "Contest Total": 617
+    },
+    {
+      "Precinct": "WASTWP-W",
+      "Jim Long": 216,
+      "Total Votes Cast": 216,
+      "Contest Total": 390
+    },
+    {
+      "Precinct": "WASTWP-X",
+      "Jim Long": 335,
+      "Total Votes Cast": 335,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "WASTWP-Y",
+      "Jim Long": 425,
+      "Total Votes Cast": 425,
+      "Contest Total": 693
+    },
+    {
+      "Precinct": "WASTWP-Z",
+      "Jim Long": 353,
+      "Total Votes Cast": 353,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "WASTWP-AA",
+      "Jim Long": 378,
+      "Total Votes Cast": 378,
+      "Contest Total": 622
+    },
+    {
+      "Precinct": "WASTWP-BB",
+      "Jim Long": 245,
+      "Total Votes Cast": 245,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "WASTWP-CC",
+      "Jim Long": 420,
+      "Total Votes Cast": 420,
+      "Contest Total": 761
+    }
+  ]
+}

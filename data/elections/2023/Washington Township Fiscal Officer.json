@@ -1,0 +1,288 @@
+{
+  "race": "Washington Township Fiscal Officer",
+  "precincts": 47,
+  "results": [
+    {
+      "Precinct": "CV-A",
+      "Gary P. Smiga": 205,
+      "Total Votes Cast": 205,
+      "Contest Total": 364
+    },
+    {
+      "Precinct": "CV-B",
+      "Gary P. Smiga": 383,
+      "Total Votes Cast": 383,
+      "Contest Total": 649
+    },
+    {
+      "Precinct": "CV-C",
+      "Gary P. Smiga": 251,
+      "Total Votes Cast": 251,
+      "Contest Total": 415
+    },
+    {
+      "Precinct": "CV-D",
+      "Gary P. Smiga": 250,
+      "Total Votes Cast": 250,
+      "Contest Total": 385
+    },
+    {
+      "Precinct": "CV-E",
+      "Gary P. Smiga": 340,
+      "Total Votes Cast": 340,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "CV-F",
+      "Gary P. Smiga": 402,
+      "Total Votes Cast": 402,
+      "Contest Total": 702
+    },
+    {
+      "Precinct": "CV-G",
+      "Gary P. Smiga": 416,
+      "Total Votes Cast": 416,
+      "Contest Total": 727
+    },
+    {
+      "Precinct": "CV-H",
+      "Gary P. Smiga": 444,
+      "Total Votes Cast": 444,
+      "Contest Total": 773
+    },
+    {
+      "Precinct": "CV-I",
+      "Gary P. Smiga": 518,
+      "Total Votes Cast": 518,
+      "Contest Total": 801
+    },
+    {
+      "Precinct": "CV-J",
+      "Gary P. Smiga": 411,
+      "Total Votes Cast": 411,
+      "Contest Total": 686
+    },
+    {
+      "Precinct": "CV-K",
+      "Gary P. Smiga": 404,
+      "Total Votes Cast": 404,
+      "Contest Total": 715
+    },
+    {
+      "Precinct": "CV-L",
+      "Gary P. Smiga": 463,
+      "Total Votes Cast": 463,
+      "Contest Total": 766
+    },
+    {
+      "Precinct": "CV-M",
+      "Gary P. Smiga": 349,
+      "Total Votes Cast": 349,
+      "Contest Total": 646
+    },
+    {
+      "Precinct": "CV-N",
+      "Gary P. Smiga": 331,
+      "Total Votes Cast": 331,
+      "Contest Total": 550
+    },
+    {
+      "Precinct": "CV-O",
+      "Gary P. Smiga": 490,
+      "Total Votes Cast": 490,
+      "Contest Total": 809
+    },
+    {
+      "Precinct": "CV-P",
+      "Gary P. Smiga": 392,
+      "Total Votes Cast": 392,
+      "Contest Total": 679
+    },
+    {
+      "Precinct": "CV-Q",
+      "Gary P. Smiga": 337,
+      "Total Votes Cast": 337,
+      "Contest Total": 589
+    },
+    {
+      "Precinct": "CV-R",
+      "Gary P. Smiga": 326,
+      "Total Votes Cast": 326,
+      "Contest Total": 585
+    },
+    {
+      "Precinct": "WASTWP-A",
+      "Gary P. Smiga": 333,
+      "Total Votes Cast": 333,
+      "Contest Total": 597
+    },
+    {
+      "Precinct": "WASTWP-B",
+      "Gary P. Smiga": 448,
+      "Total Votes Cast": 448,
+      "Contest Total": 743
+    },
+    {
+      "Precinct": "WASTWP-C",
+      "Gary P. Smiga": 403,
+      "Total Votes Cast": 403,
+      "Contest Total": 685
+    },
+    {
+      "Precinct": "WASTWP-D",
+      "Gary P. Smiga": 294,
+      "Total Votes Cast": 294,
+      "Contest Total": 508
+    },
+    {
+      "Precinct": "WASTWP-E",
+      "Gary P. Smiga": 448,
+      "Total Votes Cast": 448,
+      "Contest Total": 725
+    },
+    {
+      "Precinct": "WASTWP-F",
+      "Gary P. Smiga": 246,
+      "Total Votes Cast": 246,
+      "Contest Total": 438
+    },
+    {
+      "Precinct": "WASTWP-G",
+      "Gary P. Smiga": 445,
+      "Total Votes Cast": 445,
+      "Contest Total": 753
+    },
+    {
+      "Precinct": "WASTWP-H",
+      "Gary P. Smiga": 391,
+      "Total Votes Cast": 391,
+      "Contest Total": 634
+    },
+    {
+      "Precinct": "WASTWP-I",
+      "Gary P. Smiga": 264,
+      "Total Votes Cast": 264,
+      "Contest Total": 449
+    },
+    {
+      "Precinct": "WASTWP-J",
+      "Gary P. Smiga": 321,
+      "Total Votes Cast": 321,
+      "Contest Total": 574
+    },
+    {
+      "Precinct": "WASTWP-K",
+      "Gary P. Smiga": 360,
+      "Total Votes Cast": 360,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-L",
+      "Gary P. Smiga": 273,
+      "Total Votes Cast": 273,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "WASTWP-M",
+      "Gary P. Smiga": 420,
+      "Total Votes Cast": 420,
+      "Contest Total": 690
+    },
+    {
+      "Precinct": "WASTWP-N",
+      "Gary P. Smiga": 347,
+      "Total Votes Cast": 347,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-O",
+      "Gary P. Smiga": 329,
+      "Total Votes Cast": 329,
+      "Contest Total": 559
+    },
+    {
+      "Precinct": "WASTWP-P",
+      "Gary P. Smiga": 383,
+      "Total Votes Cast": 383,
+      "Contest Total": 654
+    },
+    {
+      "Precinct": "WASTWP-Q",
+      "Gary P. Smiga": 350,
+      "Total Votes Cast": 350,
+      "Contest Total": 638
+    },
+    {
+      "Precinct": "WASTWP-R",
+      "Gary P. Smiga": 331,
+      "Total Votes Cast": 331,
+      "Contest Total": 500
+    },
+    {
+      "Precinct": "WASTWP-S",
+      "Gary P. Smiga": 329,
+      "Total Votes Cast": 329,
+      "Contest Total": 531
+    },
+    {
+      "Precinct": "WASTWP-T",
+      "Gary P. Smiga": 318,
+      "Total Votes Cast": 318,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "WASTWP-U",
+      "Gary P. Smiga": 402,
+      "Total Votes Cast": 402,
+      "Contest Total": 667
+    },
+    {
+      "Precinct": "WASTWP-V",
+      "Gary P. Smiga": 354,
+      "Total Votes Cast": 354,
+      "Contest Total": 617
+    },
+    {
+      "Precinct": "WASTWP-W",
+      "Gary P. Smiga": 221,
+      "Total Votes Cast": 221,
+      "Contest Total": 390
+    },
+    {
+      "Precinct": "WASTWP-X",
+      "Gary P. Smiga": 326,
+      "Total Votes Cast": 326,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "WASTWP-Y",
+      "Gary P. Smiga": 423,
+      "Total Votes Cast": 423,
+      "Contest Total": 693
+    },
+    {
+      "Precinct": "WASTWP-Z",
+      "Gary P. Smiga": 367,
+      "Total Votes Cast": 367,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "WASTWP-AA",
+      "Gary P. Smiga": 386,
+      "Total Votes Cast": 386,
+      "Contest Total": 622
+    },
+    {
+      "Precinct": "WASTWP-BB",
+      "Gary P. Smiga": 247,
+      "Total Votes Cast": 247,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "WASTWP-CC",
+      "Gary P. Smiga": 429,
+      "Total Votes Cast": 429,
+      "Contest Total": 761
+    }
+  ]
+}

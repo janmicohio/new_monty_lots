@@ -1,0 +1,42 @@
+{
+  "race": "German Township Fiscal Officer",
+  "precincts": 6,
+  "results": [
+    {
+      "Precinct": "GERTWP-A",
+      "Mark A. Heistand": 435,
+      "Total Votes Cast": 435,
+      "Contest Total": 647
+    },
+    {
+      "Precinct": "GERTWP-B",
+      "Mark A. Heistand": 425,
+      "Total Votes Cast": 425,
+      "Contest Total": 661
+    },
+    {
+      "Precinct": "GTN-A",
+      "Mark A. Heistand": 384,
+      "Total Votes Cast": 384,
+      "Contest Total": 592
+    },
+    {
+      "Precinct": "GTN-B",
+      "Mark A. Heistand": 269,
+      "Total Votes Cast": 269,
+      "Contest Total": 444
+    },
+    {
+      "Precinct": "GTN-C",
+      "Mark A. Heistand": 413,
+      "Total Votes Cast": 413,
+      "Contest Total": 580
+    },
+    {
+      "Precinct": "GTN-D",
+      "Mark A. Heistand": 332,
+      "Total Votes Cast": 332,
+      "Contest Total": 511
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "race": "19. Washington Township Park - Renewal 0.9 mill and Increase 0.1 mill - 10 yrs",
+  "precincts": 47,
+  "results": [
+    {
+      "Precinct": "CV-A",
+      "FOR THE TAX LEVY": 225,
+      "AGAINST THE TAX LEVY": 98,
+      "Total Votes Cast": 323,
+      "Contest Total": 364
+    },
+    {
+      "Precinct": "CV-B",
+      "FOR THE TAX LEVY": 386,
+      "AGAINST THE TAX LEVY": 240,
+      "Total Votes Cast": 626,
+      "Contest Total": 649
+    },
+    {
+      "Precinct": "CV-C",
+      "FOR THE TAX LEVY": 220,
+      "AGAINST THE TAX LEVY": 180,
+      "Total Votes Cast": 400,
+      "Contest Total": 415
+    },
+    {
+      "Precinct": "CV-D",
+      "FOR THE TAX LEVY": 205,
+      "AGAINST THE TAX LEVY": 168,
+      "Total Votes Cast": 373,
+      "Contest Total": 385
+    },
+    {
+      "Precinct": "CV-E",
+      "FOR THE TAX LEVY": 346,
+      "AGAINST THE TAX LEVY": 231,
+      "Total Votes Cast": 577,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "CV-F",
+      "FOR THE TAX LEVY": 376,
+      "AGAINST THE TAX LEVY": 309,
+      "Total Votes Cast": 685,
+      "Contest Total": 702
+    },
+    {
+      "Precinct": "CV-G",
+      "FOR THE TAX LEVY": 396,
+      "AGAINST THE TAX LEVY": 300,
+      "Total Votes Cast": 696,
+      "Contest Total": 727
+    },
+    {
+      "Precinct": "CV-H",
+      "FOR THE TAX LEVY": 446,
+      "AGAINST THE TAX LEVY": 291,
+      "Total Votes Cast": 737,
+      "Contest Total": 773
+    },
+    {
+      "Precinct": "CV-I",
+      "FOR THE TAX LEVY": 401,
+      "AGAINST THE TAX LEVY": 368,
+      "Total Votes Cast": 769,
+      "Contest Total": 801
+    },
+    {
+      "Precinct": "CV-J",
+      "FOR THE TAX LEVY": 350,
+      "AGAINST THE TAX LEVY": 323,
+      "Total Votes Cast": 673,
+      "Contest Total": 686
+    },
+    {
+      "Precinct": "CV-K",
+      "FOR THE TAX LEVY": 362,
+      "AGAINST THE TAX LEVY": 326,
+      "Total Votes Cast": 688,
+      "Contest Total": 715
+    },
+    {
+      "Precinct": "CV-L",
+      "FOR THE TAX LEVY": 398,
+      "AGAINST THE TAX LEVY": 348,
+      "Total Votes Cast": 746,
+      "Contest Total": 766
+    },
+    {
+      "Precinct": "CV-M",
+      "FOR THE TAX LEVY": 301,
+      "AGAINST THE TAX LEVY": 318,
+      "Total Votes Cast": 619,
+      "Contest Total": 646
+    },
+    {
+      "Precinct": "CV-N",
+      "FOR THE TAX LEVY": 392,
+      "AGAINST THE TAX LEVY": 122,
+      "Total Votes Cast": 514,
+      "Contest Total": 550
+    },
+    {
+      "Precinct": "CV-O",
+      "FOR THE TAX LEVY": 414,
+      "AGAINST THE TAX LEVY": 376,
+      "Total Votes Cast": 790,
+      "Contest Total": 809
+    },
+    {
+      "Precinct": "CV-P",
+      "FOR THE TAX LEVY": 341,
+      "AGAINST THE TAX LEVY": 313,
+      "Total Votes Cast": 654,
+      "Contest Total": 679
+    },
+    {
+      "Precinct": "CV-Q",
+      "FOR THE TAX LEVY": 380,
+      "AGAINST THE TAX LEVY": 185,
+      "Total Votes Cast": 565,
+      "Contest Total": 589
+    },
+    {
+      "Precinct": "CV-R",
+      "FOR THE TAX LEVY": 324,
+      "AGAINST THE TAX LEVY": 233,
+      "Total Votes Cast": 557,
+      "Contest Total": 585
+    },
+    {
+      "Precinct": "WASTWP-A",
+      "FOR THE TAX LEVY": 350,
+      "AGAINST THE TAX LEVY": 230,
+      "Total Votes Cast": 580,
+      "Contest Total": 597
+    },
+    {
+      "Precinct": "WASTWP-B",
+      "FOR THE TAX LEVY": 421,
+      "AGAINST THE TAX LEVY": 305,
+      "Total Votes Cast": 726,
+      "Contest Total": 743
+    },
+    {
+      "Precinct": "WASTWP-C",
+      "FOR THE TAX LEVY": 384,
+      "AGAINST THE TAX LEVY": 288,
+      "Total Votes Cast": 672,
+      "Contest Total": 685
+    },
+    {
+      "Precinct": "WASTWP-D",
+      "FOR THE TAX LEVY": 284,
+      "AGAINST THE TAX LEVY": 211,
+      "Total Votes Cast": 495,
+      "Contest Total": 508
+    },
+    {
+      "Precinct": "WASTWP-E",
+      "FOR THE TAX LEVY": 418,
+      "AGAINST THE TAX LEVY": 298,
+      "Total Votes Cast": 716,
+      "Contest Total": 725
+    },
+    {
+      "Precinct": "WASTWP-F",
+      "FOR THE TAX LEVY": 239,
+      "AGAINST THE TAX LEVY": 190,
+      "Total Votes Cast": 429,
+      "Contest Total": 438
+    },
+    {
+      "Precinct": "WASTWP-G",
+      "FOR THE TAX LEVY": 494,
+      "AGAINST THE TAX LEVY": 235,
+      "Total Votes Cast": 729,
+      "Contest Total": 753
+    },
+    {
+      "Precinct": "WASTWP-H",
+      "FOR THE TAX LEVY": 356,
+      "AGAINST THE TAX LEVY": 272,
+      "Total Votes Cast": 628,
+      "Contest Total": 634
+    },
+    {
+      "Precinct": "WASTWP-I",
+      "FOR THE TAX LEVY": 273,
+      "AGAINST THE TAX LEVY": 156,
+      "Total Votes Cast": 429,
+      "Contest Total": 449
+    },
+    {
+      "Precinct": "WASTWP-J",
+      "FOR THE TAX LEVY": 340,
+      "AGAINST THE TAX LEVY": 214,
+      "Total Votes Cast": 554,
+      "Contest Total": 574
+    },
+    {
+      "Precinct": "WASTWP-K",
+      "FOR THE TAX LEVY": 339,
+      "AGAINST THE TAX LEVY": 216,
+      "Total Votes Cast": 555,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-L",
+      "FOR THE TAX LEVY": 291,
+      "AGAINST THE TAX LEVY": 179,
+      "Total Votes Cast": 470,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "WASTWP-M",
+      "FOR THE TAX LEVY": 329,
+      "AGAINST THE TAX LEVY": 338,
+      "Total Votes Cast": 667,
+      "Contest Total": 690
+    },
+    {
+      "Precinct": "WASTWP-N",
+      "FOR THE TAX LEVY": 359,
+      "AGAINST THE TAX LEVY": 186,
+      "Total Votes Cast": 545,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-O",
+      "FOR THE TAX LEVY": 254,
+      "AGAINST THE TAX LEVY": 287,
+      "Total Votes Cast": 541,
+      "Contest Total": 559
+    },
+    {
+      "Precinct": "WASTWP-P",
+      "FOR THE TAX LEVY": 356,
+      "AGAINST THE TAX LEVY": 289,
+      "Total Votes Cast": 645,
+      "Contest Total": 654
+    },
+    {
+      "Precinct": "WASTWP-Q",
+      "FOR THE TAX LEVY": 348,
+      "AGAINST THE TAX LEVY": 260,
+      "Total Votes Cast": 608,
+      "Contest Total": 638
+    },
+    {
+      "Precinct": "WASTWP-R",
+      "FOR THE TAX LEVY": 281,
+      "AGAINST THE TAX LEVY": 205,
+      "Total Votes Cast": 486,
+      "Contest Total": 500
+    },
+    {
+      "Precinct": "WASTWP-S",
+      "FOR THE TAX LEVY": 261,
+      "AGAINST THE TAX LEVY": 257,
+      "Total Votes Cast": 518,
+      "Contest Total": 531
+    },
+    {
+      "Precinct": "WASTWP-T",
+      "FOR THE TAX LEVY": 335,
+      "AGAINST THE TAX LEVY": 186,
+      "Total Votes Cast": 521,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "WASTWP-U",
+      "FOR THE TAX LEVY": 364,
+      "AGAINST THE TAX LEVY": 292,
+      "Total Votes Cast": 656,
+      "Contest Total": 667
+    },
+    {
+      "Precinct": "WASTWP-V",
+      "FOR THE TAX LEVY": 342,
+      "AGAINST THE TAX LEVY": 262,
+      "Total Votes Cast": 604,
+      "Contest Total": 617
+    },
+    {
+      "Precinct": "WASTWP-W",
+      "FOR THE TAX LEVY": 224,
+      "AGAINST THE TAX LEVY": 148,
+      "Total Votes Cast": 372,
+      "Contest Total": 390
+    },
+    {
+      "Precinct": "WASTWP-X",
+      "FOR THE TAX LEVY": 307,
+      "AGAINST THE TAX LEVY": 203,
+      "Total Votes Cast": 510,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "WASTWP-Y",
+      "FOR THE TAX LEVY": 400,
+      "AGAINST THE TAX LEVY": 277,
+      "Total Votes Cast": 677,
+      "Contest Total": 693
+    },
+    {
+      "Precinct": "WASTWP-Z",
+      "FOR THE TAX LEVY": 361,
+      "AGAINST THE TAX LEVY": 227,
+      "Total Votes Cast": 588,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "WASTWP-AA",
+      "FOR THE TAX LEVY": 332,
+      "AGAINST THE TAX LEVY": 277,
+      "Total Votes Cast": 609,
+      "Contest Total": 622
+    },
+    {
+      "Precinct": "WASTWP-BB",
+      "FOR THE TAX LEVY": 256,
+      "AGAINST THE TAX LEVY": 150,
+      "Total Votes Cast": 406,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "WASTWP-CC",
+      "FOR THE TAX LEVY": 446,
+      "AGAINST THE TAX LEVY": 299,
+      "Total Votes Cast": 745,
+      "Contest Total": 761
+    }
+  ]
+}

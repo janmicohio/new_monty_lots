@@ -1,0 +1,429 @@
+{
+  "race": "Washington Township Trustee",
+  "precincts": 47,
+  "results": [
+    {
+      "Precinct": "CV-A",
+      "Scott Colwell": 63,
+      "David Cordonnier": 45,
+      "Brian P. Lunne": 53,
+      "Keith Weiskittle": 41,
+      "Total Votes Cast": 202,
+      "Contest Total": 364
+    },
+    {
+      "Precinct": "CV-B",
+      "Scott Colwell": 69,
+      "David Cordonnier": 63,
+      "Brian P. Lunne": 207,
+      "Keith Weiskittle": 92,
+      "Total Votes Cast": 431,
+      "Contest Total": 649
+    },
+    {
+      "Precinct": "CV-C",
+      "Scott Colwell": 54,
+      "David Cordonnier": 57,
+      "Brian P. Lunne": 100,
+      "Keith Weiskittle": 52,
+      "Total Votes Cast": 263,
+      "Contest Total": 415
+    },
+    {
+      "Precinct": "CV-D",
+      "Scott Colwell": 61,
+      "David Cordonnier": 42,
+      "Brian P. Lunne": 86,
+      "Keith Weiskittle": 60,
+      "Total Votes Cast": 249,
+      "Contest Total": 385
+    },
+    {
+      "Precinct": "CV-E",
+      "Scott Colwell": 72,
+      "David Cordonnier": 72,
+      "Brian P. Lunne": 196,
+      "Keith Weiskittle": 56,
+      "Total Votes Cast": 396,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "CV-F",
+      "Scott Colwell": 54,
+      "David Cordonnier": 105,
+      "Brian P. Lunne": 217,
+      "Keith Weiskittle": 75,
+      "Total Votes Cast": 451,
+      "Contest Total": 702
+    },
+    {
+      "Precinct": "CV-G",
+      "Scott Colwell": 81,
+      "David Cordonnier": 103,
+      "Brian P. Lunne": 205,
+      "Keith Weiskittle": 60,
+      "Total Votes Cast": 449,
+      "Contest Total": 727
+    },
+    {
+      "Precinct": "CV-H",
+      "Scott Colwell": 82,
+      "David Cordonnier": 123,
+      "Brian P. Lunne": 244,
+      "Keith Weiskittle": 94,
+      "Total Votes Cast": 543,
+      "Contest Total": 773
+    },
+    {
+      "Precinct": "CV-I",
+      "Scott Colwell": 110,
+      "David Cordonnier": 101,
+      "Brian P. Lunne": 246,
+      "Keith Weiskittle": 99,
+      "Total Votes Cast": 556,
+      "Contest Total": 801
+    },
+    {
+      "Precinct": "CV-J",
+      "Scott Colwell": 85,
+      "David Cordonnier": 94,
+      "Brian P. Lunne": 201,
+      "Keith Weiskittle": 80,
+      "Total Votes Cast": 460,
+      "Contest Total": 686
+    },
+    {
+      "Precinct": "CV-K",
+      "Scott Colwell": 72,
+      "David Cordonnier": 88,
+      "Brian P. Lunne": 252,
+      "Keith Weiskittle": 67,
+      "Total Votes Cast": 479,
+      "Contest Total": 715
+    },
+    {
+      "Precinct": "CV-L",
+      "Scott Colwell": 84,
+      "David Cordonnier": 90,
+      "Brian P. Lunne": 267,
+      "Keith Weiskittle": 91,
+      "Total Votes Cast": 532,
+      "Contest Total": 766
+    },
+    {
+      "Precinct": "CV-M",
+      "Scott Colwell": 80,
+      "David Cordonnier": 100,
+      "Brian P. Lunne": 164,
+      "Keith Weiskittle": 53,
+      "Total Votes Cast": 397,
+      "Contest Total": 646
+    },
+    {
+      "Precinct": "CV-N",
+      "Scott Colwell": 63,
+      "David Cordonnier": 64,
+      "Brian P. Lunne": 172,
+      "Keith Weiskittle": 62,
+      "Total Votes Cast": 361,
+      "Contest Total": 550
+    },
+    {
+      "Precinct": "CV-O",
+      "Scott Colwell": 82,
+      "David Cordonnier": 61,
+      "Brian P. Lunne": 315,
+      "Keith Weiskittle": 121,
+      "Total Votes Cast": 579,
+      "Contest Total": 809
+    },
+    {
+      "Precinct": "CV-P",
+      "Scott Colwell": 83,
+      "David Cordonnier": 115,
+      "Brian P. Lunne": 168,
+      "Keith Weiskittle": 59,
+      "Total Votes Cast": 425,
+      "Contest Total": 679
+    },
+    {
+      "Precinct": "CV-Q",
+      "Scott Colwell": 55,
+      "David Cordonnier": 59,
+      "Brian P. Lunne": 183,
+      "Keith Weiskittle": 77,
+      "Total Votes Cast": 374,
+      "Contest Total": 589
+    },
+    {
+      "Precinct": "CV-R",
+      "Scott Colwell": 62,
+      "David Cordonnier": 75,
+      "Brian P. Lunne": 182,
+      "Keith Weiskittle": 77,
+      "Total Votes Cast": 396,
+      "Contest Total": 585
+    },
+    {
+      "Precinct": "WASTWP-A",
+      "Scott Colwell": 46,
+      "David Cordonnier": 64,
+      "Brian P. Lunne": 268,
+      "Keith Weiskittle": 80,
+      "Total Votes Cast": 458,
+      "Contest Total": 597
+    },
+    {
+      "Precinct": "WASTWP-B",
+      "Scott Colwell": 64,
+      "David Cordonnier": 50,
+      "Brian P. Lunne": 339,
+      "Keith Weiskittle": 94,
+      "Total Votes Cast": 547,
+      "Contest Total": 743
+    },
+    {
+      "Precinct": "WASTWP-C",
+      "Scott Colwell": 72,
+      "David Cordonnier": 97,
+      "Brian P. Lunne": 255,
+      "Keith Weiskittle": 115,
+      "Total Votes Cast": 539,
+      "Contest Total": 685
+    },
+    {
+      "Precinct": "WASTWP-D",
+      "Scott Colwell": 35,
+      "David Cordonnier": 59,
+      "Brian P. Lunne": 256,
+      "Keith Weiskittle": 65,
+      "Total Votes Cast": 415,
+      "Contest Total": 508
+    },
+    {
+      "Precinct": "WASTWP-E",
+      "Scott Colwell": 68,
+      "David Cordonnier": 63,
+      "Brian P. Lunne": 340,
+      "Keith Weiskittle": 90,
+      "Total Votes Cast": 561,
+      "Contest Total": 725
+    },
+    {
+      "Precinct": "WASTWP-F",
+      "Scott Colwell": 48,
+      "David Cordonnier": 42,
+      "Brian P. Lunne": 183,
+      "Keith Weiskittle": 51,
+      "Total Votes Cast": 324,
+      "Contest Total": 438
+    },
+    {
+      "Precinct": "WASTWP-G",
+      "Scott Colwell": 88,
+      "David Cordonnier": 77,
+      "Brian P. Lunne": 331,
+      "Keith Weiskittle": 82,
+      "Total Votes Cast": 578,
+      "Contest Total": 753
+    },
+    {
+      "Precinct": "WASTWP-H",
+      "Scott Colwell": 83,
+      "David Cordonnier": 67,
+      "Brian P. Lunne": 236,
+      "Keith Weiskittle": 73,
+      "Total Votes Cast": 459,
+      "Contest Total": 634
+    },
+    {
+      "Precinct": "WASTWP-I",
+      "Scott Colwell": 57,
+      "David Cordonnier": 52,
+      "Brian P. Lunne": 125,
+      "Keith Weiskittle": 74,
+      "Total Votes Cast": 308,
+      "Contest Total": 449
+    },
+    {
+      "Precinct": "WASTWP-J",
+      "Scott Colwell": 79,
+      "David Cordonnier": 75,
+      "Brian P. Lunne": 171,
+      "Keith Weiskittle": 74,
+      "Total Votes Cast": 399,
+      "Contest Total": 574
+    },
+    {
+      "Precinct": "WASTWP-K",
+      "Scott Colwell": 60,
+      "David Cordonnier": 48,
+      "Brian P. Lunne": 221,
+      "Keith Weiskittle": 114,
+      "Total Votes Cast": 443,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-L",
+      "Scott Colwell": 60,
+      "David Cordonnier": 77,
+      "Brian P. Lunne": 113,
+      "Keith Weiskittle": 65,
+      "Total Votes Cast": 315,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "WASTWP-M",
+      "Scott Colwell": 100,
+      "David Cordonnier": 64,
+      "Brian P. Lunne": 242,
+      "Keith Weiskittle": 103,
+      "Total Votes Cast": 509,
+      "Contest Total": 690
+    },
+    {
+      "Precinct": "WASTWP-N",
+      "Scott Colwell": 78,
+      "David Cordonnier": 59,
+      "Brian P. Lunne": 139,
+      "Keith Weiskittle": 97,
+      "Total Votes Cast": 373,
+      "Contest Total": 568
+    },
+    {
+      "Precinct": "WASTWP-O",
+      "Scott Colwell": 78,
+      "David Cordonnier": 57,
+      "Brian P. Lunne": 204,
+      "Keith Weiskittle": 82,
+      "Total Votes Cast": 421,
+      "Contest Total": 559
+    },
+    {
+      "Precinct": "WASTWP-P",
+      "Scott Colwell": 58,
+      "David Cordonnier": 54,
+      "Brian P. Lunne": 258,
+      "Keith Weiskittle": 94,
+      "Total Votes Cast": 464,
+      "Contest Total": 654
+    },
+    {
+      "Precinct": "WASTWP-Q",
+      "Scott Colwell": 84,
+      "David Cordonnier": 73,
+      "Brian P. Lunne": 181,
+      "Keith Weiskittle": 95,
+      "Total Votes Cast": 433,
+      "Contest Total": 638
+    },
+    {
+      "Precinct": "WASTWP-R",
+      "Scott Colwell": 64,
+      "David Cordonnier": 51,
+      "Brian P. Lunne": 184,
+      "Keith Weiskittle": 82,
+      "Total Votes Cast": 381,
+      "Contest Total": 500
+    },
+    {
+      "Precinct": "WASTWP-S",
+      "Scott Colwell": 98,
+      "David Cordonnier": 63,
+      "Brian P. Lunne": 169,
+      "Keith Weiskittle": 77,
+      "Total Votes Cast": 407,
+      "Contest Total": 531
+    },
+    {
+      "Precinct": "WASTWP-T",
+      "Scott Colwell": 59,
+      "David Cordonnier": 78,
+      "Brian P. Lunne": 153,
+      "Keith Weiskittle": 75,
+      "Total Votes Cast": 365,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "WASTWP-U",
+      "Scott Colwell": 63,
+      "David Cordonnier": 62,
+      "Brian P. Lunne": 243,
+      "Keith Weiskittle": 121,
+      "Total Votes Cast": 489,
+      "Contest Total": 667
+    },
+    {
+      "Precinct": "WASTWP-V",
+      "Scott Colwell": 70,
+      "David Cordonnier": 67,
+      "Brian P. Lunne": 206,
+      "Keith Weiskittle": 98,
+      "Total Votes Cast": 441,
+      "Contest Total": 617
+    },
+    {
+      "Precinct": "WASTWP-W",
+      "Scott Colwell": 49,
+      "David Cordonnier": 55,
+      "Brian P. Lunne": 93,
+      "Keith Weiskittle": 56,
+      "Total Votes Cast": 253,
+      "Contest Total": 390
+    },
+    {
+      "Precinct": "WASTWP-X",
+      "Scott Colwell": 75,
+      "David Cordonnier": 58,
+      "Brian P. Lunne": 182,
+      "Keith Weiskittle": 74,
+      "Total Votes Cast": 389,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "WASTWP-Y",
+      "Scott Colwell": 112,
+      "David Cordonnier": 61,
+      "Brian P. Lunne": 248,
+      "Keith Weiskittle": 88,
+      "Total Votes Cast": 509,
+      "Contest Total": 693
+    },
+    {
+      "Precinct": "WASTWP-Z",
+      "Scott Colwell": 79,
+      "David Cordonnier": 66,
+      "Brian P. Lunne": 213,
+      "Keith Weiskittle": 89,
+      "Total Votes Cast": 447,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "WASTWP-AA",
+      "Scott Colwell": 91,
+      "David Cordonnier": 60,
+      "Brian P. Lunne": 170,
+      "Keith Weiskittle": 107,
+      "Total Votes Cast": 428,
+      "Contest Total": 622
+    },
+    {
+      "Precinct": "WASTWP-BB",
+      "Scott Colwell": 54,
+      "David Cordonnier": 55,
+      "Brian P. Lunne": 105,
+      "Keith Weiskittle": 88,
+      "Total Votes Cast": 302,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "WASTWP-CC",
+      "Scott Colwell": 77,
+      "David Cordonnier": 68,
+      "Brian P. Lunne": 369,
+      "Keith Weiskittle": 64,
+      "Total Votes Cast": 578,
+      "Contest Total": 761
+    }
+  ]
+}

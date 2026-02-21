@@ -1,0 +1,86 @@
+{
+  "race": "Englewood Council",
+  "precincts": 10,
+  "results": [
+    {
+      "Precinct": "ENG-A",
+      "Brad Daugherty": 329,
+      "Steve P. Henne": 278,
+      "Fred B. Huelsman": 241,
+      "Total Votes Cast": 848,
+      "Contest Total": 1845
+    },
+    {
+      "Precinct": "ENG-B",
+      "Brad Daugherty": 252,
+      "Steve P. Henne": 248,
+      "Fred B. Huelsman": 199,
+      "Total Votes Cast": 699,
+      "Contest Total": 1632
+    },
+    {
+      "Precinct": "ENG-C",
+      "Brad Daugherty": 245,
+      "Steve P. Henne": 246,
+      "Fred B. Huelsman": 200,
+      "Total Votes Cast": 691,
+      "Contest Total": 1356
+    },
+    {
+      "Precinct": "ENG-D",
+      "Brad Daugherty": 339,
+      "Steve P. Henne": 334,
+      "Fred B. Huelsman": 267,
+      "Total Votes Cast": 940,
+      "Contest Total": 1872
+    },
+    {
+      "Precinct": "ENG-E",
+      "Brad Daugherty": 327,
+      "Steve P. Henne": 285,
+      "Fred B. Huelsman": 242,
+      "Total Votes Cast": 854,
+      "Contest Total": 1815
+    },
+    {
+      "Precinct": "ENG-F",
+      "Brad Daugherty": 268,
+      "Steve P. Henne": 287,
+      "Fred B. Huelsman": 235,
+      "Total Votes Cast": 790,
+      "Contest Total": 1572
+    },
+    {
+      "Precinct": "ENG-G",
+      "Brad Daugherty": 307,
+      "Steve P. Henne": 316,
+      "Fred B. Huelsman": 243,
+      "Total Votes Cast": 866,
+      "Contest Total": 1773
+    },
+    {
+      "Precinct": "ENG-H",
+      "Brad Daugherty": 263,
+      "Steve P. Henne": 271,
+      "Fred B. Huelsman": 205,
+      "Total Votes Cast": 739,
+      "Contest Total": 1368
+    },
+    {
+      "Precinct": "ENG-I",
+      "Brad Daugherty": 207,
+      "Steve P. Henne": 238,
+      "Fred B. Huelsman": 172,
+      "Total Votes Cast": 617,
+      "Contest Total": 1224
+    },
+    {
+      "Precinct": "ENG-J",
+      "Brad Daugherty": 250,
+      "Steve P. Henne": 229,
+      "Fred B. Huelsman": 169,
+      "Total Votes Cast": 648,
+      "Contest Total": 1455
+    }
+  ]
+}

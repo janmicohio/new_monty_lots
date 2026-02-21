@@ -1,0 +1,182 @@
+{
+  "race": "Trotwood-Madison School Board",
+  "precincts": 22,
+  "results": [
+    {
+      "Precinct": "CTN 1-D",
+      "Craig Anderson": 20,
+      "Aaron D. Lumpkin": 14,
+      "Dionne M. Simmons": 20,
+      "Total Votes Cast": 54,
+      "Contest Total": 88
+    },
+    {
+      "Precinct": "CTN 2-C",
+      "Craig Anderson": 17,
+      "Aaron D. Lumpkin": 33,
+      "Dionne M. Simmons": 37,
+      "Total Votes Cast": 87,
+      "Contest Total": 162
+    },
+    {
+      "Precinct": "DAY 6-A",
+      "Craig Anderson": 2,
+      "Aaron D. Lumpkin": 2,
+      "Dionne M. Simmons": 1,
+      "Total Votes Cast": 5,
+      "Contest Total": 12
+    },
+    {
+      "Precinct": "DAY 15-D",
+      "Craig Anderson": 32,
+      "Aaron D. Lumpkin": 43,
+      "Dionne M. Simmons": 77,
+      "Total Votes Cast": 152,
+      "Contest Total": 256
+    },
+    {
+      "Precinct": "JEFTWP-A",
+      "Craig Anderson": 7,
+      "Aaron D. Lumpkin": 6,
+      "Dionne M. Simmons": 3,
+      "Total Votes Cast": 16,
+      "Contest Total": 48
+    },
+    {
+      "Precinct": "JEFTWP-B",
+      "Craig Anderson": 14,
+      "Aaron D. Lumpkin": 4,
+      "Dionne M. Simmons": 11,
+      "Total Votes Cast": 29,
+      "Contest Total": 58
+    },
+    {
+      "Precinct": "TR 1-A",
+      "Craig Anderson": 112,
+      "Aaron D. Lumpkin": 294,
+      "Dionne M. Simmons": 233,
+      "Total Votes Cast": 639,
+      "Contest Total": 930
+    },
+    {
+      "Precinct": "TR 1-B",
+      "Craig Anderson": 56,
+      "Aaron D. Lumpkin": 152,
+      "Dionne M. Simmons": 143,
+      "Total Votes Cast": 351,
+      "Contest Total": 490
+    },
+    {
+      "Precinct": "TR 1-C",
+      "Craig Anderson": 76,
+      "Aaron D. Lumpkin": 243,
+      "Dionne M. Simmons": 255,
+      "Total Votes Cast": 574,
+      "Contest Total": 758
+    },
+    {
+      "Precinct": "TR 1-D",
+      "Craig Anderson": 53,
+      "Aaron D. Lumpkin": 174,
+      "Dionne M. Simmons": 170,
+      "Total Votes Cast": 397,
+      "Contest Total": 540
+    },
+    {
+      "Precinct": "TR 1-E",
+      "Craig Anderson": 68,
+      "Aaron D. Lumpkin": 377,
+      "Dionne M. Simmons": 319,
+      "Total Votes Cast": 764,
+      "Contest Total": 986
+    },
+    {
+      "Precinct": "TR 2-B",
+      "Craig Anderson": 67,
+      "Aaron D. Lumpkin": 268,
+      "Dionne M. Simmons": 277,
+      "Total Votes Cast": 612,
+      "Contest Total": 818
+    },
+    {
+      "Precinct": "TR 2-C",
+      "Craig Anderson": 50,
+      "Aaron D. Lumpkin": 119,
+      "Dionne M. Simmons": 137,
+      "Total Votes Cast": 306,
+      "Contest Total": 430
+    },
+    {
+      "Precinct": "TR 2-D",
+      "Craig Anderson": 57,
+      "Aaron D. Lumpkin": 100,
+      "Dionne M. Simmons": 99,
+      "Total Votes Cast": 256,
+      "Contest Total": 392
+    },
+    {
+      "Precinct": "TR 2-E",
+      "Craig Anderson": 60,
+      "Aaron D. Lumpkin": 223,
+      "Dionne M. Simmons": 226,
+      "Total Votes Cast": 509,
+      "Contest Total": 666
+    },
+    {
+      "Precinct": "TR 3-A",
+      "Craig Anderson": 82,
+      "Aaron D. Lumpkin": 174,
+      "Dionne M. Simmons": 156,
+      "Total Votes Cast": 412,
+      "Contest Total": 586
+    },
+    {
+      "Precinct": "TR 3-B",
+      "Craig Anderson": 70,
+      "Aaron D. Lumpkin": 157,
+      "Dionne M. Simmons": 118,
+      "Total Votes Cast": 345,
+      "Contest Total": 576
+    },
+    {
+      "Precinct": "TR 3-C",
+      "Craig Anderson": 49,
+      "Aaron D. Lumpkin": 97,
+      "Dionne M. Simmons": 83,
+      "Total Votes Cast": 229,
+      "Contest Total": 374
+    },
+    {
+      "Precinct": "TR 3-D",
+      "Craig Anderson": 89,
+      "Aaron D. Lumpkin": 268,
+      "Dionne M. Simmons": 244,
+      "Total Votes Cast": 601,
+      "Contest Total": 866
+    },
+    {
+      "Precinct": "TR 4-A",
+      "Craig Anderson": 76,
+      "Aaron D. Lumpkin": 321,
+      "Dionne M. Simmons": 285,
+      "Total Votes Cast": 682,
+      "Contest Total": 888
+    },
+    {
+      "Precinct": "TR 4-B",
+      "Craig Anderson": 53,
+      "Aaron D. Lumpkin": 176,
+      "Dionne M. Simmons": 179,
+      "Total Votes Cast": 408,
+      "Contest Total": 602
+    },
+    {
+      "Precinct": "TR 4-D",
+      "Craig Anderson": 17,
+      "Aaron D. Lumpkin": 67,
+      "Dionne M. Simmons": 56,
+      "Total Votes Cast": 140,
+      "Contest Total": 206
+    }
+  ]
+}

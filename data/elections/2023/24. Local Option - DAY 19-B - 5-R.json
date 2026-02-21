@@ -1,0 +1,13 @@
+{
+  "race": "24. Local Option - DAY 19-B - 5-R",
+  "precincts": 1,
+  "results": [
+    {
+      "Precinct": "DAY 19-B",
+      "Yes": 197,
+      "No": 53,
+      "Total Votes Cast": 250,
+      "Contest Total": 254
+    }
+  ]
+}

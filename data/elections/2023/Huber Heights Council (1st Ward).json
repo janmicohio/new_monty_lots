@@ -1,0 +1,30 @@
+{
+  "race": "Huber Heights Council (1st Ward)",
+  "precincts": 4,
+  "results": [
+    {
+      "Precinct": "HUB 1-A",
+      "Scott A. Davidson": 252,
+      "Total Votes Cast": 252,
+      "Contest Total": 486
+    },
+    {
+      "Precinct": "HUB 1-B",
+      "Scott A. Davidson": 411,
+      "Total Votes Cast": 411,
+      "Contest Total": 697
+    },
+    {
+      "Precinct": "HUB 1-C",
+      "Scott A. Davidson": 236,
+      "Total Votes Cast": 236,
+      "Contest Total": 405
+    },
+    {
+      "Precinct": "HUB 1-D",
+      "Scott A. Davidson": 390,
+      "Total Votes Cast": 390,
+      "Contest Total": 594
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "race": "Vandalia Mayor",
+  "precincts": 11,
+  "results": [
+    {
+      "Precinct": "VD-A",
+      "Richard Herbst": 306,
+      "Total Votes Cast": 306,
+      "Contest Total": 444
+    },
+    {
+      "Precinct": "VD-B",
+      "Richard Herbst": 219,
+      "Total Votes Cast": 219,
+      "Contest Total": 295
+    },
+    {
+      "Precinct": "VD-C",
+      "Richard Herbst": 392,
+      "Total Votes Cast": 392,
+      "Contest Total": 554
+    },
+    {
+      "Precinct": "VD-D",
+      "Richard Herbst": 387,
+      "Total Votes Cast": 387,
+      "Contest Total": 500
+    },
+    {
+      "Precinct": "VD-E",
+      "Richard Herbst": 259,
+      "Total Votes Cast": 259,
+      "Contest Total": 375
+    },
+    {
+      "Precinct": "VD-F",
+      "Richard Herbst": 488,
+      "Total Votes Cast": 488,
+      "Contest Total": 648
+    },
+    {
+      "Precinct": "VD-G",
+      "Richard Herbst": 365,
+      "Total Votes Cast": 365,
+      "Contest Total": 505
+    },
+    {
+      "Precinct": "VD-H",
+      "Richard Herbst": 523,
+      "Total Votes Cast": 523,
+      "Contest Total": 667
+    },
+    {
+      "Precinct": "VD-I",
+      "Richard Herbst": 362,
+      "Total Votes Cast": 362,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "VD-J",
+      "Richard Herbst": 476,
+      "Total Votes Cast": 476,
+      "Contest Total": 660
+    },
+    {
+      "Precinct": "VD-K",
+      "Richard Herbst": 421,
+      "Total Votes Cast": 421,
+      "Contest Total": 589
+    }
+  ]
+}

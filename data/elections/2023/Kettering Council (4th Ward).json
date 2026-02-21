@@ -1,0 +1,83 @@
+{
+  "race": "Kettering Council (4th Ward)",
+  "precincts": 11,
+  "results": [
+    {
+      "Precinct": "KT 4-A",
+      "LaSue J. Juniel": 184,
+      "Bryan N. Suddith": 314,
+      "Total Votes Cast": 498,
+      "Contest Total": 720
+    },
+    {
+      "Precinct": "KT 4-B",
+      "LaSue J. Juniel": 171,
+      "Bryan N. Suddith": 274,
+      "Total Votes Cast": 445,
+      "Contest Total": 680
+    },
+    {
+      "Precinct": "KT 4-C",
+      "LaSue J. Juniel": 115,
+      "Bryan N. Suddith": 180,
+      "Total Votes Cast": 295,
+      "Contest Total": 419
+    },
+    {
+      "Precinct": "KT 4-D",
+      "LaSue J. Juniel": 126,
+      "Bryan N. Suddith": 278,
+      "Total Votes Cast": 404,
+      "Contest Total": 581
+    },
+    {
+      "Precinct": "KT 4-E",
+      "LaSue J. Juniel": 170,
+      "Bryan N. Suddith": 217,
+      "Total Votes Cast": 387,
+      "Contest Total": 542
+    },
+    {
+      "Precinct": "KT 4-F",
+      "LaSue J. Juniel": 149,
+      "Bryan N. Suddith": 279,
+      "Total Votes Cast": 428,
+      "Contest Total": 602
+    },
+    {
+      "Precinct": "KT 4-G",
+      "LaSue J. Juniel": 192,
+      "Bryan N. Suddith": 388,
+      "Total Votes Cast": 580,
+      "Contest Total": 806
+    },
+    {
+      "Precinct": "KT 4-H",
+      "LaSue J. Juniel": 102,
+      "Bryan N. Suddith": 200,
+      "Total Votes Cast": 302,
+      "Contest Total": 411
+    },
+    {
+      "Precinct": "KT 4-I",
+      "LaSue J. Juniel": 210,
+      "Bryan N. Suddith": 227,
+      "Total Votes Cast": 437,
+      "Contest Total": 614
+    },
+    {
+      "Precinct": "KT 4-J",
+      "LaSue J. Juniel": 138,
+      "Bryan N. Suddith": 232,
+      "Total Votes Cast": 370,
+      "Contest Total": 520
+    },
+    {
+      "Precinct": "KT 4-K",
+      "LaSue J. Juniel": 161,
+      "Bryan N. Suddith": 257,
+      "Total Votes Cast": 418,
+      "Contest Total": 595
+    }
+  ]
+}

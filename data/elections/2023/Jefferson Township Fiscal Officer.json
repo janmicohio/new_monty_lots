@@ -1,0 +1,48 @@
+{
+  "race": "Jefferson Township Fiscal Officer",
+  "precincts": 6,
+  "results": [
+    {
+      "Precinct": "DAY 14-A",
+      "Charlene E. Chattams": 0,
+      "Tracey M. Edwards": 2,
+      "Total Votes Cast": 2,
+      "Contest Total": 7
+    },
+    {
+      "Precinct": "DAY 14-C",
+      "Charlene E. Chattams": 0,
+      "Tracey M. Edwards": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "JEFTWP-A",
+      "Charlene E. Chattams": 253,
+      "Tracey M. Edwards": 182,
+      "Total Votes Cast": 435,
+      "Contest Total": 589
+    },
+    {
+      "Precinct": "JEFTWP-B",
+      "Charlene E. Chattams": 121,
+      "Tracey M. Edwards": 111,
+      "Total Votes Cast": 232,
+      "Contest Total": 280
+    },
+    {
+      "Precinct": "JEFTWP-C",
+      "Charlene E. Chattams": 173,
+      "Tracey M. Edwards": 143,
+      "Total Votes Cast": 316,
+      "Contest Total": 440
+    },
+    {
+      "Precinct": "JEFTWP-D",
+      "Charlene E. Chattams": 205,
+      "Tracey M. Edwards": 199,
+      "Total Votes Cast": 404,
+      "Contest Total": 425
+    }
+  ]
+}

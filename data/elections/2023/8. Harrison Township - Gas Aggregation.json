@@ -1,0 +1,111 @@
+{
+  "race": "8. Harrison Township - Gas Aggregation",
+  "precincts": 15,
+  "results": [
+    {
+      "Precinct": "HARTWP-A",
+      "Yes": 126,
+      "No": 74,
+      "Total Votes Cast": 200,
+      "Contest Total": 226
+    },
+    {
+      "Precinct": "HARTWP-B",
+      "Yes": 137,
+      "No": 122,
+      "Total Votes Cast": 259,
+      "Contest Total": 297
+    },
+    {
+      "Precinct": "HARTWP-C",
+      "Yes": 153,
+      "No": 103,
+      "Total Votes Cast": 256,
+      "Contest Total": 289
+    },
+    {
+      "Precinct": "HARTWP-D",
+      "Yes": 319,
+      "No": 160,
+      "Total Votes Cast": 479,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "HARTWP-E",
+      "Yes": 103,
+      "No": 66,
+      "Total Votes Cast": 169,
+      "Contest Total": 189
+    },
+    {
+      "Precinct": "HARTWP-F",
+      "Yes": 109,
+      "No": 73,
+      "Total Votes Cast": 182,
+      "Contest Total": 204
+    },
+    {
+      "Precinct": "HARTWP-G",
+      "Yes": 172,
+      "No": 134,
+      "Total Votes Cast": 306,
+      "Contest Total": 327
+    },
+    {
+      "Precinct": "HARTWP-H",
+      "Yes": 166,
+      "No": 111,
+      "Total Votes Cast": 277,
+      "Contest Total": 309
+    },
+    {
+      "Precinct": "HARTWP-I",
+      "Yes": 133,
+      "No": 110,
+      "Total Votes Cast": 243,
+      "Contest Total": 274
+    },
+    {
+      "Precinct": "HARTWP-J",
+      "Yes": 195,
+      "No": 126,
+      "Total Votes Cast": 321,
+      "Contest Total": 340
+    },
+    {
+      "Precinct": "HARTWP-K",
+      "Yes": 148,
+      "No": 116,
+      "Total Votes Cast": 264,
+      "Contest Total": 286
+    },
+    {
+      "Precinct": "HARTWP-L",
+      "Yes": 322,
+      "No": 165,
+      "Total Votes Cast": 487,
+      "Contest Total": 548
+    },
+    {
+      "Precinct": "HARTWP-M",
+      "Yes": 331,
+      "No": 166,
+      "Total Votes Cast": 497,
+      "Contest Total": 531
+    },
+    {
+      "Precinct": "HARTWP-N",
+      "Yes": 155,
+      "No": 98,
+      "Total Votes Cast": 253,
+      "Contest Total": 295
+    },
+    {
+      "Precinct": "HARTWP-O",
+      "Yes": 290,
+      "No": 142,
+      "Total Votes Cast": 432,
+      "Contest Total": 473
+    }
+  ]
+}

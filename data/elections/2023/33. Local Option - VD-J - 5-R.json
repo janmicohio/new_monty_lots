@@ -1,0 +1,13 @@
+{
+  "race": "33. Local Option - VD-J - 5-R",
+  "precincts": 1,
+  "results": [
+    {
+      "Precinct": "VD-J",
+      "Yes": 494,
+      "No": 140,
+      "Total Votes Cast": 634,
+      "Contest Total": 660
+    }
+  ]
+}

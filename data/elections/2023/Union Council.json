@@ -1,0 +1,46 @@
+{
+  "race": "Union Council",
+  "precincts": 5,
+  "results": [
+    {
+      "Precinct": "UN-A",
+      "Robert I. Bennett": 147,
+      "John Bruns": 142,
+      "Lynne Thomas-Roth": 155,
+      "Total Votes Cast": 444,
+      "Contest Total": 915
+    },
+    {
+      "Precinct": "UN-B",
+      "Robert I. Bennett": 217,
+      "John Bruns": 252,
+      "Lynne Thomas-Roth": 252,
+      "Total Votes Cast": 721,
+      "Contest Total": 1506
+    },
+    {
+      "Precinct": "UN-C",
+      "Robert I. Bennett": 255,
+      "John Bruns": 252,
+      "Lynne Thomas-Roth": 255,
+      "Total Votes Cast": 762,
+      "Contest Total": 1560
+    },
+    {
+      "Precinct": "UN-D",
+      "Robert I. Bennett": 274,
+      "John Bruns": 298,
+      "Lynne Thomas-Roth": 300,
+      "Total Votes Cast": 872,
+      "Contest Total": 1770
+    },
+    {
+      "Precinct": "UN-E",
+      "Robert I. Bennett": 225,
+      "John Bruns": 228,
+      "Lynne Thomas-Roth": 261,
+      "Total Votes Cast": 714,
+      "Contest Total": 1659
+    }
+  ]
+}

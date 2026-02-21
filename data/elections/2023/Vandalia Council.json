@@ -1,0 +1,116 @@
+{
+  "race": "Vandalia Council",
+  "precincts": 11,
+  "results": [
+    {
+      "Precinct": "VD-A",
+      "Amber Aivalotis Weaver": 199,
+      "Cindy Doogan": 170,
+      "Corey M. Follick": 179,
+      "Jack R. Herbst": 117,
+      "Constance R. Woods": 134,
+      "Total Votes Cast": 799,
+      "Contest Total": 1332
+    },
+    {
+      "Precinct": "VD-B",
+      "Amber Aivalotis Weaver": 143,
+      "Cindy Doogan": 102,
+      "Corey M. Follick": 122,
+      "Jack R. Herbst": 91,
+      "Constance R. Woods": 71,
+      "Total Votes Cast": 529,
+      "Contest Total": 885
+    },
+    {
+      "Precinct": "VD-C",
+      "Amber Aivalotis Weaver": 214,
+      "Cindy Doogan": 259,
+      "Corey M. Follick": 244,
+      "Jack R. Herbst": 168,
+      "Constance R. Woods": 180,
+      "Total Votes Cast": 1065,
+      "Contest Total": 1662
+    },
+    {
+      "Precinct": "VD-D",
+      "Amber Aivalotis Weaver": 201,
+      "Cindy Doogan": 215,
+      "Corey M. Follick": 220,
+      "Jack R. Herbst": 177,
+      "Constance R. Woods": 209,
+      "Total Votes Cast": 1022,
+      "Contest Total": 1500
+    },
+    {
+      "Precinct": "VD-E",
+      "Amber Aivalotis Weaver": 180,
+      "Cindy Doogan": 120,
+      "Corey M. Follick": 194,
+      "Jack R. Herbst": 103,
+      "Constance R. Woods": 141,
+      "Total Votes Cast": 738,
+      "Contest Total": 1125
+    },
+    {
+      "Precinct": "VD-F",
+      "Amber Aivalotis Weaver": 245,
+      "Cindy Doogan": 313,
+      "Corey M. Follick": 271,
+      "Jack R. Herbst": 206,
+      "Constance R. Woods": 224,
+      "Total Votes Cast": 1259,
+      "Contest Total": 1944
+    },
+    {
+      "Precinct": "VD-G",
+      "Amber Aivalotis Weaver": 211,
+      "Cindy Doogan": 222,
+      "Corey M. Follick": 282,
+      "Jack R. Herbst": 175,
+      "Constance R. Woods": 205,
+      "Total Votes Cast": 1095,
+      "Contest Total": 1515
+    },
+    {
+      "Precinct": "VD-H",
+      "Amber Aivalotis Weaver": 244,
+      "Cindy Doogan": 246,
+      "Corey M. Follick": 375,
+      "Jack R. Herbst": 232,
+      "Constance R. Woods": 340,
+      "Total Votes Cast": 1437,
+      "Contest Total": 2001
+    },
+    {
+      "Precinct": "VD-I",
+      "Amber Aivalotis Weaver": 221,
+      "Cindy Doogan": 201,
+      "Corey M. Follick": 237,
+      "Jack R. Herbst": 161,
+      "Constance R. Woods": 201,
+      "Total Votes Cast": 1021,
+      "Contest Total": 1578
+    },
+    {
+      "Precinct": "VD-J",
+      "Amber Aivalotis Weaver": 229,
+      "Cindy Doogan": 294,
+      "Corey M. Follick": 317,
+      "Jack R. Herbst": 180,
+      "Constance R. Woods": 285,
+      "Total Votes Cast": 1305,
+      "Contest Total": 1980
+    },
+    {
+      "Precinct": "VD-K",
+      "Amber Aivalotis Weaver": 248,
+      "Cindy Doogan": 206,
+      "Corey M. Follick": 274,
+      "Jack R. Herbst": 178,
+      "Constance R. Woods": 200,
+      "Total Votes Cast": 1106,
+      "Contest Total": 1767
+    }
+  ]
+}

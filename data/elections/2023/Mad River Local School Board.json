@@ -1,0 +1,153 @@
+{
+  "race": "Mad River Local School Board",
+  "precincts": 21,
+  "results": [
+    {
+      "Precinct": "DAY 2-C",
+      "Julie Denning": 0,
+      "Ruth Newhouse": 1,
+      "Total Votes Cast": 1,
+      "Contest Total": 2
+    },
+    {
+      "Precinct": "DAY 2-D",
+      "Julie Denning": 0,
+      "Ruth Newhouse": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "DAY 3-C",
+      "Julie Denning": 69,
+      "Ruth Newhouse": 60,
+      "Total Votes Cast": 129,
+      "Contest Total": 244
+    },
+    {
+      "Precinct": "DAY 3-J",
+      "Julie Denning": 13,
+      "Ruth Newhouse": 17,
+      "Total Votes Cast": 30,
+      "Contest Total": 50
+    },
+    {
+      "Precinct": "DAY 3-K",
+      "Julie Denning": 260,
+      "Ruth Newhouse": 212,
+      "Total Votes Cast": 472,
+      "Contest Total": 1014
+    },
+    {
+      "Precinct": "DAY 11-C",
+      "Julie Denning": 5,
+      "Ruth Newhouse": 5,
+      "Total Votes Cast": 10,
+      "Contest Total": 30
+    },
+    {
+      "Precinct": "HUB 5-B",
+      "Julie Denning": 0,
+      "Ruth Newhouse": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "PM",
+      "Julie Denning": 120,
+      "Ruth Newhouse": 85,
+      "Total Votes Cast": 205,
+      "Contest Total": 402
+    },
+    {
+      "Precinct": "RV-A",
+      "Julie Denning": 286,
+      "Ruth Newhouse": 261,
+      "Total Votes Cast": 547,
+      "Contest Total": 970
+    },
+    {
+      "Precinct": "RV-B",
+      "Julie Denning": 141,
+      "Ruth Newhouse": 115,
+      "Total Votes Cast": 256,
+      "Contest Total": 538
+    },
+    {
+      "Precinct": "RV-C",
+      "Julie Denning": 207,
+      "Ruth Newhouse": 172,
+      "Total Votes Cast": 379,
+      "Contest Total": 786
+    },
+    {
+      "Precinct": "RV-E",
+      "Julie Denning": 162,
+      "Ruth Newhouse": 124,
+      "Total Votes Cast": 286,
+      "Contest Total": 620
+    },
+    {
+      "Precinct": "RV-F",
+      "Julie Denning": 227,
+      "Ruth Newhouse": 184,
+      "Total Votes Cast": 411,
+      "Contest Total": 746
+    },
+    {
+      "Precinct": "RV-G",
+      "Julie Denning": 191,
+      "Ruth Newhouse": 160,
+      "Total Votes Cast": 351,
+      "Contest Total": 692
+    },
+    {
+      "Precinct": "RV-H",
+      "Julie Denning": 101,
+      "Ruth Newhouse": 71,
+      "Total Votes Cast": 172,
+      "Contest Total": 348
+    },
+    {
+      "Precinct": "RV-I",
+      "Julie Denning": 153,
+      "Ruth Newhouse": 132,
+      "Total Votes Cast": 285,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "RV-J",
+      "Julie Denning": 171,
+      "Ruth Newhouse": 154,
+      "Total Votes Cast": 325,
+      "Contest Total": 668
+    },
+    {
+      "Precinct": "RV-L",
+      "Julie Denning": 40,
+      "Ruth Newhouse": 40,
+      "Total Votes Cast": 80,
+      "Contest Total": 134
+    },
+    {
+      "Precinct": "RV-M",
+      "Julie Denning": 244,
+      "Ruth Newhouse": 206,
+      "Total Votes Cast": 450,
+      "Contest Total": 818
+    },
+    {
+      "Precinct": "RV-N",
+      "Julie Denning": 155,
+      "Ruth Newhouse": 110,
+      "Total Votes Cast": 265,
+      "Contest Total": 514
+    },
+    {
+      "Precinct": "RV-P",
+      "Julie Denning": 275,
+      "Ruth Newhouse": 237,
+      "Total Votes Cast": 512,
+      "Contest Total": 944
+    }
+  ]
+}

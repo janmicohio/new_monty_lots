@@ -1,0 +1,54 @@
+{
+  "race": "Butler Township Trustee",
+  "precincts": 8,
+  "results": [
+    {
+      "Precinct": "BTLTWP-A",
+      "Missy Pruszynski": 359,
+      "Total Votes Cast": 359,
+      "Contest Total": 574
+    },
+    {
+      "Precinct": "BTLTWP-B",
+      "Missy Pruszynski": 352,
+      "Total Votes Cast": 352,
+      "Contest Total": 547
+    },
+    {
+      "Precinct": "BTLTWP-C",
+      "Missy Pruszynski": 453,
+      "Total Votes Cast": 453,
+      "Contest Total": 670
+    },
+    {
+      "Precinct": "BTLTWP-D",
+      "Missy Pruszynski": 425,
+      "Total Votes Cast": 425,
+      "Contest Total": 626
+    },
+    {
+      "Precinct": "BTLTWP-E",
+      "Missy Pruszynski": 312,
+      "Total Votes Cast": 312,
+      "Contest Total": 464
+    },
+    {
+      "Precinct": "BTLTWP-F",
+      "Missy Pruszynski": 381,
+      "Total Votes Cast": 381,
+      "Contest Total": 529
+    },
+    {
+      "Precinct": "BTLTWP-G",
+      "Missy Pruszynski": 217,
+      "Total Votes Cast": 217,
+      "Contest Total": 322
+    },
+    {
+      "Precinct": "UN-C",
+      "Missy Pruszynski": 2,
+      "Total Votes Cast": 2,
+      "Contest Total": 4
+    }
+  ]
+}

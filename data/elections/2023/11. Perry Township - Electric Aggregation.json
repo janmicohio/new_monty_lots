@@ -1,0 +1,27 @@
+{
+  "race": "11. Perry Township - Electric Aggregation",
+  "precincts": 3,
+  "results": [
+    {
+      "Precinct": "PERTWP-A",
+      "Yes": 258,
+      "No": 112,
+      "Total Votes Cast": 370,
+      "Contest Total": 396
+    },
+    {
+      "Precinct": "PERTWP-B",
+      "Yes": 298,
+      "No": 123,
+      "Total Votes Cast": 421,
+      "Contest Total": 463
+    },
+    {
+      "Precinct": "PERTWP-C",
+      "Yes": 284,
+      "No": 183,
+      "Total Votes Cast": 467,
+      "Contest Total": 499
+    }
+  ]
+}

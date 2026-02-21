@@ -1,0 +1,70 @@
+{
+  "race": "Jefferson Township Local School Board",
+  "precincts": 8,
+  "results": [
+    {
+      "Precinct": "DAY 14-A",
+      "Shaunece Gillespie": 62,
+      "Renee McDaniel": 43,
+      "Rodney Taylor": 33,
+      "Total Votes Cast": 138,
+      "Contest Total": 216
+    },
+    {
+      "Precinct": "DAY 14-C",
+      "Shaunece Gillespie": 16,
+      "Renee McDaniel": 11,
+      "Rodney Taylor": 8,
+      "Total Votes Cast": 35,
+      "Contest Total": 78
+    },
+    {
+      "Precinct": "JEFTWP-A",
+      "Shaunece Gillespie": 200,
+      "Renee McDaniel": 215,
+      "Rodney Taylor": 155,
+      "Total Votes Cast": 570,
+      "Contest Total": 1020
+    },
+    {
+      "Precinct": "JEFTWP-B",
+      "Shaunece Gillespie": 82,
+      "Renee McDaniel": 88,
+      "Rodney Taylor": 30,
+      "Total Votes Cast": 200,
+      "Contest Total": 292
+    },
+    {
+      "Precinct": "JEFTWP-C",
+      "Shaunece Gillespie": 140,
+      "Renee McDaniel": 199,
+      "Rodney Taylor": 116,
+      "Total Votes Cast": 455,
+      "Contest Total": 880
+    },
+    {
+      "Precinct": "JEFTWP-D",
+      "Shaunece Gillespie": 295,
+      "Renee McDaniel": 242,
+      "Rodney Taylor": 102,
+      "Total Votes Cast": 639,
+      "Contest Total": 850
+    },
+    {
+      "Precinct": "MOR 2-A",
+      "Shaunece Gillespie": 24,
+      "Renee McDaniel": 38,
+      "Rodney Taylor": 31,
+      "Total Votes Cast": 93,
+      "Contest Total": 222
+    },
+    {
+      "Precinct": "WCR-A",
+      "Shaunece Gillespie": 2,
+      "Renee McDaniel": 5,
+      "Rodney Taylor": 4,
+      "Total Votes Cast": 11,
+      "Contest Total": 36
+    }
+  ]
+}

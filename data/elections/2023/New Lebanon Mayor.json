@@ -1,0 +1,27 @@
+{
+  "race": "New Lebanon Mayor",
+  "precincts": 3,
+  "results": [
+    {
+      "Precinct": "JNLB-A",
+      "Ray Arriola": 144,
+      "David J. Nickerson": 138,
+      "Total Votes Cast": 282,
+      "Contest Total": 321
+    },
+    {
+      "Precinct": "JNLB-B",
+      "Ray Arriola": 161,
+      "David J. Nickerson": 254,
+      "Total Votes Cast": 415,
+      "Contest Total": 468
+    },
+    {
+      "Precinct": "PNLB",
+      "Ray Arriola": 125,
+      "David J. Nickerson": 159,
+      "Total Votes Cast": 284,
+      "Contest Total": 314
+    }
+  ]
+}

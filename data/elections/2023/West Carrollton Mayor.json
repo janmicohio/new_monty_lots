@@ -1,0 +1,60 @@
+{
+  "race": "West Carrollton Mayor",
+  "precincts": 9,
+  "results": [
+    {
+      "Precinct": "WCR-A",
+      "Richard R. Barnhart": 280,
+      "Total Votes Cast": 280,
+      "Contest Total": 427
+    },
+    {
+      "Precinct": "WCR-B",
+      "Richard R. Barnhart": 308,
+      "Total Votes Cast": 308,
+      "Contest Total": 476
+    },
+    {
+      "Precinct": "WCR-C",
+      "Richard R. Barnhart": 345,
+      "Total Votes Cast": 345,
+      "Contest Total": 477
+    },
+    {
+      "Precinct": "WCR-D",
+      "Richard R. Barnhart": 342,
+      "Total Votes Cast": 342,
+      "Contest Total": 509
+    },
+    {
+      "Precinct": "WCR-E",
+      "Richard R. Barnhart": 184,
+      "Total Votes Cast": 184,
+      "Contest Total": 271
+    },
+    {
+      "Precinct": "WCR-F",
+      "Richard R. Barnhart": 212,
+      "Total Votes Cast": 212,
+      "Contest Total": 323
+    },
+    {
+      "Precinct": "WCR-G",
+      "Richard R. Barnhart": 315,
+      "Total Votes Cast": 315,
+      "Contest Total": 473
+    },
+    {
+      "Precinct": "WCR-H",
+      "Richard R. Barnhart": 265,
+      "Total Votes Cast": 265,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "WCR-I",
+      "Richard R. Barnhart": 165,
+      "Total Votes Cast": 165,
+      "Contest Total": 246
+    }
+  ]
+}

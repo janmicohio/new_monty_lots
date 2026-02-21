@@ -1,0 +1,108 @@
+{
+  "race": "Riverside Mayor",
+  "precincts": 17,
+  "results": [
+    {
+      "Precinct": "PM",
+      "Pete Williams": 143,
+      "Total Votes Cast": 143,
+      "Contest Total": 201
+    },
+    {
+      "Precinct": "RV-A",
+      "Pete Williams": 363,
+      "Total Votes Cast": 363,
+      "Contest Total": 485
+    },
+    {
+      "Precinct": "RV-B",
+      "Pete Williams": 193,
+      "Total Votes Cast": 193,
+      "Contest Total": 291
+    },
+    {
+      "Precinct": "RV-C",
+      "Pete Williams": 269,
+      "Total Votes Cast": 269,
+      "Contest Total": 393
+    },
+    {
+      "Precinct": "RV-D",
+      "Pete Williams": 333,
+      "Total Votes Cast": 333,
+      "Contest Total": 462
+    },
+    {
+      "Precinct": "RV-E",
+      "Pete Williams": 211,
+      "Total Votes Cast": 211,
+      "Contest Total": 324
+    },
+    {
+      "Precinct": "RV-F",
+      "Pete Williams": 272,
+      "Total Votes Cast": 272,
+      "Contest Total": 373
+    },
+    {
+      "Precinct": "RV-G",
+      "Pete Williams": 242,
+      "Total Votes Cast": 242,
+      "Contest Total": 346
+    },
+    {
+      "Precinct": "RV-H",
+      "Pete Williams": 125,
+      "Total Votes Cast": 125,
+      "Contest Total": 174
+    },
+    {
+      "Precinct": "RV-I",
+      "Pete Williams": 236,
+      "Total Votes Cast": 236,
+      "Contest Total": 299
+    },
+    {
+      "Precinct": "RV-J",
+      "Pete Williams": 237,
+      "Total Votes Cast": 237,
+      "Contest Total": 334
+    },
+    {
+      "Precinct": "RV-K",
+      "Pete Williams": 312,
+      "Total Votes Cast": 312,
+      "Contest Total": 487
+    },
+    {
+      "Precinct": "RV-L",
+      "Pete Williams": 167,
+      "Total Votes Cast": 167,
+      "Contest Total": 227
+    },
+    {
+      "Precinct": "RV-M",
+      "Pete Williams": 312,
+      "Total Votes Cast": 312,
+      "Contest Total": 409
+    },
+    {
+      "Precinct": "RV-N",
+      "Pete Williams": 187,
+      "Total Votes Cast": 187,
+      "Contest Total": 257
+    },
+    {
+      "Precinct": "RV-O",
+      "Pete Williams": 311,
+      "Total Votes Cast": 311,
+      "Contest Total": 427
+    },
+    {
+      "Precinct": "RV-P",
+      "Pete Williams": 342,
+      "Total Votes Cast": 342,
+      "Contest Total": 472
+    }
+  ]
+}

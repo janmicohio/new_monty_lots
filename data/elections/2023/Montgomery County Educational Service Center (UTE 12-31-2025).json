@@ -1,0 +1,384 @@
+{
+  "race": "Montgomery County Educational Service Center (UTE 12-31-2025)",
+  "precincts": 63,
+  "results": [
+    {
+      "Precinct": "BRK-A",
+      "Daryl Michael": 317,
+      "Total Votes Cast": 317,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "BRK-B",
+      "Daryl Michael": 258,
+      "Total Votes Cast": 258,
+      "Contest Total": 464
+    },
+    {
+      "Precinct": "BRK-C",
+      "Daryl Michael": 329,
+      "Total Votes Cast": 329,
+      "Contest Total": 619
+    },
+    {
+      "Precinct": "BRK-D",
+      "Daryl Michael": 293,
+      "Total Votes Cast": 293,
+      "Contest Total": 528
+    },
+    {
+      "Precinct": "CLATWP-B",
+      "Daryl Michael": 203,
+      "Total Votes Cast": 203,
+      "Contest Total": 381
+    },
+    {
+      "Precinct": "CLATWP-C",
+      "Daryl Michael": 191,
+      "Total Votes Cast": 191,
+      "Contest Total": 326
+    },
+    {
+      "Precinct": "CTN 1-B",
+      "Daryl Michael": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 1
+    },
+    {
+      "Precinct": "DAY 2-C",
+      "Daryl Michael": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 1
+    },
+    {
+      "Precinct": "DAY 2-D",
+      "Daryl Michael": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "DAY 3-B",
+      "Daryl Michael": 75,
+      "Total Votes Cast": 75,
+      "Contest Total": 145
+    },
+    {
+      "Precinct": "DAY 3-C",
+      "Daryl Michael": 66,
+      "Total Votes Cast": 66,
+      "Contest Total": 122
+    },
+    {
+      "Precinct": "DAY 3-D",
+      "Daryl Michael": 144,
+      "Total Votes Cast": 144,
+      "Contest Total": 290
+    },
+    {
+      "Precinct": "DAY 3-F",
+      "Daryl Michael": 1,
+      "Total Votes Cast": 1,
+      "Contest Total": 2
+    },
+    {
+      "Precinct": "DAY 3-G",
+      "Daryl Michael": 73,
+      "Total Votes Cast": 73,
+      "Contest Total": 136
+    },
+    {
+      "Precinct": "DAY 3-J",
+      "Daryl Michael": 14,
+      "Total Votes Cast": 14,
+      "Contest Total": 25
+    },
+    {
+      "Precinct": "DAY 3-K",
+      "Daryl Michael": 267,
+      "Total Votes Cast": 267,
+      "Contest Total": 507
+    },
+    {
+      "Precinct": "DAY 11-C",
+      "Daryl Michael": 6,
+      "Total Votes Cast": 6,
+      "Contest Total": 15
+    },
+    {
+      "Precinct": "DAY 14-A",
+      "Daryl Michael": 67,
+      "Total Votes Cast": 67,
+      "Contest Total": 108
+    },
+    {
+      "Precinct": "DAY 14-C",
+      "Daryl Michael": 17,
+      "Total Votes Cast": 17,
+      "Contest Total": 39
+    },
+    {
+      "Precinct": "FARM",
+      "Daryl Michael": 206,
+      "Total Votes Cast": 206,
+      "Contest Total": 406
+    },
+    {
+      "Precinct": "GERTWP-A",
+      "Daryl Michael": 269,
+      "Total Votes Cast": 269,
+      "Contest Total": 512
+    },
+    {
+      "Precinct": "GERTWP-B",
+      "Daryl Michael": 339,
+      "Total Votes Cast": 339,
+      "Contest Total": 633
+    },
+    {
+      "Precinct": "GTN-A",
+      "Daryl Michael": 304,
+      "Total Votes Cast": 304,
+      "Contest Total": 592
+    },
+    {
+      "Precinct": "GTN-B",
+      "Daryl Michael": 239,
+      "Total Votes Cast": 239,
+      "Contest Total": 444
+    },
+    {
+      "Precinct": "GTN-C",
+      "Daryl Michael": 354,
+      "Total Votes Cast": 354,
+      "Contest Total": 580
+    },
+    {
+      "Precinct": "GTN-D",
+      "Daryl Michael": 283,
+      "Total Votes Cast": 283,
+      "Contest Total": 511
+    },
+    {
+      "Precinct": "HARTWP-A",
+      "Daryl Michael": 125,
+      "Total Votes Cast": 125,
+      "Contest Total": 226
+    },
+    {
+      "Precinct": "HARTWP-B",
+      "Daryl Michael": 173,
+      "Total Votes Cast": 173,
+      "Contest Total": 297
+    },
+    {
+      "Precinct": "HARTWP-C",
+      "Daryl Michael": 174,
+      "Total Votes Cast": 174,
+      "Contest Total": 289
+    },
+    {
+      "Precinct": "HARTWP-E",
+      "Daryl Michael": 113,
+      "Total Votes Cast": 113,
+      "Contest Total": 189
+    },
+    {
+      "Precinct": "HARTWP-N",
+      "Daryl Michael": 172,
+      "Total Votes Cast": 172,
+      "Contest Total": 295
+    },
+    {
+      "Precinct": "HUB 5-B",
+      "Daryl Michael": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "JAKTWP-A",
+      "Daryl Michael": 392,
+      "Total Votes Cast": 392,
+      "Contest Total": 673
+    },
+    {
+      "Precinct": "JAKTWP-B",
+      "Daryl Michael": 269,
+      "Total Votes Cast": 269,
+      "Contest Total": 479
+    },
+    {
+      "Precinct": "JEFTWP-A",
+      "Daryl Michael": 293,
+      "Total Votes Cast": 293,
+      "Contest Total": 565
+    },
+    {
+      "Precinct": "JEFTWP-B",
+      "Daryl Michael": 92,
+      "Total Votes Cast": 92,
+      "Contest Total": 146
+    },
+    {
+      "Precinct": "JEFTWP-C",
+      "Daryl Michael": 228,
+      "Total Votes Cast": 228,
+      "Contest Total": 440
+    },
+    {
+      "Precinct": "JEFTWP-D",
+      "Daryl Michael": 285,
+      "Total Votes Cast": 285,
+      "Contest Total": 425
+    },
+    {
+      "Precinct": "JNLB-A",
+      "Daryl Michael": 181,
+      "Total Votes Cast": 181,
+      "Contest Total": 321
+    },
+    {
+      "Precinct": "JNLB-B",
+      "Daryl Michael": 292,
+      "Total Votes Cast": 292,
+      "Contest Total": 468
+    },
+    {
+      "Precinct": "MIATWP-J",
+      "Daryl Michael": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 0
+    },
+    {
+      "Precinct": "MOR 2-A",
+      "Daryl Michael": 53,
+      "Total Votes Cast": 53,
+      "Contest Total": 111
+    },
+    {
+      "Precinct": "PERTWP-A",
+      "Daryl Michael": 209,
+      "Total Votes Cast": 209,
+      "Contest Total": 396
+    },
+    {
+      "Precinct": "PERTWP-B",
+      "Daryl Michael": 244,
+      "Total Votes Cast": 244,
+      "Contest Total": 463
+    },
+    {
+      "Precinct": "PERTWP-C",
+      "Daryl Michael": 298,
+      "Total Votes Cast": 298,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "PM",
+      "Daryl Michael": 129,
+      "Total Votes Cast": 129,
+      "Contest Total": 201
+    },
+    {
+      "Precinct": "PNLB",
+      "Daryl Michael": 213,
+      "Total Votes Cast": 213,
+      "Contest Total": 314
+    },
+    {
+      "Precinct": "RV-A",
+      "Daryl Michael": 303,
+      "Total Votes Cast": 303,
+      "Contest Total": 485
+    },
+    {
+      "Precinct": "RV-B",
+      "Daryl Michael": 151,
+      "Total Votes Cast": 151,
+      "Contest Total": 269
+    },
+    {
+      "Precinct": "RV-C",
+      "Daryl Michael": 247,
+      "Total Votes Cast": 247,
+      "Contest Total": 393
+    },
+    {
+      "Precinct": "RV-E",
+      "Daryl Michael": 171,
+      "Total Votes Cast": 171,
+      "Contest Total": 310
+    },
+    {
+      "Precinct": "RV-F",
+      "Daryl Michael": 246,
+      "Total Votes Cast": 246,
+      "Contest Total": 373
+    },
+    {
+      "Precinct": "RV-G",
+      "Daryl Michael": 215,
+      "Total Votes Cast": 215,
+      "Contest Total": 346
+    },
+    {
+      "Precinct": "RV-H",
+      "Daryl Michael": 110,
+      "Total Votes Cast": 110,
+      "Contest Total": 174
+    },
+    {
+      "Precinct": "RV-I",
+      "Daryl Michael": 183,
+      "Total Votes Cast": 183,
+      "Contest Total": 299
+    },
+    {
+      "Precinct": "RV-J",
+      "Daryl Michael": 196,
+      "Total Votes Cast": 196,
+      "Contest Total": 334
+    },
+    {
+      "Precinct": "RV-L",
+      "Daryl Michael": 43,
+      "Total Votes Cast": 43,
+      "Contest Total": 67
+    },
+    {
+      "Precinct": "RV-M",
+      "Daryl Michael": 269,
+      "Total Votes Cast": 269,
+      "Contest Total": 409
+    },
+    {
+      "Precinct": "RV-N",
+      "Daryl Michael": 167,
+      "Total Votes Cast": 167,
+      "Contest Total": 257
+    },
+    {
+      "Precinct": "RV-P",
+      "Daryl Michael": 311,
+      "Total Votes Cast": 311,
+      "Contest Total": 472
+    },
+    {
+      "Precinct": "TR 1-A",
+      "Daryl Michael": 10,
+      "Total Votes Cast": 10,
+      "Contest Total": 25
+    },
+    {
+      "Precinct": "TR 3-B",
+      "Daryl Michael": 56,
+      "Total Votes Cast": 56,
+      "Contest Total": 88
+    },
+    {
+      "Precinct": "WCR-A",
+      "Daryl Michael": 5,
+      "Total Votes Cast": 5,
+      "Contest Total": 18
+    }
+  ]
+}

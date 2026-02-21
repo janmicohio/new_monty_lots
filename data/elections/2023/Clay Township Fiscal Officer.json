@@ -1,0 +1,54 @@
+{
+  "race": "Clay Township Fiscal Officer",
+  "precincts": 8,
+  "results": [
+    {
+      "Precinct": "BRK-A",
+      "Mark B. Brownfield": 324,
+      "Total Votes Cast": 324,
+      "Contest Total": 598
+    },
+    {
+      "Precinct": "BRK-B",
+      "Mark B. Brownfield": 255,
+      "Total Votes Cast": 255,
+      "Contest Total": 464
+    },
+    {
+      "Precinct": "BRK-C",
+      "Mark B. Brownfield": 342,
+      "Total Votes Cast": 342,
+      "Contest Total": 619
+    },
+    {
+      "Precinct": "CLATWP-A",
+      "Mark B. Brownfield": 247,
+      "Total Votes Cast": 247,
+      "Contest Total": 434
+    },
+    {
+      "Precinct": "CLATWP-B",
+      "Mark B. Brownfield": 270,
+      "Total Votes Cast": 270,
+      "Contest Total": 443
+    },
+    {
+      "Precinct": "CLATWP-C",
+      "Mark B. Brownfield": 365,
+      "Total Votes Cast": 365,
+      "Contest Total": 646
+    },
+    {
+      "Precinct": "CTN 1-C",
+      "Mark B. Brownfield": 15,
+      "Total Votes Cast": 15,
+      "Contest Total": 25
+    },
+    {
+      "Precinct": "PHBG",
+      "Mark B. Brownfield": 103,
+      "Total Votes Cast": 103,
+      "Contest Total": 178
+    }
+  ]
+}

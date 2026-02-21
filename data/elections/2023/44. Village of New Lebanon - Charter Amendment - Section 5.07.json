@@ -1,0 +1,27 @@
+{
+  "race": "44. Village of New Lebanon - Charter Amendment - Section 5.07",
+  "precincts": 3,
+  "results": [
+    {
+      "Precinct": "JNLB-A",
+      "Yes": 178,
+      "No": 68,
+      "Total Votes Cast": 246,
+      "Contest Total": 319
+    },
+    {
+      "Precinct": "JNLB-B",
+      "Yes": 290,
+      "No": 100,
+      "Total Votes Cast": 390,
+      "Contest Total": 467
+    },
+    {
+      "Precinct": "PNLB",
+      "Yes": 187,
+      "No": 63,
+      "Total Votes Cast": 250,
+      "Contest Total": 313
+    }
+  ]
+}

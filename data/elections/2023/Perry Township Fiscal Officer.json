@@ -1,0 +1,36 @@
+{
+  "race": "Perry Township Fiscal Officer",
+  "precincts": 5,
+  "results": [
+    {
+      "Precinct": "BRK-D",
+      "Charity F. Grill": 292,
+      "Total Votes Cast": 292,
+      "Contest Total": 528
+    },
+    {
+      "Precinct": "PERTWP-A",
+      "Charity F. Grill": 214,
+      "Total Votes Cast": 214,
+      "Contest Total": 396
+    },
+    {
+      "Precinct": "PERTWP-B",
+      "Charity F. Grill": 254,
+      "Total Votes Cast": 254,
+      "Contest Total": 463
+    },
+    {
+      "Precinct": "PERTWP-C",
+      "Charity F. Grill": 285,
+      "Total Votes Cast": 285,
+      "Contest Total": 499
+    },
+    {
+      "Precinct": "PNLB",
+      "Charity F. Grill": 198,
+      "Total Votes Cast": 198,
+      "Contest Total": 314
+    }
+  ]
+}

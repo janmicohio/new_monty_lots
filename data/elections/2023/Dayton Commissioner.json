@@ -1,0 +1,834 @@
+{
+  "race": "Dayton Commissioner",
+  "precincts": 92,
+  "results": [
+    {
+      "Precinct": "DAY 1-A",
+      "Marcus Bedinger": 23,
+      "Valerie Duncan": 35,
+      "Matt Joseph": 87,
+      "Chris Shaw": 60,
+      "Total Votes Cast": 205,
+      "Contest Total": 284
+    },
+    {
+      "Precinct": "DAY 1-B",
+      "Marcus Bedinger": 132,
+      "Valerie Duncan": 171,
+      "Matt Joseph": 199,
+      "Chris Shaw": 184,
+      "Total Votes Cast": 686,
+      "Contest Total": 996
+    },
+    {
+      "Precinct": "DAY 1-C",
+      "Marcus Bedinger": 73,
+      "Valerie Duncan": 94,
+      "Matt Joseph": 153,
+      "Chris Shaw": 147,
+      "Total Votes Cast": 467,
+      "Contest Total": 640
+    },
+    {
+      "Precinct": "DAY 1-D",
+      "Marcus Bedinger": 91,
+      "Valerie Duncan": 98,
+      "Matt Joseph": 61,
+      "Chris Shaw": 59,
+      "Total Votes Cast": 309,
+      "Contest Total": 466
+    },
+    {
+      "Precinct": "DAY 1-E",
+      "Marcus Bedinger": 160,
+      "Valerie Duncan": 208,
+      "Matt Joseph": 133,
+      "Chris Shaw": 107,
+      "Total Votes Cast": 608,
+      "Contest Total": 996
+    },
+    {
+      "Precinct": "DAY 2-A",
+      "Marcus Bedinger": 40,
+      "Valerie Duncan": 89,
+      "Matt Joseph": 94,
+      "Chris Shaw": 75,
+      "Total Votes Cast": 298,
+      "Contest Total": 480
+    },
+    {
+      "Precinct": "DAY 2-B",
+      "Marcus Bedinger": 95,
+      "Valerie Duncan": 134,
+      "Matt Joseph": 145,
+      "Chris Shaw": 113,
+      "Total Votes Cast": 487,
+      "Contest Total": 726
+    },
+    {
+      "Precinct": "DAY 2-C",
+      "Marcus Bedinger": 52,
+      "Valerie Duncan": 104,
+      "Matt Joseph": 125,
+      "Chris Shaw": 97,
+      "Total Votes Cast": 378,
+      "Contest Total": 612
+    },
+    {
+      "Precinct": "DAY 2-D",
+      "Marcus Bedinger": 34,
+      "Valerie Duncan": 59,
+      "Matt Joseph": 77,
+      "Chris Shaw": 52,
+      "Total Votes Cast": 222,
+      "Contest Total": 360
+    },
+    {
+      "Precinct": "DAY 3-A",
+      "Marcus Bedinger": 16,
+      "Valerie Duncan": 47,
+      "Matt Joseph": 64,
+      "Chris Shaw": 45,
+      "Total Votes Cast": 172,
+      "Contest Total": 288
+    },
+    {
+      "Precinct": "DAY 3-B",
+      "Marcus Bedinger": 29,
+      "Valerie Duncan": 62,
+      "Matt Joseph": 88,
+      "Chris Shaw": 65,
+      "Total Votes Cast": 244,
+      "Contest Total": 420
+    },
+    {
+      "Precinct": "DAY 3-C",
+      "Marcus Bedinger": 88,
+      "Valerie Duncan": 171,
+      "Matt Joseph": 262,
+      "Chris Shaw": 242,
+      "Total Votes Cast": 763,
+      "Contest Total": 1166
+    },
+    {
+      "Precinct": "DAY 3-D",
+      "Marcus Bedinger": 54,
+      "Valerie Duncan": 96,
+      "Matt Joseph": 112,
+      "Chris Shaw": 105,
+      "Total Votes Cast": 367,
+      "Contest Total": 580
+    },
+    {
+      "Precinct": "DAY 3-E",
+      "Marcus Bedinger": 36,
+      "Valerie Duncan": 59,
+      "Matt Joseph": 68,
+      "Chris Shaw": 57,
+      "Total Votes Cast": 220,
+      "Contest Total": 326
+    },
+    {
+      "Precinct": "DAY 3-F",
+      "Marcus Bedinger": 88,
+      "Valerie Duncan": 147,
+      "Matt Joseph": 264,
+      "Chris Shaw": 214,
+      "Total Votes Cast": 713,
+      "Contest Total": 1002
+    },
+    {
+      "Precinct": "DAY 3-G",
+      "Marcus Bedinger": 33,
+      "Valerie Duncan": 79,
+      "Matt Joseph": 109,
+      "Chris Shaw": 88,
+      "Total Votes Cast": 309,
+      "Contest Total": 494
+    },
+    {
+      "Precinct": "DAY 3-H",
+      "Marcus Bedinger": 48,
+      "Valerie Duncan": 72,
+      "Matt Joseph": 114,
+      "Chris Shaw": 91,
+      "Total Votes Cast": 325,
+      "Contest Total": 516
+    },
+    {
+      "Precinct": "DAY 3-I",
+      "Marcus Bedinger": 72,
+      "Valerie Duncan": 182,
+      "Matt Joseph": 217,
+      "Chris Shaw": 208,
+      "Total Votes Cast": 679,
+      "Contest Total": 1086
+    },
+    {
+      "Precinct": "DAY 3-J",
+      "Marcus Bedinger": 64,
+      "Valerie Duncan": 117,
+      "Matt Joseph": 184,
+      "Chris Shaw": 159,
+      "Total Votes Cast": 524,
+      "Contest Total": 818
+    },
+    {
+      "Precinct": "DAY 3-K",
+      "Marcus Bedinger": 100,
+      "Valerie Duncan": 181,
+      "Matt Joseph": 248,
+      "Chris Shaw": 222,
+      "Total Votes Cast": 751,
+      "Contest Total": 1188
+    },
+    {
+      "Precinct": "DAY 3-L",
+      "Marcus Bedinger": 94,
+      "Valerie Duncan": 151,
+      "Matt Joseph": 250,
+      "Chris Shaw": 202,
+      "Total Votes Cast": 697,
+      "Contest Total": 1114
+    },
+    {
+      "Precinct": "DAY 4-A",
+      "Marcus Bedinger": 76,
+      "Valerie Duncan": 92,
+      "Matt Joseph": 166,
+      "Chris Shaw": 160,
+      "Total Votes Cast": 494,
+      "Contest Total": 636
+    },
+    {
+      "Precinct": "DAY 4-B",
+      "Marcus Bedinger": 70,
+      "Valerie Duncan": 77,
+      "Matt Joseph": 109,
+      "Chris Shaw": 90,
+      "Total Votes Cast": 346,
+      "Contest Total": 472
+    },
+    {
+      "Precinct": "DAY 4-C",
+      "Marcus Bedinger": 80,
+      "Valerie Duncan": 77,
+      "Matt Joseph": 146,
+      "Chris Shaw": 127,
+      "Total Votes Cast": 430,
+      "Contest Total": 562
+    },
+    {
+      "Precinct": "DAY 5-A",
+      "Marcus Bedinger": 49,
+      "Valerie Duncan": 78,
+      "Matt Joseph": 97,
+      "Chris Shaw": 107,
+      "Total Votes Cast": 331,
+      "Contest Total": 428
+    },
+    {
+      "Precinct": "DAY 5-B",
+      "Marcus Bedinger": 31,
+      "Valerie Duncan": 76,
+      "Matt Joseph": 132,
+      "Chris Shaw": 135,
+      "Total Votes Cast": 374,
+      "Contest Total": 488
+    },
+    {
+      "Precinct": "DAY 5-C",
+      "Marcus Bedinger": 65,
+      "Valerie Duncan": 58,
+      "Matt Joseph": 75,
+      "Chris Shaw": 67,
+      "Total Votes Cast": 265,
+      "Contest Total": 348
+    },
+    {
+      "Precinct": "DAY 5-D",
+      "Marcus Bedinger": 83,
+      "Valerie Duncan": 75,
+      "Matt Joseph": 96,
+      "Chris Shaw": 109,
+      "Total Votes Cast": 363,
+      "Contest Total": 462
+    },
+    {
+      "Precinct": "DAY 6-A",
+      "Marcus Bedinger": 38,
+      "Valerie Duncan": 54,
+      "Matt Joseph": 160,
+      "Chris Shaw": 168,
+      "Total Votes Cast": 420,
+      "Contest Total": 532
+    },
+    {
+      "Precinct": "DAY 6-B",
+      "Marcus Bedinger": 33,
+      "Valerie Duncan": 47,
+      "Matt Joseph": 152,
+      "Chris Shaw": 154,
+      "Total Votes Cast": 386,
+      "Contest Total": 480
+    },
+    {
+      "Precinct": "DAY 6-C",
+      "Marcus Bedinger": 42,
+      "Valerie Duncan": 50,
+      "Matt Joseph": 109,
+      "Chris Shaw": 125,
+      "Total Votes Cast": 326,
+      "Contest Total": 408
+    },
+    {
+      "Precinct": "DAY 7-A",
+      "Marcus Bedinger": 36,
+      "Valerie Duncan": 47,
+      "Matt Joseph": 101,
+      "Chris Shaw": 123,
+      "Total Votes Cast": 307,
+      "Contest Total": 410
+    },
+    {
+      "Precinct": "DAY 7-B",
+      "Marcus Bedinger": 54,
+      "Valerie Duncan": 58,
+      "Matt Joseph": 110,
+      "Chris Shaw": 123,
+      "Total Votes Cast": 345,
+      "Contest Total": 416
+    },
+    {
+      "Precinct": "DAY 8-A",
+      "Marcus Bedinger": 80,
+      "Valerie Duncan": 147,
+      "Matt Joseph": 171,
+      "Chris Shaw": 153,
+      "Total Votes Cast": 551,
+      "Contest Total": 870
+    },
+    {
+      "Precinct": "DAY 8-B",
+      "Marcus Bedinger": 82,
+      "Valerie Duncan": 154,
+      "Matt Joseph": 170,
+      "Chris Shaw": 127,
+      "Total Votes Cast": 533,
+      "Contest Total": 884
+    },
+    {
+      "Precinct": "DAY 8-C",
+      "Marcus Bedinger": 95,
+      "Valerie Duncan": 141,
+      "Matt Joseph": 207,
+      "Chris Shaw": 171,
+      "Total Votes Cast": 614,
+      "Contest Total": 898
+    },
+    {
+      "Precinct": "DAY 8-D",
+      "Marcus Bedinger": 86,
+      "Valerie Duncan": 155,
+      "Matt Joseph": 136,
+      "Chris Shaw": 112,
+      "Total Votes Cast": 489,
+      "Contest Total": 820
+    },
+    {
+      "Precinct": "DAY 9-A",
+      "Marcus Bedinger": 108,
+      "Valerie Duncan": 209,
+      "Matt Joseph": 310,
+      "Chris Shaw": 225,
+      "Total Votes Cast": 852,
+      "Contest Total": 1254
+    },
+    {
+      "Precinct": "DAY 9-B",
+      "Marcus Bedinger": 100,
+      "Valerie Duncan": 184,
+      "Matt Joseph": 238,
+      "Chris Shaw": 157,
+      "Total Votes Cast": 679,
+      "Contest Total": 1060
+    },
+    {
+      "Precinct": "DAY 9-C",
+      "Marcus Bedinger": 96,
+      "Valerie Duncan": 164,
+      "Matt Joseph": 258,
+      "Chris Shaw": 241,
+      "Total Votes Cast": 759,
+      "Contest Total": 1236
+    },
+    {
+      "Precinct": "DAY 9-D",
+      "Marcus Bedinger": 62,
+      "Valerie Duncan": 126,
+      "Matt Joseph": 177,
+      "Chris Shaw": 120,
+      "Total Votes Cast": 485,
+      "Contest Total": 796
+    },
+    {
+      "Precinct": "DAY 10-A",
+      "Marcus Bedinger": 80,
+      "Valerie Duncan": 145,
+      "Matt Joseph": 145,
+      "Chris Shaw": 119,
+      "Total Votes Cast": 489,
+      "Contest Total": 822
+    },
+    {
+      "Precinct": "DAY 10-B",
+      "Marcus Bedinger": 66,
+      "Valerie Duncan": 119,
+      "Matt Joseph": 136,
+      "Chris Shaw": 94,
+      "Total Votes Cast": 415,
+      "Contest Total": 676
+    },
+    {
+      "Precinct": "DAY 10-C",
+      "Marcus Bedinger": 59,
+      "Valerie Duncan": 109,
+      "Matt Joseph": 123,
+      "Chris Shaw": 120,
+      "Total Votes Cast": 411,
+      "Contest Total": 648
+    },
+    {
+      "Precinct": "DAY 10-D",
+      "Marcus Bedinger": 56,
+      "Valerie Duncan": 153,
+      "Matt Joseph": 146,
+      "Chris Shaw": 122,
+      "Total Votes Cast": 477,
+      "Contest Total": 754
+    },
+    {
+      "Precinct": "DAY 10-E",
+      "Marcus Bedinger": 54,
+      "Valerie Duncan": 119,
+      "Matt Joseph": 124,
+      "Chris Shaw": 104,
+      "Total Votes Cast": 401,
+      "Contest Total": 680
+    },
+    {
+      "Precinct": "DAY 11-A",
+      "Marcus Bedinger": 54,
+      "Valerie Duncan": 89,
+      "Matt Joseph": 109,
+      "Chris Shaw": 70,
+      "Total Votes Cast": 322,
+      "Contest Total": 518
+    },
+    {
+      "Precinct": "DAY 11-B",
+      "Marcus Bedinger": 43,
+      "Valerie Duncan": 82,
+      "Matt Joseph": 82,
+      "Chris Shaw": 72,
+      "Total Votes Cast": 279,
+      "Contest Total": 430
+    },
+    {
+      "Precinct": "DAY 11-C",
+      "Marcus Bedinger": 46,
+      "Valerie Duncan": 83,
+      "Matt Joseph": 82,
+      "Chris Shaw": 72,
+      "Total Votes Cast": 283,
+      "Contest Total": 482
+    },
+    {
+      "Precinct": "DAY 11-D",
+      "Marcus Bedinger": 54,
+      "Valerie Duncan": 131,
+      "Matt Joseph": 161,
+      "Chris Shaw": 129,
+      "Total Votes Cast": 475,
+      "Contest Total": 734
+    },
+    {
+      "Precinct": "DAY 11-E",
+      "Marcus Bedinger": 60,
+      "Valerie Duncan": 99,
+      "Matt Joseph": 117,
+      "Chris Shaw": 78,
+      "Total Votes Cast": 354,
+      "Contest Total": 596
+    },
+    {
+      "Precinct": "DAY 12-A",
+      "Marcus Bedinger": 79,
+      "Valerie Duncan": 139,
+      "Matt Joseph": 173,
+      "Chris Shaw": 160,
+      "Total Votes Cast": 551,
+      "Contest Total": 830
+    },
+    {
+      "Precinct": "DAY 12-B",
+      "Marcus Bedinger": 88,
+      "Valerie Duncan": 133,
+      "Matt Joseph": 144,
+      "Chris Shaw": 110,
+      "Total Votes Cast": 475,
+      "Contest Total": 670
+    },
+    {
+      "Precinct": "DAY 12-C",
+      "Marcus Bedinger": 65,
+      "Valerie Duncan": 107,
+      "Matt Joseph": 140,
+      "Chris Shaw": 102,
+      "Total Votes Cast": 414,
+      "Contest Total": 624
+    },
+    {
+      "Precinct": "DAY 12-D",
+      "Marcus Bedinger": 44,
+      "Valerie Duncan": 66,
+      "Matt Joseph": 78,
+      "Chris Shaw": 67,
+      "Total Votes Cast": 255,
+      "Contest Total": 404
+    },
+    {
+      "Precinct": "DAY 13-A",
+      "Marcus Bedinger": 27,
+      "Valerie Duncan": 48,
+      "Matt Joseph": 142,
+      "Chris Shaw": 158,
+      "Total Votes Cast": 375,
+      "Contest Total": 458
+    },
+    {
+      "Precinct": "DAY 13-B",
+      "Marcus Bedinger": 15,
+      "Valerie Duncan": 25,
+      "Matt Joseph": 53,
+      "Chris Shaw": 57,
+      "Total Votes Cast": 150,
+      "Contest Total": 210
+    },
+    {
+      "Precinct": "DAY 14-A",
+      "Marcus Bedinger": 39,
+      "Valerie Duncan": 57,
+      "Matt Joseph": 183,
+      "Chris Shaw": 202,
+      "Total Votes Cast": 481,
+      "Contest Total": 580
+    },
+    {
+      "Precinct": "DAY 14-B",
+      "Marcus Bedinger": 14,
+      "Valerie Duncan": 25,
+      "Matt Joseph": 65,
+      "Chris Shaw": 69,
+      "Total Votes Cast": 173,
+      "Contest Total": 218
+    },
+    {
+      "Precinct": "DAY 14-C",
+      "Marcus Bedinger": 26,
+      "Valerie Duncan": 36,
+      "Matt Joseph": 116,
+      "Chris Shaw": 113,
+      "Total Votes Cast": 291,
+      "Contest Total": 364
+    },
+    {
+      "Precinct": "DAY 14-D",
+      "Marcus Bedinger": 42,
+      "Valerie Duncan": 59,
+      "Matt Joseph": 176,
+      "Chris Shaw": 203,
+      "Total Votes Cast": 480,
+      "Contest Total": 614
+    },
+    {
+      "Precinct": "DAY 15-A",
+      "Marcus Bedinger": 42,
+      "Valerie Duncan": 75,
+      "Matt Joseph": 146,
+      "Chris Shaw": 155,
+      "Total Votes Cast": 418,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "DAY 15-B",
+      "Marcus Bedinger": 30,
+      "Valerie Duncan": 67,
+      "Matt Joseph": 190,
+      "Chris Shaw": 195,
+      "Total Votes Cast": 482,
+      "Contest Total": 588
+    },
+    {
+      "Precinct": "DAY 15-C",
+      "Marcus Bedinger": 26,
+      "Valerie Duncan": 51,
+      "Matt Joseph": 111,
+      "Chris Shaw": 124,
+      "Total Votes Cast": 312,
+      "Contest Total": 410
+    },
+    {
+      "Precinct": "DAY 15-D",
+      "Marcus Bedinger": 43,
+      "Valerie Duncan": 80,
+      "Matt Joseph": 107,
+      "Chris Shaw": 115,
+      "Total Votes Cast": 345,
+      "Contest Total": 452
+    },
+    {
+      "Precinct": "DAY 16-A",
+      "Marcus Bedinger": 57,
+      "Valerie Duncan": 105,
+      "Matt Joseph": 137,
+      "Chris Shaw": 140,
+      "Total Votes Cast": 439,
+      "Contest Total": 558
+    },
+    {
+      "Precinct": "DAY 16-B",
+      "Marcus Bedinger": 42,
+      "Valerie Duncan": 61,
+      "Matt Joseph": 82,
+      "Chris Shaw": 87,
+      "Total Votes Cast": 272,
+      "Contest Total": 358
+    },
+    {
+      "Precinct": "DAY 16-C",
+      "Marcus Bedinger": 34,
+      "Valerie Duncan": 69,
+      "Matt Joseph": 94,
+      "Chris Shaw": 112,
+      "Total Votes Cast": 309,
+      "Contest Total": 400
+    },
+    {
+      "Precinct": "DAY 16-D",
+      "Marcus Bedinger": 58,
+      "Valerie Duncan": 98,
+      "Matt Joseph": 285,
+      "Chris Shaw": 299,
+      "Total Votes Cast": 740,
+      "Contest Total": 900
+    },
+    {
+      "Precinct": "DAY 16-E",
+      "Marcus Bedinger": 41,
+      "Valerie Duncan": 70,
+      "Matt Joseph": 152,
+      "Chris Shaw": 164,
+      "Total Votes Cast": 427,
+      "Contest Total": 526
+    },
+    {
+      "Precinct": "DAY 17-A",
+      "Marcus Bedinger": 41,
+      "Valerie Duncan": 65,
+      "Matt Joseph": 105,
+      "Chris Shaw": 93,
+      "Total Votes Cast": 304,
+      "Contest Total": 398
+    },
+    {
+      "Precinct": "DAY 17-B",
+      "Marcus Bedinger": 55,
+      "Valerie Duncan": 84,
+      "Matt Joseph": 106,
+      "Chris Shaw": 97,
+      "Total Votes Cast": 342,
+      "Contest Total": 506
+    },
+    {
+      "Precinct": "DAY 17-C",
+      "Marcus Bedinger": 59,
+      "Valerie Duncan": 110,
+      "Matt Joseph": 138,
+      "Chris Shaw": 125,
+      "Total Votes Cast": 432,
+      "Contest Total": 564
+    },
+    {
+      "Precinct": "DAY 17-D",
+      "Marcus Bedinger": 41,
+      "Valerie Duncan": 86,
+      "Matt Joseph": 71,
+      "Chris Shaw": 74,
+      "Total Votes Cast": 272,
+      "Contest Total": 366
+    },
+    {
+      "Precinct": "DAY 18-A",
+      "Marcus Bedinger": 34,
+      "Valerie Duncan": 68,
+      "Matt Joseph": 99,
+      "Chris Shaw": 96,
+      "Total Votes Cast": 297,
+      "Contest Total": 404
+    },
+    {
+      "Precinct": "DAY 18-B",
+      "Marcus Bedinger": 68,
+      "Valerie Duncan": 96,
+      "Matt Joseph": 189,
+      "Chris Shaw": 194,
+      "Total Votes Cast": 547,
+      "Contest Total": 724
+    },
+    {
+      "Precinct": "DAY 18-C",
+      "Marcus Bedinger": 49,
+      "Valerie Duncan": 77,
+      "Matt Joseph": 87,
+      "Chris Shaw": 88,
+      "Total Votes Cast": 301,
+      "Contest Total": 418
+    },
+    {
+      "Precinct": "DAY 18-D",
+      "Marcus Bedinger": 32,
+      "Valerie Duncan": 79,
+      "Matt Joseph": 96,
+      "Chris Shaw": 96,
+      "Total Votes Cast": 303,
+      "Contest Total": 404
+    },
+    {
+      "Precinct": "DAY 19-A",
+      "Marcus Bedinger": 11,
+      "Valerie Duncan": 28,
+      "Matt Joseph": 56,
+      "Chris Shaw": 60,
+      "Total Votes Cast": 155,
+      "Contest Total": 194
+    },
+    {
+      "Precinct": "DAY 19-B",
+      "Marcus Bedinger": 35,
+      "Valerie Duncan": 55,
+      "Matt Joseph": 132,
+      "Chris Shaw": 182,
+      "Total Votes Cast": 404,
+      "Contest Total": 508
+    },
+    {
+      "Precinct": "DAY 19-C",
+      "Marcus Bedinger": 31,
+      "Valerie Duncan": 55,
+      "Matt Joseph": 129,
+      "Chris Shaw": 156,
+      "Total Votes Cast": 371,
+      "Contest Total": 450
+    },
+    {
+      "Precinct": "DAY 20-A",
+      "Marcus Bedinger": 110,
+      "Valerie Duncan": 221,
+      "Matt Joseph": 219,
+      "Chris Shaw": 167,
+      "Total Votes Cast": 717,
+      "Contest Total": 1106
+    },
+    {
+      "Precinct": "DAY 20-B",
+      "Marcus Bedinger": 123,
+      "Valerie Duncan": 212,
+      "Matt Joseph": 237,
+      "Chris Shaw": 175,
+      "Total Votes Cast": 747,
+      "Contest Total": 1128
+    },
+    {
+      "Precinct": "DAY 20-C",
+      "Marcus Bedinger": 55,
+      "Valerie Duncan": 97,
+      "Matt Joseph": 159,
+      "Chris Shaw": 145,
+      "Total Votes Cast": 456,
+      "Contest Total": 760
+    },
+    {
+      "Precinct": "DAY 20-D",
+      "Marcus Bedinger": 57,
+      "Valerie Duncan": 116,
+      "Matt Joseph": 173,
+      "Chris Shaw": 111,
+      "Total Votes Cast": 457,
+      "Contest Total": 770
+    },
+    {
+      "Precinct": "DAY 21-A",
+      "Marcus Bedinger": 21,
+      "Valerie Duncan": 53,
+      "Matt Joseph": 101,
+      "Chris Shaw": 105,
+      "Total Votes Cast": 280,
+      "Contest Total": 384
+    },
+    {
+      "Precinct": "DAY 21-B",
+      "Marcus Bedinger": 34,
+      "Valerie Duncan": 38,
+      "Matt Joseph": 106,
+      "Chris Shaw": 128,
+      "Total Votes Cast": 306,
+      "Contest Total": 378
+    },
+    {
+      "Precinct": "DAY 21-C",
+      "Marcus Bedinger": 35,
+      "Valerie Duncan": 82,
+      "Matt Joseph": 164,
+      "Chris Shaw": 192,
+      "Total Votes Cast": 473,
+      "Contest Total": 594
+    },
+    {
+      "Precinct": "DAY 22-A",
+      "Marcus Bedinger": 89,
+      "Valerie Duncan": 139,
+      "Matt Joseph": 229,
+      "Chris Shaw": 247,
+      "Total Votes Cast": 704,
+      "Contest Total": 896
+    },
+    {
+      "Precinct": "DAY 22-B",
+      "Marcus Bedinger": 65,
+      "Valerie Duncan": 118,
+      "Matt Joseph": 205,
+      "Chris Shaw": 213,
+      "Total Votes Cast": 601,
+      "Contest Total": 746
+    },
+    {
+      "Precinct": "DAY 22-C",
+      "Marcus Bedinger": 50,
+      "Valerie Duncan": 125,
+      "Matt Joseph": 283,
+      "Chris Shaw": 310,
+      "Total Votes Cast": 768,
+      "Contest Total": 942
+    },
+    {
+      "Precinct": "DAY 23-A",
+      "Marcus Bedinger": 89,
+      "Valerie Duncan": 136,
+      "Matt Joseph": 157,
+      "Chris Shaw": 143,
+      "Total Votes Cast": 525,
+      "Contest Total": 788
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "race": "Huber Heights Council (2nd Ward)",
+  "precincts": 2,
+  "results": [
+    {
+      "Precinct": "HUB 2-A",
+      "Don Webb": 325,
+      "Total Votes Cast": 325,
+      "Contest Total": 555
+    },
+    {
+      "Precinct": "HUB 2-B",
+      "Don Webb": 345,
+      "Total Votes Cast": 345,
+      "Contest Total": 606
+    }
+  ]
+}

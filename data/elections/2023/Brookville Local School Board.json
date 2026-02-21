@@ -1,0 +1,116 @@
+{
+  "race": "Brookville Local School Board",
+  "precincts": 10,
+  "results": [
+    {
+      "Precinct": "BRK-A",
+      "Roger A. Bowyer": 169,
+      "Timothy J. Denlinger": 250,
+      "Fred Garber": 160,
+      "Lauren N. Hester": 154,
+      "Darren McNew": 94,
+      "Susan Steck": 260,
+      "Total Votes Cast": 1087,
+      "Contest Total": 1794
+    },
+    {
+      "Precinct": "BRK-B",
+      "Roger A. Bowyer": 112,
+      "Timothy J. Denlinger": 218,
+      "Fred Garber": 134,
+      "Lauren N. Hester": 120,
+      "Darren McNew": 104,
+      "Susan Steck": 193,
+      "Total Votes Cast": 881,
+      "Contest Total": 1392
+    },
+    {
+      "Precinct": "BRK-C",
+      "Roger A. Bowyer": 161,
+      "Timothy J. Denlinger": 272,
+      "Fred Garber": 193,
+      "Lauren N. Hester": 170,
+      "Darren McNew": 116,
+      "Susan Steck": 303,
+      "Total Votes Cast": 1215,
+      "Contest Total": 1857
+    },
+    {
+      "Precinct": "BRK-D",
+      "Roger A. Bowyer": 144,
+      "Timothy J. Denlinger": 222,
+      "Fred Garber": 143,
+      "Lauren N. Hester": 179,
+      "Darren McNew": 124,
+      "Susan Steck": 229,
+      "Total Votes Cast": 1041,
+      "Contest Total": 1584
+    },
+    {
+      "Precinct": "CLATWP-B",
+      "Roger A. Bowyer": 89,
+      "Timothy J. Denlinger": 142,
+      "Fred Garber": 108,
+      "Lauren N. Hester": 69,
+      "Darren McNew": 85,
+      "Susan Steck": 172,
+      "Total Votes Cast": 665,
+      "Contest Total": 1143
+    },
+    {
+      "Precinct": "CLATWP-C",
+      "Roger A. Bowyer": 96,
+      "Timothy J. Denlinger": 132,
+      "Fred Garber": 116,
+      "Lauren N. Hester": 71,
+      "Darren McNew": 80,
+      "Susan Steck": 156,
+      "Total Votes Cast": 651,
+      "Contest Total": 978
+    },
+    {
+      "Precinct": "CTN 1-B",
+      "Roger A. Bowyer": 0,
+      "Timothy J. Denlinger": 0,
+      "Fred Garber": 0,
+      "Lauren N. Hester": 0,
+      "Darren McNew": 0,
+      "Susan Steck": 0,
+      "Total Votes Cast": 0,
+      "Contest Total": 3
+    },
+    {
+      "Precinct": "PERTWP-A",
+      "Roger A. Bowyer": 118,
+      "Timothy J. Denlinger": 141,
+      "Fred Garber": 97,
+      "Lauren N. Hester": 58,
+      "Darren McNew": 70,
+      "Susan Steck": 147,
+      "Total Votes Cast": 631,
+      "Contest Total": 996
+    },
+    {
+      "Precinct": "PERTWP-B",
+      "Roger A. Bowyer": 99,
+      "Timothy J. Denlinger": 178,
+      "Fred Garber": 142,
+      "Lauren N. Hester": 108,
+      "Darren McNew": 85,
+      "Susan Steck": 195,
+      "Total Votes Cast": 807,
+      "Contest Total": 1263
+    },
+    {
+      "Precinct": "TR 1-A",
+      "Roger A. Bowyer": 3,
+      "Timothy J. Denlinger": 5,
+      "Fred Garber": 5,
+      "Lauren N. Hester": 6,
+      "Darren McNew": 3,
+      "Susan Steck": 11,
+      "Total Votes Cast": 33,
+      "Contest Total": 75
+    }
+  ]
+}
